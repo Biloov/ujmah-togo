@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galerie — UJMAH Togo</title>
+  <meta name="description" content="Galerie photo des actions humanitaires UJMAH Togo. Témoignage visuel de nos engagements sur le terrain."/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+    .bento-gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; grid-auto-rows: 240px; }
+    @media (max-width: 768px) { .bento-gallery { grid-template-columns: 1fr; grid-auto-rows: 200px; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="assets/logo-ujmahvf.png" alt="UJMAH"/></a>
+      <div class="navbar__links" id="navLinks">
+        <a href="index.html" class="navbar__link">Accueil</a>
+        <a href="nos-actions.html" class="navbar__link">Nos Actions</a>
+        <a href="galerie.html" class="navbar__link navbar__link--active">Galerie</a>
+        <a href="valeurs.html" class="navbar__link">Valeurs</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <a href="contact.html" class="navbar__cta navbar__cta--desktop">Faire un don</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main style="padding-top:100px;padding-bottom:var(--sp-xl);">
+    <div class="container">
+
+      <!-- Title -->
+      <div class="mb-lg reveal" style="max-width:650px;">
+        <h1 class="display-lg text-primary mb-md">Galerie des Actions</h1>
+        <p class="body-lg text-on-surface-variant">Un témoignage visuel de nos engagements et de la solidarité qui anime notre communauté. Chaque image reflète la sincérité de nos actions sur le terrain.</p>
+      </div>
+
+      <!-- Bento Gallery -->
+      <div class="bento-gallery">
+        <!-- Large -->
+        <div class="gallery-item reveal" style="grid-column:span 8;grid-row:span 2;">
+          <img src="assets/hero-mosque.png" alt="Mosquée — Excellence et Spiritualité"/>
+          <div class="gallery-item__overlay">
+            <p class="gallery-item__label">Concours de Récitation du Saint Coran (CRSC)</p>
+            <h3 class="gallery-item__title">Excellence et Spiritualité</h3>
+          </div>
+        </div>
+        <!-- Tall -->
+        <div class="gallery-item reveal reveal-delay-1" style="grid-column:span 4;grid-row:span 3;">
+          <img src="assets/actions-sociales.png" alt="Actions Sociales — Préparation des colis"/>
+          <div class="gallery-item__overlay">
+            <p class="gallery-item__label">Actions Sociales</p>
+            <h3 class="gallery-item__title">Préparation des colis</h3>
+          </div>
+        </div>
+        <!-- Square -->
+        <div class="gallery-item reveal" style="grid-column:span 4;grid-row:span 2;">
+          <img src="assets/gallery-well.png" alt="Actions Sociales — Puits communautaire"/>
+          <div class="gallery-item__overlay">
+            <p class="gallery-item__label">Actions Sociales</p>
+            <h3 class="gallery-item__title">Puits communautaire</h3>
+          </div>
+        </div>
+        <!-- Wide -->
+        <div class="gallery-item reveal reveal-delay-1" style="grid-column:span 4;grid-row:span 1;">
+          <img src="assets/sefima-weaving.png" alt="SEFIMA — Formation Islamique et Managériale"/>
+          <div class="gallery-item__overlay" style="padding:12px 16px;">
+            <p class="caption" style="color:var(--primary);background:rgba(255,255,255,0.9);padding:8px 12px;border-radius:4px;">SEFIMA — Séminaire de Formation Islamique et Managériale</p>
+          </div>
+        </div>
+        <!-- Education -->
+        <div class="gallery-item reveal" style="grid-column:span 4;grid-row:span 2;">
+          <img src="assets/formations-workspace.png" alt="Formations — Apprentissage continu"/>
+          <div class="gallery-item__overlay">
+            <p class="gallery-item__label">Formations</p>
+            <h3 class="gallery-item__title">Apprentissage continu</h3>
+          </div>
+        </div>
+        <!-- Wide bottom -->
+        <div class="gallery-item reveal" style="grid-column:span 8;grid-row:span 1;">
+          <img src="assets/crsc-interior.png" alt="Formations — Islamique, académique, professionnel, TIC"/>
+          <div class="gallery-item__overlay" style="display:flex;justify-content:space-between;align-items:flex-end;">
+            <div>
+              <p class="gallery-item__label">Formations</p>
+              <h3 class="gallery-item__title">Islamique, académique, professionnel, TIC...</h3>
+            </div>
+            <span class="material-symbols-outlined" style="color:rgba(255,255,255,0.8);">school</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote -->
+      <section class="quote section mt-xl reveal">
+        <span class="material-symbols-outlined quote__icon">format_quote</span>
+        <p class="quote__text">"Le meilleur des hommes est celui qui est le plus utile aux autres."</p>
+        <p class="quote__source">— Éthique UJMAH</p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__logo"><img src="assets/logo-ujmahvf.png" alt="UJMAH"/></div>
+    <div class="footer__links">
+      <a href="index.html" class="footer__link">Accueil</a>
+      <a href="nos-actions.html" class="footer__link">Nos Actions</a>
+      <a href="galerie.html" class="footer__link footer__link--active">Galerie</a>
+      <a href="valeurs.html" class="footer__link">Valeurs</a>
+      <a href="contact.html" class="footer__link">Contact</a>
+      <a href="#" class="footer__link">Confidentialité</a>
+    </div>
+    <p class="footer__copy">© 2024 UJMAH — Servir l'humanité dans l'union</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

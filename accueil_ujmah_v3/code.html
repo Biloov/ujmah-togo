@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#584400",
+                        "inverse-primary": "#c0c1ff",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-primary-container": "#9c9eff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#241a00",
+                        "inverse-surface": "#313030",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface": "#fcf9f8",
+                        "surface-container-high": "#eae7e7",
+                        "on-tertiary-fixed": "#301400",
+                        "surface-tint": "#5153b3",
+                        "on-primary-fixed-variant": "#393a9a",
+                        "on-secondary-container": "#6f5600",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#777683",
+                        "surface-dim": "#dcd9d9",
+                        "error": "#ba1a1a",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed-dim": "#f0c12c",
+                        "tertiary-fixed": "#ffdcc6",
+                        "surface-container-low": "#f6f3f2",
+                        "on-tertiary-container": "#ff881b",
+                        "tertiary-fixed-dim": "#ffb784",
+                        "surface-variant": "#e5e2e1",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-surface-variant": "#464652",
+                        "secondary": "#755b00",
+                        "surface-bright": "#fcf9f8",
+                        "primary-container": "#2e2f8f",
+                        "error-container": "#ffdad6",
+                        "background": "#fcf9f8",
+                        "tertiary": "#421d00",
+                        "surface-container-highest": "#e5e2e1",
+                        "secondary-container": "#fccc38",
+                        "primary-fixed": "#e1e0ff",
+                        "on-error": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "primary": "#15137a",
+                        "tertiary-container": "#622f00",
+                        "surface-container": "#f0eded",
+                        "outline-variant": "#c7c5d4",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "on-primary-fixed": "#07006c",
+                        "secondary-fixed": "#ffdf90"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "sm": "12px",
+                        "base": "8px",
+                        "md": "24px",
+                        "margin": "32px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #ffffff;
+            color: #1c1b1b;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background bg-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 py-4 bg-white/95 dark:bg-slate-950/95 backdrop-blur-sm shadow-sm shadow-indigo-900/5 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-indigo-900 dark:text-white">UJMAH</span>
+<div class="hidden md:flex gap-6">
+<a class="font-manrope text-sm tracking-wide font-medium text-indigo-900 dark:text-indigo-300 border-b-2 border-indigo-900 dark:border-indigo-300 pb-1" href="#">Accueil</a>
+<a class="font-manrope text-sm tracking-wide font-medium text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-slate-200 transition-colors" href="#">Nos Actions</a>
+<a class="font-manrope text-sm tracking-wide font-medium text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-slate-200 transition-colors" href="#">Galerie</a>
+<a class="font-manrope text-sm tracking-wide font-medium text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-slate-200 transition-colors" href="#">Valeurs</a>
+<a class="font-manrope text-sm tracking-wide font-medium text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-slate-200 transition-colors" href="#">Contact</a>
+</div>
+</div>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-label-md text-label-md hover:opacity-90 transition-opacity">
+            Faire un don
+        </button>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-gutter text-center py-xl">
+<h1 class="font-display-lg text-display-lg text-primary-container mb-lg">
+                Servir l’humanité dans l’union
+            </h1>
+<div class="relative w-full max-w-4xl mx-auto aspect-[21/9] rounded-xl overflow-hidden shadow-sm">
+<img alt="Mosquée UJMAH" class="w-full h-full object-cover grayscale-[20%] brightness-105" data-alt="A serene and minimalist architectural photograph of a white mosque with clean geometric lines under a soft, clear blue sky. The lighting is diffused and high-key, emphasizing the purity and spiritual calm of the structure. The composition is perfectly centered, reflecting the project's focus on balance and peace. The visual style is professional and sober, using a high-resolution, realistic approach to capture the subtle textures of the stone walls." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB681t27C0pRz9nnfuDUa70saJefS1G4T4j6aGUIsStwv1ZPTjeBZk-acnhBXcb8S2eXpZhabaD84jVsC2gQyGiA1PUH8VGyDU2l1pfKowMKnLqDwnNx1zCYDx6fa_aRli56YCHBub187B9O2jmRwM_d6mAjlwMUuODnXWDPuDQFyHL_8QYpU-DE_snjkDeLeAl7dNZ09J_20neJhm0x01MTNSLqpUJD2_OC8JLQhqGWUGQLjBUXY2qeyDSpeI3qMzo-kp3rkwjzPXf"/>
+<div class="absolute inset-0 bg-primary/5 mix-blend-multiply"></div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="bg-surface-container-low py-xl">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-xs">Nos Valeurs Fondamentales</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Ancrées dans la spiritualité, portées par l'action.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="bg-white p-lg rounded-xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-sm" data-icon="auto_awesome">auto_awesome</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Foi</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">L'intention pure comme moteur de chaque engagement.</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-sm" data-icon="diversity_3">diversity_3</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Solidarité</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Agir ensemble pour soutenir les plus vulnérables.</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-sm" data-icon="volunteer_activism">volunteer_activism</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Engagement</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Une présence constante sur le terrain humanitaire.</p>
+</div>
+<div class="bg-white p-lg rounded-xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-sm" data-icon="handshake">handshake</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Fraternité</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">L'union des cœurs au service du bien commun.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Highlights Section -->
+<section class="py-xl max-w-7xl mx-auto px-gutter">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-primary">Activités en Lumière</h2>
+<div class="h-1 w-20 bg-secondary-container mt-xs"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-64 relative">
+<img alt="CRSC Action" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist and high-quality photograph of an open Quran on a wooden stand. The lighting is soft and natural, creating a serene and spiritual atmosphere. The background is softly blurred, focusing on the elegant Arabic calligraphy. The aesthetic is clean and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzc2Z3aLCChI_atHKvoXsFbZ6j523rgiVQhlH_cDdBGUC30pTmrYH6nanXa9Ugub3MgkPwHRFaQ0_0fow8oWQOr2G6mYCIoBx_3rvLK-CnrL2Y91QR37-iR3MILmKCOiEmrqtJPaa8Bmo43vdpj34ZAcTgFgmYlhdeBxwYf4RYXiCb2kF99BsEDPee2rM2FFa5P6-NHyeY3vIIjMKbFXbQ2vjKxMW5qMarlzaK_pKg3lK9N7p9bSexRl-VuATGPKMfY4RLt59uVZkF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<span class="bg-primary px-3 py-1 rounded text-caption font-caption uppercase tracking-wider">Concours de Récitation du Saint Coran (CRSC)</span>
+</div>
+</div>
+<div class="p-lg">
+<h4 class="font-headline-md text-headline-md text-primary mb-sm">Actions sociales - Centre de Ressources et Solidarité</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Accompagnement quotidien et soutien matériel aux familles en difficulté, dans le respect et la dignité.</p>
+<a class="text-primary font-label-md flex items-center gap-base hover:gap-sm transition-all" href="#">
+                            En savoir plus <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-64 relative">
+<img alt="SEFIMA Program" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional and sober top-down shot of a clean workspace representing education and learning. The composition includes a stack of books, a notebook, and a pen on a light-colored surface. The lighting is bright and even, conveying a sense of clarity and professional growth, avoiding human faces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzdpC7tWOf-5C9_rV7FlRc5MNAxG1xFLm5rqtZo3qHERdxegWXh6fLe556OxK2mhBShD743BjlVaV1ieiMHYUelYUg-r8OWNN9R0ZiJn3lyjQOMUOMIwE_JR8jwg87QInDZxY76x5rHK9mnm0XVQqMjrwGCfkFHsFue4skzcgpxZNV-ZST3hvI1o2SnI2NIcvev6r6GtljycxedrET6jC1TkwXUXQ3LLgz6IAwYXYOwHZMVEvz-bTtMbyAxIoe-5sTHhCypK6gvxb9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-white">
+<span class="bg-primary px-3 py-1 rounded text-caption font-caption uppercase tracking-wider">SEFIMA (Séminaire de Formation Islamique et Managériale)</span>
+</div>
+</div>
+<div class="p-lg">
+<h4 class="font-headline-md text-headline-md text-primary mb-sm">Formations et Accompagnement</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Programmes de formations (Islamique, académique, professionnel, TIC...) et accompagnement des familles pour un bien-être global durable.</p>
+<a class="text-primary font-label-md flex items-center gap-base hover:gap-sm transition-all" href="#">
+                            En savoir plus <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Sadaqa Section -->
+<section class="max-w-7xl mx-auto px-gutter py-xl">
+<div class="bg-secondary-container rounded-2xl p-lg md:p-xl flex flex-col md:flex-row items-center justify-between gap-lg overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-on-tertiary-container/5 rounded-full -mr-32 -mt-32"></div>
+<div class="z-10 text-center md:text-left">
+<h2 class="font-display-lg text-headline-lg text-on-secondary-fixed mb-sm">Sadaqa Jariya</h2>
+<p class="font-body-lg text-body-lg text-on-secondary-fixed-variant max-w-md">Laissez une empreinte durable. Vos dons financent nos projets d'infrastructure et de soutien à long terme.</p>
+</div>
+<div class="z-10 flex flex-col items-center gap-sm">
+<button class="bg-tertiary-container text-on-tertiary-container px-10 py-4 rounded-full font-headline-md text-headline-md shadow-lg shadow-tertiary/20 hover:scale-[1.02] transition-transform">
+                        Soutenir l'Union
+                    </button>
+<div class="w-full max-w-xs h-2 bg-on-secondary-fixed/10 rounded-full mt-sm overflow-hidden">
+<div class="h-full bg-on-tertiary-container w-3/4 rounded-full"></div>
+</div>
+<span class="font-caption text-caption text-on-secondary-fixed-variant">75% de l'objectif mensuel atteint</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col items-center gap-8 text-center bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-800">
+<span class="text-lg font-semibold text-indigo-900 dark:text-white mb-4 block">UJMAH</span>
+<div class="flex flex-wrap justify-center gap-6 mb-4">
+<a class="font-manrope text-xs uppercase tracking-widest font-light text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300" href="#">Accueil</a>
+<a class="font-manrope text-xs uppercase tracking-widest font-light text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300" href="#">Nos Actions</a>
+<a class="font-manrope text-xs uppercase tracking-widest font-light text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300" href="#">Galerie</a>
+<a class="font-manrope text-xs uppercase tracking-widest font-light text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300" href="#">Valeurs</a>
+<a class="font-manrope text-xs uppercase tracking-widest font-light text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300" href="#">Contact</a>
+<a class="font-manrope text-xs uppercase tracking-widest font-light text-slate-500 dark:text-slate-400 hover:text-indigo-900 dark:hover:text-indigo-300" href="#">Confidentialité</a>
+</div>
+<p class="font-manrope text-xs uppercase tracking-widest font-light text-slate-400">© 2024 UJMAH — Servir l’humanité dans l’union</p>
+</footer>
+</body></html>

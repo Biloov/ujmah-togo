@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nos Actions — UJMAH Togo</title>
+  <meta name="description" content="Découvrez les programmes UJMAH : CRSC, SEFIMA, actions sociales et formations professionnelles au Togo."/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="assets/logo-ujmahvf.png" alt="UJMAH"/></a>
+      <div class="navbar__links" id="navLinks">
+        <a href="index.html" class="navbar__link">Accueil</a>
+        <a href="nos-actions.html" class="navbar__link navbar__link--active">Nos Actions</a>
+        <a href="galerie.html" class="navbar__link">Galerie</a>
+        <a href="valeurs.html" class="navbar__link">Valeurs</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <a href="contact.html" class="navbar__cta navbar__cta--desktop">Faire un don</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main style="padding-top:100px;padding-bottom:var(--sp-xl);">
+    <div class="container">
+
+      <!-- Hero -->
+      <section class="text-center mb-xl reveal" style="max-width:750px;margin-left:auto;margin-right:auto;">
+        <h1 class="display-lg text-primary mb-md">Nos Actions au Service de la Communauté</h1>
+        <p class="body-lg text-on-surface-variant">Découvrez l'ensemble de nos programmes visant à promouvoir l'excellence spirituelle, sociale et professionnelle à travers des initiatives concrètes et durables.</p>
+      </section>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid">
+
+        <!-- CRSC -->
+        <div class="card reveal" style="grid-column:span 7;">
+          <div class="card__image" style="height:320px;position:relative;">
+            <img src="assets/crsc-interior.png" alt="Concours de Récitation du Saint Coran"/>
+            <div style="position:absolute;top:16px;left:16px;"><span class="badge badge--spiritual">Spirituel</span></div>
+          </div>
+          <div class="card__body">
+            <h2 class="headline-lg card__title">Concours de Récitation du Saint Coran (CRSC)</h2>
+            <p class="body-md card__text">Un événement d'excellence annuel encourageant les jeunes à parfaire leur mémorisation et leur lecture mélodieuse. Une célébration de la beauté du Verbe Divin.</p>
+            <div class="flex gap-sm" style="flex-wrap:wrap;">
+              <button class="btn btn--primary btn--icon">Soutenir le concours <span class="material-symbols-outlined" style="font-size:18px;">favorite</span></button>
+              <button class="btn btn--secondary">En savoir plus</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEFIMA -->
+        <div class="card reveal reveal-delay-1" style="grid-column:span 5;">
+          <div class="card__image" style="height:320px;position:relative;">
+            <img src="assets/sefima-weaving.png" alt="SEFIMA — Formation et autonomisation"/>
+            <div style="position:absolute;top:16px;left:16px;"><span class="badge badge--autonomy">Autonomisation</span></div>
+          </div>
+          <div class="card__body">
+            <h2 class="headline-lg card__title">SEFIMA (Séminaire de Formation Islamique et Managériale)</h2>
+            <p class="body-md card__text">Un programme dédié à l'autonomisation des femmes à travers des ateliers de formation, des conférences et un réseau d'entraide communautaire.</p>
+            <button class="btn btn--primary btn--full">Découvrir le réseau</button>
+          </div>
+        </div>
+
+        <!-- Actions Sociales -->
+        <div class="card reveal" style="grid-column:span 6;">
+          <div class="card__image" style="height:280px;position:relative;">
+            <img src="assets/actions-sociales.png" alt="Actions sociales — kits scolaires et Ramadan"/>
+            <div style="position:absolute;top:16px;left:16px;"><span class="badge badge--social">Social</span></div>
+          </div>
+          <div class="card__body">
+            <h2 class="headline-lg card__title">Actions Sociales (Ramadan, kits scolaires, etc.)</h2>
+            <p class="body-md card__text">Kits scolaires pour les orphelins et colis alimentaires durant le Ramadan. Nous agissons là où le besoin est le plus pressant pour soulager les familles.</p>
+            <div class="progress mb-md">
+              <div class="progress__bar progress__bar--accent" style="width:75%;"></div>
+            </div>
+            <div class="flex justify-between mb-md">
+              <span class="caption label-md text-on-surface-variant">Collecte en cours : 75%</span>
+              <span class="caption label-md text-primary">Objectif 500 kits</span>
+            </div>
+            <button class="btn btn--accent btn--full">Contribuer à un kit</button>
+          </div>
+        </div>
+
+        <!-- Formations TIC -->
+        <div class="card reveal reveal-delay-1" style="grid-column:span 6;">
+          <div class="card__image" style="height:280px;position:relative;">
+            <img src="assets/formations-workspace.png" alt="Formations professionnelles et TIC"/>
+            <div style="position:absolute;top:16px;left:16px;"><span class="badge badge--education">Éducation</span></div>
+          </div>
+          <div class="card__body">
+            <h2 class="headline-lg card__title">Formations (Islamique, académique, professionnel, TIC...)</h2>
+            <p class="body-md card__text">Réduire la fracture numérique et renforcer les compétences par des formations diversifiées pour les jeunes. Un levier pour l'excellence spirituelle, l'employabilité et l'avenir.</p>
+            <div class="grid-2 mb-md">
+              <div class="flex items-center gap-sm caption text-on-surface-variant">
+                <span class="material-symbols-outlined" style="font-size:16px;">computer</span> Bureautique
+              </div>
+              <div class="flex items-center gap-sm caption text-on-surface-variant">
+                <span class="material-symbols-outlined" style="font-size:16px;">code</span> Web Design
+              </div>
+            </div>
+            <button class="btn btn--outline-primary btn--full">S'inscrire à la prochaine session</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Bénévole -->
+      <section class="cta-banner--primary mt-xl reveal">
+        <div>
+          <h3 class="headline-md cta-banner__title mb-xs">Vous souhaitez devenir bénévole ?</h3>
+          <p class="body-md cta-banner__text" style="opacity:0.9;color:white;">Rejoignez l'union et participez activement à nos projets sur le terrain.</p>
+        </div>
+        <a href="contact.html" class="btn btn--white" style="white-space:nowrap;">Nous rejoindre</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__logo"><img src="assets/logo-ujmahvf.png" alt="UJMAH"/></div>
+    <div class="footer__links">
+      <a href="index.html" class="footer__link">Accueil</a>
+      <a href="nos-actions.html" class="footer__link footer__link--active">Nos Actions</a>
+      <a href="galerie.html" class="footer__link">Galerie</a>
+      <a href="valeurs.html" class="footer__link">Valeurs</a>
+      <a href="contact.html" class="footer__link">Contact</a>
+      <a href="#" class="footer__link">Confidentialité</a>
+    </div>
+    <p class="footer__copy">© 2024 UJMAH — Servir l'humanité dans l'union</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
