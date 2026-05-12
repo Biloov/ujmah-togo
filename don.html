@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faire un Don — UJMAH Togo</title>
+  <meta name="description" content="Soutenez les actions de l'UJMAH Togo par vos dons via Tmoney, Flooz ou virement bancaire."/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo"><img src="assets/logo-ujmahvf.png" alt="UJMAH"/></a>
+      <div class="navbar__links" id="navLinks">
+        <a href="index.html" class="navbar__link">Accueil</a>
+        <a href="nos-actions.html" class="navbar__link">Nos Actions</a>
+        <a href="galerie.html" class="navbar__link">Galerie</a>
+        <a href="valeurs.html" class="navbar__link">Valeurs</a>
+        <a href="contact.html" class="navbar__link">Contact</a>
+      </div>
+      <a href="don.html" class="navbar__cta navbar__cta--desktop">Faire un don</a>
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <main style="padding-top:120px;padding-bottom:var(--sp-xl); min-height: 80vh; display: flex; align-items: center;">
+    <div class="container text-center">
+      
+      <section class="mb-xl reveal">
+        <h1 class="display-lg text-primary mb-md">Soutenir l'UJMAH</h1>
+        <p class="body-lg text-on-surface-variant" style="max-width:700px;margin:0 auto;">
+          Votre générosité est le moteur de nos actions. Chaque contribution nous permet d'étendre notre impact auprès des plus vulnérables au Togo.
+        </p>
+      </section>
+
+      <div class="donation-grid reveal" style="justify-content: center;">
+        
+        <!-- MIXX BY YAS -->
+        <div class="donation-card">
+          <div class="donation-card__icon">
+            <img src="assets/mixx_logo.png" alt="MIXX BY YAS" onerror="this.src='https://placehold.co/80x80/003366/FFCC00?text=MIXX'">
+          </div>
+          <h3 class="donation-card__title headline-md">MIXX BY YAS</h3>
+          <p class="body-md text-on-surface-variant">Mobile Money Togocom</p>
+          <div class="donation-card__value" id="tmoney-number">+228 93 26 71 54</div>
+          <div class="flex flex-col gap-sm" style="width: 100%;">
+            <a href="tel:*145*1*93267154#" class="btn btn--primary btn--full">
+              <span class="material-symbols-outlined">send_to_mobile</span> Envoyer via USSD
+            </a>
+            <button class="copy-btn" style="width: 100%;" onclick="copyToClipboard('+22893267154', this)">
+              <span class="material-symbols-outlined">content_copy</span> Copier le numéro
+            </button>
+          </div>
+          <p class="caption mt-sm text-on-surface-variant">Tapez <code style="background: #eee; padding: 2px 4px;">*145#</code> sur votre mobile</p>
+        </div>
+
+        <!-- Moov Money -->
+        <div class="donation-card">
+          <div class="donation-card__icon">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moov_Money_Flooz.png" alt="Moov Money" onerror="this.src='https://placehold.co/80x80/009944/FFFFFF?text=Moov'">
+          </div>
+          <h3 class="donation-card__title headline-md">Moov Money</h3>
+          <p class="body-md text-on-surface-variant">Moov Africa Togo</p>
+          <div class="donation-card__value" id="flooz-number">+228 97 79 50 37</div>
+          <div class="flex flex-col gap-sm" style="width: 100%;">
+            <a href="tel:*155*1*1*97795037#" class="btn btn--primary btn--full">
+              <span class="material-symbols-outlined">send_to_mobile</span> Envoyer via USSD
+            </a>
+            <button class="copy-btn" style="width: 100%;" onclick="copyToClipboard('+22897795037', this)">
+              <span class="material-symbols-outlined">content_copy</span> Copier le numéro
+            </button>
+          </div>
+          <p class="caption mt-sm text-on-surface-variant">Tapez <code style="background: #eee; padding: 2px 4px;">*155#</code> sur votre mobile</p>
+        </div>
+
+        <!-- Virement Bancaire -->
+        <div class="donation-card" style="grid-column: 1 / -1; max-width: 650px; margin: 0 auto;">
+          <div class="donation-card__icon">
+            <span class="material-symbols-outlined" style="font-size: 64px; color: var(--primary);">account_balance</span>
+          </div>
+          <h3 class="donation-card__title headline-md">Virement Bancaire</h3>
+          <p class="body-md text-on-surface-variant">CORIS BANK TOGO — ASSOCIATION UJMAH</p>
+          <div class="donation-card__value" id="bank-rib" style="font-size: 16px; letter-spacing: 1px;">
+            TG182 01010 008811824401 13
+          </div>
+          <button class="copy-btn" onclick="copyToClipboard('TG1820101000881182440113', this)">
+            <span class="material-symbols-outlined">content_copy</span> Copier le RIB pour virement
+          </button>
+        </div>
+
+      </div>
+
+      <section class="mt-xl text-center reveal">
+        <div style="background: var(--surface-container-low); padding: var(--sp-lg); border-radius: var(--radius-lg); max-width: 800px; margin: 0 auto;">
+          <h3 class="headline-md text-primary mb-sm">Besoin d'un reçu ou d'une attestation ?</h3>
+          <p class="body-md text-on-surface-variant mb-md">Après votre don, envoyez-nous une preuve de transfert par WhatsApp ou Email pour obtenir votre reçu officiel.</p>
+          <div class="flex justify-center gap-sm">
+            <a href="https://wa.me/22893267154" class="btn btn--outline-primary">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="mailto:ujmahofficiel@gmail.com" class="btn btn--outline-primary">
+              <i class="far fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__logo"><img src="assets/logo-ujmahvf.png" alt="UJMAH"/></div>
+    
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="https://facebook.com/ujmahofficiel" class="social-link social-link--facebook" target="_blank" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/ujmahofficiel" class="social-link social-link--instagram" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@ujmah.officiel" class="social-link social-link--youtube" target="_blank" title="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://tiktok.com/@ujmahofficiel" class="social-link social-link--tiktok" target="_blank" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+
+    <div class="footer__links">
+      <a href="index.html" class="footer__link">Accueil</a>
+      <a href="nos-actions.html" class="footer__link">Nos Actions</a>
+      <a href="galerie.html" class="footer__link">Galerie</a>
+      <a href="valeurs.html" class="footer__link">Valeurs</a>
+      <a href="contact.html" class="footer__link">Contact</a>
+      <a href="#" class="footer__link">Confidentialité</a>
+    </div>
+    <p class="footer__copy">© 2024 UJMAH — Servir l'humanité dans l'union</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

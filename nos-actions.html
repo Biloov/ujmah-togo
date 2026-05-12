@@ -7,6 +7,7 @@
   <meta name="description" content="Découvrez les programmes UJMAH : CRSC, SEFIMA, actions sociales et formations professionnelles au Togo."/>
   <link rel="stylesheet" href="css/styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
 <body>
 
@@ -21,7 +22,7 @@
         <a href="valeurs.html" class="navbar__link">Valeurs</a>
         <a href="contact.html" class="navbar__link">Contact</a>
       </div>
-      <a href="contact.html" class="navbar__cta navbar__cta--desktop">Faire un don</a>
+      <a href="don.html" class="navbar__cta navbar__cta--desktop">Faire un don</a>
       <button class="navbar__hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -50,7 +51,7 @@
             <h2 class="headline-lg card__title">Concours de Récitation du Saint Coran (CRSC)</h2>
             <p class="body-md card__text">Un événement d'excellence annuel encourageant les jeunes à parfaire leur mémorisation et leur lecture mélodieuse. Une célébration de la beauté du Verbe Divin.</p>
             <div class="flex gap-sm" style="flex-wrap:wrap;">
-              <button class="btn btn--primary btn--icon">Soutenir le concours <span class="material-symbols-outlined" style="font-size:18px;">favorite</span></button>
+              <a href="don.html" class="btn btn--primary btn--icon">Soutenir le concours <span class="material-symbols-outlined" style="font-size:18px;">favorite</span></a>
               <button class="btn btn--secondary">En savoir plus</button>
             </div>
           </div>
@@ -85,7 +86,7 @@
               <span class="caption label-md text-on-surface-variant">Collecte en cours : 75%</span>
               <span class="caption label-md text-primary">Objectif 500 kits</span>
             </div>
-            <button class="btn btn--accent btn--full">Contribuer à un kit</button>
+            <a href="don.html" class="btn btn--accent btn--full">Contribuer à un kit</a>
           </div>
         </div>
 
@@ -109,6 +110,23 @@
             <button class="btn btn--outline-primary btn--full">S'inscrire à la prochaine session</button>
           </div>
         </div>
+
+        <!-- Orphelinat MES ENFANTS -->
+        <div class="card reveal" style="grid-column:span 12;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-md);" class="contact-grid">
+            <div class="card__image" style="height:400px;position:relative;">
+              <img src="assets/orphanage-yelivo.png" alt="Orphelinat MES ENFANTS à Yelivo" onerror="this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800'">
+              <div style="position:absolute;top:16px;left:16px;"><span class="badge badge--social">Social & Enfance</span></div>
+            </div>
+            <div class="card__body" style="justify-content: center;">
+              <h2 class="headline-lg card__title">Orphelinat « MES ENFANTS »</h2>
+              <p class="label-md text-primary mb-sm"><span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">location_on</span> Yelivo, Région Centrale (Sokodé), Togo</p>
+              <p class="body-md card__text">Plus qu'un simple toit, un foyer chaleureux pour les enfants privés de famille. Situé à Yelivo, notre orphelinat offre éducation, soins de santé et surtout l'amour nécessaire à l'épanouissement de chaque enfant.</p>
+              <p class="body-md card__text" style="font-style:italic;">"Donner un avenir à ceux qui en ont le plus besoin."</p>
+              <a href="don.html" class="btn btn--primary btn--large">Soutenir l'orphelinat</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- CTA Bénévole -->
@@ -124,8 +142,26 @@
   </main>
 
   <!-- Footer -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer__logo"><img src="assets/logo-ujmahvf.png" alt="UJMAH"/></div>
+    
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="https://facebook.com/ujmahofficiel" class="social-link social-link--facebook" target="_blank" title="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/ujmahofficiel" class="social-link social-link--instagram" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com/@ujmah.officiel" class="social-link social-link--youtube" target="_blank" title="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://tiktok.com/@ujmahofficiel" class="social-link social-link--tiktok" target="_blank" title="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+
     <div class="footer__links">
       <a href="index.html" class="footer__link">Accueil</a>
       <a href="nos-actions.html" class="footer__link footer__link--active">Nos Actions</a>

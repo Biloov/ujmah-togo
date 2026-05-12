@@ -125,3 +125,18 @@ function initContactForm() {
     }
   });
 }
+
+/* ---- Helper: Copy to Clipboard ---- */
+function copyToClipboard(text, btn) {
+  if (!navigator.clipboard) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const originalContent = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined">check</span> Copié !';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.innerHTML = originalContent;
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+window.copyToClipboard = copyToClipboard;
