@@ -48,7 +48,32 @@
             Soutenez nos actions instantanément via Mobile Money (**Tmoney, Flooz, Wave**) ou par **Carte Bancaire** grâce à notre partenaire sécurisé **Genius Pay**.
           </p>
 
+          <!-- Category Selector -->
+          <div style="text-align: left; margin-bottom: var(--sp-md);">
+            <label class="form-label" style="font-weight: 600; margin-bottom: 8px; display: block;">Destination de votre don :</label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--sp-sm);">
+              <label class="category-card active" data-category="general">
+                <input type="radio" name="donation_category" value="general" checked style="display: none;">
+                <span class="material-symbols-outlined">volunteer_activism</span>
+                <div class="category-card__title">Don Général</div>
+              </label>
+              <label class="category-card" data-category="orphelinat">
+                <input type="radio" name="donation_category" value="orphelinat" style="display: none;">
+                <span class="material-symbols-outlined">home_mini</span>
+                <div class="category-card__title font-bold">Orphelinat</div>
+              </label>
+              <label class="category-card" data-category="cotisation">
+                <input type="radio" name="donation_category" value="cotisation" style="display: none;">
+                <span class="material-symbols-outlined">groups</span>
+                <div class="category-card__title">Cotisation Membre</div>
+              </label>
+            </div>
+          </div>
+
           <!-- Amount Selector -->
+          <div style="text-align: left; margin-bottom: 8px;">
+            <label class="form-label" style="font-weight: 600; display: block;">Montant du don :</label>
+          </div>
           <div class="donation-amount-selector mb-md">
             <button class="amount-btn active" data-amount="2000">2 000 F</button>
             <button class="amount-btn" data-amount="5000">5 000 F</button>
@@ -63,8 +88,8 @@
           </div>
 
           <!-- Donate Button -->
-          <!-- NOTE: Remplacez l'URL ci-dessous par votre lien de don/paiement Genius Pay réel -->
-          <a href="https://pay.genius.ci/d/ujmah" target="_blank" class="btn btn--primary btn--large btn--full" id="geniuspay-btn" style="margin-top: 24px;">
+          <!-- NOTE: Les URLs de chaque catégorie sont configurées dans le script en bas de page -->
+          <a href="https://pay.genius.ci/d/ujmah-general" target="_blank" class="btn btn--primary btn--large btn--full" id="geniuspay-btn" style="margin-top: 24px;">
             <span class="material-symbols-outlined">credit_card</span> Faire un don de <span id="btn-amount-display">2 000</span> FCFA
           </a>
           <p class="caption text-on-surface-variant mt-sm" style="display: flex; align-items: center; justify-content: center; gap: 4px;">
@@ -195,24 +220,49 @@
       const btnAmountDisplay = document.getElementById('btn-amount-display');
       const geniuspayBtn = document.getElementById('geniuspay-btn');
       
-      const baseUrl = "https://pay.genius.ci/d/ujmah"; // Lien de base Genius Pay
+      const categoryCards = document.querySelectorAll('.category-card');
+      
+      // Liens de paiement par catégorie
+      const baseUrls = {
+        general: "https://pay.genius.ci/d/ujmah-general",
+        orphelinat: "https://pay.genius.ci/d/ujmah-orphelinat",
+        cotisation: "https://pay.genius.ci/d/ujmah-cotisation"
+      };
+
+      let activeCategory = "general";
       let currentAmount = "2000";
 
-      function updateDonation(amount) {
-        currentAmount = amount;
+      function updateDonation(amount, category) {
+        if (amount !== undefined) currentAmount = amount;
+        if (category !== undefined) activeCategory = category;
         
         // Formatage pour l'affichage (espace pour les milliers)
-        const formattedAmount = Number(amount).toLocaleString('fr-FR');
+        const formattedAmount = Number(currentAmount).toLocaleString('fr-FR');
         btnAmountDisplay.textContent = formattedAmount;
 
+        const baseUrl = baseUrls[activeCategory];
+
         // Mise à jour dynamique du lien Genius Pay
-        if (amount && !isNaN(amount)) {
-          geniuspayBtn.href = `${baseUrl}?amount=${amount}`;
+        if (currentAmount && !isNaN(currentAmount) && Number(currentAmount) > 0) {
+          geniuspayBtn.href = `${baseUrl}?amount=${currentAmount}`;
         } else {
           geniuspayBtn.href = baseUrl;
         }
       }
 
+      // Gestion des catégories
+      categoryCards.forEach(card => {
+        card.addEventListener('click', () => {
+          categoryCards.forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+          const radio = card.querySelector('input[type="radio"]');
+          radio.checked = true;
+          
+          updateDonation(undefined, radio.value);
+        });
+      });
+
+      // Gestion des montants
       amountButtons.forEach(btn => {
         btn.addEventListener('click', () => {
           // Gérer la classe active
@@ -224,17 +274,17 @@
           if (amount === 'custom') {
             customAmountBox.style.display = 'block';
             customAmountInput.focus();
-            updateDonation(customAmountInput.value || "0");
+            updateDonation(customAmountInput.value || "0", undefined);
           } else {
             customAmountBox.style.display = 'none';
-            updateDonation(amount);
+            updateDonation(amount, undefined);
           }
         });
       });
 
       customAmountInput.addEventListener('input', () => {
         const val = customAmountInput.value.trim();
-        updateDonation(val);
+        updateDonation(val || "0", undefined);
       });
     });
   </script>

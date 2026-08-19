@@ -523,3 +523,95 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
   margin-top: var(--sp-md);
   text-align: left;
 }
+
+/* Category Card Styles */
+.category-card {
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-xs);
+  cursor: pointer;
+  background: var(--surface-container-low);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.category-card span {
+  font-size: 28px;
+  color: var(--outline);
+  transition: all 0.3s ease;
+}
+.category-card__title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  transition: all 0.3s ease;
+}
+.category-card:hover {
+  border-color: var(--primary);
+  background: var(--primary-fixed);
+  transform: translateY(-2px);
+}
+.category-card:hover span {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+.category-card.active {
+  border-color: var(--primary);
+  background: var(--primary-fixed);
+  box-shadow: 0 4px 12px rgba(26,21,96,0.1);
+}
+.category-card.active span {
+  color: var(--primary);
+}
+.category-card.active .category-card__title {
+  color: var(--primary);
+}
+
+/* Futuristic / Glassmorphic & Glow Enhancements */
+.card, .donation-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.card:hover, .donation-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 20px 40px rgba(26, 21, 96, 0.12), 
+              0 0 15px rgba(26, 21, 96, 0.05) !important;
+  border-color: var(--primary-fixed-dim) !important;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 21, 96, 0.2);
+}
+
+/* Subtly animated gradient border on hover for primary items */
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -50%;
+  width: 200%; height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-30deg);
+  transition: 0.75s;
+  pointer-events: none;
+}
+.btn--primary:hover::after {
+  left: 120%;
+}

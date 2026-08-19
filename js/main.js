@@ -118,10 +118,51 @@ function initContactForm() {
 
     if (valid) {
       const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = '✓ Message envoyé !';
-      btn.style.background = '#22c55e';
-      form.reset();
-      setTimeout(() => { btn.textContent = 'Envoyer le message'; btn.style.background = ''; }, 3000);
+      const originalText = btn.textContent;
+      btn.textContent = 'Envoi en cours...';
+      btn.disabled = true;
+
+      const formData = {
+        name: form.querySelector('#name').value,
+        email: form.querySelector('#email').value,
+        subject: form.querySelector('#subject').value,
+        message: form.querySelector('#message').value,
+        _subject: "Nouveau message de " + form.querySelector('#name').value + " (Site UJMAH)"
+      };
+
+      fetch("https://formsubmit.co/ajax/ujmahofficiel@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        btn.textContent = '✓ Message envoyé !';
+        btn.style.background = '#22c55e';
+        btn.style.color = '#ffffff';
+        form.reset();
+        setTimeout(() => { 
+          btn.textContent = originalText; 
+          btn.style.background = ''; 
+          btn.style.color = '';
+          btn.disabled = false;
+        }, 3000);
+      })
+      .catch(error => {
+        console.error("Error submitting form:", error);
+        btn.textContent = '❌ Erreur, réessayez';
+        btn.style.background = '#dc2626';
+        btn.style.color = '#ffffff';
+        setTimeout(() => { 
+          btn.textContent = originalText; 
+          btn.style.background = ''; 
+          btn.style.color = '';
+          btn.disabled = false;
+        }, 3000);
+      });
     }
   });
 }
