@@ -1,0 +1,209 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum RoleName {
+  SUPER_ADMIN
+  ADMIN
+  COMMUNICATION
+  EVENTS_MANAGER
+  PROJECT_MANAGER
+  FINANCE
+  EDITOR
+}
+
+model User {
+  id                String        @id @default(uuid())
+  email             String        @unique
+  password          String
+  firstName         String
+  lastName          String
+  role              RoleName      @default(EDITOR)
+  twoFactorEnabled  Boolean       @default(false)
+  twoFactorSecret   String?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  articles          Article[]
+  activityLogs      ActivityLog[]
+}
+
+model ArticleCategory {
+  id        String    @id @default(uuid())
+  name      String    @unique
+  slug      String    @unique
+  articles  Article[]
+}
+
+model Article {
+  id             String          @id @default(uuid())
+  title          String
+  slug           String          @unique
+  summary        String
+  content        String          @db.Text
+  mainImage      String
+  status         String          @default("Brouillon") // Brouillon, Publie, Archive
+  categoryId     String
+  category       ArticleCategory @relation(fields: [categoryId], references: [id])
+  authorId       String
+  author         User            @relation(fields: [authorId], references: [id])
+  seoTitle       String?
+  seoDescription String?
+  seoKeywords    String?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model ProjectCategory {
+  id       String    @id @default(uuid())
+  name     String    @unique
+  slug     String    @unique
+  projects Project[]
+}
+
+model Project {
+  id              String          @id @default(uuid())
+  name            String
+  slug            String          @unique
+  description     String          @db.Text
+  status          String          @default("Planifié") // Brouillon, Planifie, En cours, Termine, Archive
+  startDate       DateTime?
+  endDate         DateTime?
+  beneficiaries   String?
+  budget          Float?
+  collectedAmount Float           @default(0)
+  mainImage       String
+  gallery         String[]
+  documents       String[]
+  results         String?         @db.Text
+  categoryId      String
+  category        ProjectCategory @relation(fields: [categoryId], references: [id])
+  donations       Donation[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model Event {
+  id                  String              @id @default(uuid())
+  title               String
+  description         String              @db.Text
+  mainImage           String
+  location            String
+  startDate           DateTime
+  endDate             DateTime?
+  organizer           String?
+  registrationEnabled Boolean             @default(false)
+  externalRegUrl      String?
+  status              String              @default("Planifié") // Brouillon, Planifie, Annule, Archive
+  registrations       EventRegistration[]
+  createdAt           DateTime            @default(now())
+  updatedAt           DateTime            @updatedAt
+}
+
+model EventRegistration {
+  id        String   @id @default(uuid())
+  firstName String
+  lastName  String
+  phone     String
+  email     String
+  eventId   String
+  event     Event    @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  status    String   @default("Confirmé") // Confirme, Annule
+  createdAt DateTime @default(now())
+}
+
+model GalleryAlbum {
+  id          String        @id @default(uuid())
+  name        String
+  description String?
+  items       GalleryItem[]
+  createdAt   DateTime      @default(now())
+}
+
+model GalleryItem {
+  id        String        @id @default(uuid())
+  url       String
+  altText   String?
+  type      String        @default("IMAGE") // IMAGE, VIDEO
+  albumId   String?
+  album     GalleryAlbum? @relation(fields: [albumId], references: [id], onDelete: SetNull)
+  createdAt DateTime      @default(now())
+}
+
+model Document {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  category    String // Rapports, Projets, Communiques, Programmes, Brochures, Institutionnels
+  url         String
+  year        Int?
+  visibility  String   @default("PUBLIC") // PUBLIC, PRIVATE
+  createdAt   DateTime @default(now())
+}
+
+model Testimonial {
+  id        String   @id @default(uuid())
+  name      String
+  role      String?
+  avatar    String?
+  content   String   @db.Text
+  status    String   @default("Brouillon") // Brouillon, Publie
+  createdAt DateTime @default(now())
+}
+
+model Donation {
+  id         String           @id @default(uuid())
+  amount     Float
+  currency   String           @default("XOF")
+  donorName  String
+  donorEmail String
+  donorPhone String?
+  category   String // general, orphelinat, cotisation
+  projectId  String?
+  project    Project?         @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  reference  String           @unique
+  status     String           @default("En attente") // En attente, Reussi, Echoue, Annule
+  receipt    DonationReceipt?
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+}
+
+model DonationReceipt {
+  id            String   @id @default(uuid())
+  receiptNumber String   @unique
+  donationId    String   @unique
+  donation      Donation @relation(fields: [donationId], references: [id], onDelete: Cascade)
+  pdfUrl        String
+  createdAt     DateTime @default(now())
+}
+
+model ImpactMetric {
+  id        String   @id @default(uuid())
+  label     String
+  value     Int
+  suffix    String?
+  icon      String?
+  year      Int      @default(2024)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSetting {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     String   @db.Text
+  updatedAt DateTime @updatedAt
+}
+
+model ActivityLog {
+  id        String   @id @default(uuid())
+  action    String
+  object    String
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  createdAt DateTime @default(now())
+}
