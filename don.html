@@ -18,6 +18,7 @@
       <div class="navbar__links" id="navLinks">
         <a href="index.html" class="navbar__link">Accueil</a>
         <a href="nos-actions.html" class="navbar__link">Nos Actions</a>
+        <a href="orphelinat.html" class="navbar__link">Orphelinat</a>
         <a href="galerie.html" class="navbar__link">Galerie</a>
         <a href="valeurs.html" class="navbar__link">Valeurs</a>
         <a href="contact.html" class="navbar__link">Contact</a>
@@ -26,7 +27,6 @@
       <button class="navbar__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
-
   <main style="padding-top:120px;padding-bottom:var(--sp-xl); min-height: 80vh; display: flex; align-items: center;">
     <div class="container text-center">
       
@@ -37,7 +37,49 @@
         </p>
       </section>
 
-      <div class="donation-grid reveal" style="justify-content: center;">
+      <!-- Don en ligne avec Genius Pay -->
+      <section class="reveal mb-xl" style="max-width: 650px; margin: 0 auto;">
+        <div style="background: white; border-radius: var(--radius-xl); padding: var(--sp-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--surface-container-high);">
+          <div style="display: flex; justify-content: center; align-items: center; gap: var(--sp-base); margin-bottom: var(--sp-md);">
+            <span class="material-symbols-outlined text-primary" style="font-size: 32px;">volunteer_activism</span>
+            <h2 class="headline-lg text-primary" style="margin: 0;">Faire un don en ligne</h2>
+          </div>
+          <p class="body-md text-on-surface-variant mb-lg">
+            Soutenez nos actions instantanément via Mobile Money (**Tmoney, Flooz, Wave**) ou par **Carte Bancaire** grâce à notre partenaire sécurisé **Genius Pay**.
+          </p>
+
+          <!-- Amount Selector -->
+          <div class="donation-amount-selector mb-md">
+            <button class="amount-btn active" data-amount="2000">2 000 F</button>
+            <button class="amount-btn" data-amount="5000">5 000 F</button>
+            <button class="amount-btn" data-amount="10000">10 000 F</button>
+            <button class="amount-btn" data-amount="25000">25 000 F</button>
+            <button class="amount-btn" data-amount="custom">Autre</button>
+          </div>
+
+          <div class="custom-amount-container mb-lg" id="custom-amount-box" style="display: none;">
+            <label class="form-label" for="custom-amount">Saisir un montant (FCFA)</label>
+            <input class="form-input text-center" type="number" id="custom-amount" min="100" placeholder="Ex: 15000" style="max-width: 300px; margin: 0 auto;" />
+          </div>
+
+          <!-- Donate Button -->
+          <!-- NOTE: Remplacez l'URL ci-dessous par votre lien de don/paiement Genius Pay réel -->
+          <a href="https://pay.genius.ci/d/ujmah" target="_blank" class="btn btn--primary btn--large btn--full" id="geniuspay-btn" style="margin-top: 24px;">
+            <span class="material-symbols-outlined">credit_card</span> Faire un don de <span id="btn-amount-display">2 000</span> FCFA
+          </a>
+          <p class="caption text-on-surface-variant mt-sm" style="display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span class="material-symbols-outlined" style="font-size: 14px;">security</span> Paiement sécurisé opéré par Genius Pay
+          </p>
+        </div>
+      </section>
+
+      <section class="reveal mb-lg">
+        <h2 class="headline-lg text-primary">Autres moyens de contribution</h2>
+        <div class="section-header__line" style="margin: 8px auto 0;"></div>
+        <p class="body-md text-on-surface-variant mt-sm">Si vous préférez faire un transfert direct ou un dépôt manuel.</p>
+      </section>
+
+      <div class="donation-grid reveal" style="justify-content: center; margin-top: var(--sp-md);">
         
         <!-- MIXX BY YAS -->
         <div class="donation-card">
@@ -94,6 +136,7 @@
 
       </div>
 
+
       <section class="mt-xl text-center reveal">
         <div style="background: var(--surface-container-low); padding: var(--sp-lg); border-radius: var(--radius-lg); max-width: 800px; margin: 0 auto;">
           <h3 class="headline-md text-primary mb-sm">Besoin d'un reçu ou d'une attestation ?</h3>
@@ -134,6 +177,7 @@
     <div class="footer__links">
       <a href="index.html" class="footer__link">Accueil</a>
       <a href="nos-actions.html" class="footer__link">Nos Actions</a>
+      <a href="orphelinat.html" class="footer__link">Orphelinat</a>
       <a href="galerie.html" class="footer__link">Galerie</a>
       <a href="valeurs.html" class="footer__link">Valeurs</a>
       <a href="contact.html" class="footer__link">Contact</a>
@@ -143,5 +187,56 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const amountButtons = document.querySelectorAll('.amount-btn');
+      const customAmountBox = document.getElementById('custom-amount-box');
+      const customAmountInput = document.getElementById('custom-amount');
+      const btnAmountDisplay = document.getElementById('btn-amount-display');
+      const geniuspayBtn = document.getElementById('geniuspay-btn');
+      
+      const baseUrl = "https://pay.genius.ci/d/ujmah"; // Lien de base Genius Pay
+      let currentAmount = "2000";
+
+      function updateDonation(amount) {
+        currentAmount = amount;
+        
+        // Formatage pour l'affichage (espace pour les milliers)
+        const formattedAmount = Number(amount).toLocaleString('fr-FR');
+        btnAmountDisplay.textContent = formattedAmount;
+
+        // Mise à jour dynamique du lien Genius Pay
+        if (amount && !isNaN(amount)) {
+          geniuspayBtn.href = `${baseUrl}?amount=${amount}`;
+        } else {
+          geniuspayBtn.href = baseUrl;
+        }
+      }
+
+      amountButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Gérer la classe active
+          amountButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const amount = btn.dataset.amount;
+
+          if (amount === 'custom') {
+            customAmountBox.style.display = 'block';
+            customAmountInput.focus();
+            updateDonation(customAmountInput.value || "0");
+          } else {
+            customAmountBox.style.display = 'none';
+            updateDonation(amount);
+          }
+        });
+      });
+
+      customAmountInput.addEventListener('input', () => {
+        const val = customAmountInput.value.trim();
+        updateDonation(val);
+      });
+    });
+  </script>
 </body>
 </html>

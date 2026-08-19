@@ -251,7 +251,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 
 /* ============ HIGHLIGHTS ============ */
 .section-header__line { height: 3px; width: 60px; background: var(--secondary-container); margin-top: var(--sp-xs); border-radius: 2px; }
-.highlights-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-lg); }
+.highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--sp-lg); }
 
 /* ============ CTA BANNER ============ */
 .cta-banner {
@@ -484,3 +484,42 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 .copy-btn:hover { background: var(--primary); color: white; }
 .copy-btn.copied { background: #4CAF50; color: white; }
+
+/* Amount Selector */
+.donation-amount-selector {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--sp-base);
+}
+@media (max-width: 580px) {
+  .donation-amount-selector {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.amount-btn {
+  background: var(--surface-container-low);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--on-surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+.amount-btn:hover {
+  border-color: var(--primary);
+  background: var(--primary-fixed);
+  color: var(--primary);
+}
+.amount-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+.custom-amount-container {
+  margin-top: var(--sp-md);
+  text-align: left;
+}
