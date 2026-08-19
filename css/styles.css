@@ -91,12 +91,17 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 /* ============ NAVBAR ============ */
 .navbar {
   position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 1px 4px rgba(21,19,122,0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.navbar.scrolled { box-shadow: var(--shadow-sm); }
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 30px rgba(26, 21, 96, 0.06);
+  border-bottom: 1px solid rgba(26, 21, 96, 0.05);
+}
 .navbar__inner {
   max-width: var(--max-width); margin: 0 auto;
   display: flex; justify-content: space-between; align-items: center;
@@ -614,4 +619,63 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 .btn--primary:hover::after {
   left: 120%;
+}
+
+/* Custom Selection & Scrollbar */
+::selection {
+  background: var(--primary-fixed-dim);
+  color: var(--primary);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container-lowest);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-fixed-dim);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--surface-container-lowest);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* High-tech, Secure Input Focus State */
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(26, 21, 96, 0.15) !important;
+  outline: none;
+}
+
+/* Soft glowing badges */
+.badge {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.badge--spiritual { background: rgba(26, 21, 96, 0.1); color: var(--primary); box-shadow: 0 0 10px rgba(26, 21, 96, 0.05); }
+.badge--social { background: rgba(117, 91, 0, 0.1); color: var(--secondary); box-shadow: 0 0 10px rgba(117, 91, 0, 0.05); }
+.badge--education { background: rgba(98, 47, 0, 0.1); color: var(--tertiary-container); box-shadow: 0 0 10px rgba(98, 47, 0, 0.05); }
+
+/* Futuristic Card Overlay Transition */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(21, 19, 122, 0.12);
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
