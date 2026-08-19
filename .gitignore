@@ -19,9 +19,9 @@ lerna-debug.log*
 *.log
 
 # Build outputs
-/dist
-/build
-/out
+dist/
+build/
+out/
 .tsbuildinfo
 
 # IDE files

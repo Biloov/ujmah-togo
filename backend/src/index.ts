@@ -3,6 +3,13 @@ import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
 
+import authRouter from './routes/auth.js';
+import articlesRouter from './routes/articles.js';
+import projectsRouter from './routes/projects.js';
+import eventsRouter from './routes/events.js';
+import donationsRouter from './routes/donations.js';
+import impactRouter from './routes/impact.js';
+
 dotenv.config();
 
 const app = express();
@@ -15,7 +22,15 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Basic health check route
+// Routes Mounts
+app.use('/api/auth', authRouter);
+app.use('/api/articles', articlesRouter);
+app.use('/api/projects', projectsRouter);
+app.use('/api/events', eventsRouter);
+app.use('/api/donations', donationsRouter);
+app.use('/api/impact', impactRouter);
+
+// Health check route
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
