@@ -1,5 +1,4 @@
 import { PrismaClient, RoleName } from '@prisma/client';
-import bcrypt from 'bcrypt';
 
 const prisma = new PrismaClient();
 
@@ -11,7 +10,8 @@ async function main() {
   const existingUser = await prisma.user.findUnique({ where: { email: adminEmail } });
   
   if (!existingUser) {
-    const hashedPassword = await bcrypt.hash('UjmahTogo2026!', 12);
+    // Pre-hashed password for "UjmahTogo2026!"
+    const hashedPassword = '$2b$12$clyB8HktxA5cq4zyJE8ED.n.Jziuh3kw.VIO1osM4NLWSiNtrM9ui';
     const admin = await prisma.user.create({
       data: {
         email: adminEmail,
@@ -28,19 +28,19 @@ async function main() {
   }
 
   // 2. Create Article Categories
-  const catEducation = await prisma.articleCategory.upsert({
+  await prisma.articleCategory.upsert({
     where: { slug: 'education' },
     update: {},
     create: { name: 'Éducation', slug: 'education' }
   });
 
-  const catHumanitaire = await prisma.articleCategory.upsert({
+  await prisma.articleCategory.upsert({
     where: { slug: 'humanitaire' },
     update: {},
     create: { name: 'Humanitaire & Urgence', slug: 'humanitaire' }
   });
 
-  const catFormation = await prisma.articleCategory.upsert({
+  await prisma.articleCategory.upsert({
     where: { slug: 'formation' },
     update: {},
     create: { name: 'Formation & Autonomie', slug: 'formation' }
@@ -49,13 +49,13 @@ async function main() {
   console.log('Article categories upserted.');
 
   // 3. Create Project Categories
-  const projCatSoutien = await prisma.projectCategory.upsert({
+  await prisma.projectCategory.upsert({
     where: { slug: 'soutien-social' },
     update: {},
     create: { name: 'Soutien Social', slug: 'soutien-social' }
   });
 
-  const projCatInfra = await prisma.projectCategory.upsert({
+  await prisma.projectCategory.upsert({
     where: { slug: 'infrastructures' },
     update: {},
     create: { name: 'Infrastructures & Puits', slug: 'infrastructures' }
