@@ -18,6 +18,7 @@ import AdminArticles from './pages/AdminArticles';
 import AdminProjects from './pages/AdminProjects';
 import AdminEvents from './pages/AdminEvents';
 import AdminDonations from './pages/AdminDonations';
+import AdminUsers from './pages/AdminUsers';
 
 function AppContent() {
   const location = useLocation();
@@ -46,6 +47,7 @@ function AppContent() {
           <Route path="/admin/projects" element={<AdminProjects />} />
           <Route path="/admin/events" element={<AdminEvents />} />
           <Route path="/admin/donations" element={<AdminDonations />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
         </Routes>
       </main>
 

@@ -124,4 +124,51 @@ router.post('/users', requireAuth, requireRole([RoleName.SUPER_ADMIN]), async (r
   }
 });
 
+// GET: Retrieve all users (Access restricted to SUPER_ADMIN & ADMIN)
+router.get('/users', requireAuth, requireRole([RoleName.SUPER_ADMIN, RoleName.ADMIN]), async (req, res) => {
+  try {
+    const users = await prisma.user.findMany({
+      select: {
+        id: true,
+        email: true,
+        firstName: true,
+        lastName: true,
+        role: true,
+        createdAt: true
+      },
+      orderBy: { createdAt: 'desc' }
+    });
+    res.json({ users });
+  } catch (err) {
+    res.status(500).json({ error: 'Get users list server error' });
+  }
+});
+
+// DELETE: Delete a user account (Access restricted to SUPER_ADMIN)
+router.delete('/users/:id', requireAuth, requireRole([RoleName.SUPER_ADMIN]), async (req: AuthenticatedRequest, res) => {
+  try {
+    const userToDelete = await prisma.user.findUnique({ where: { id: req.params.id } });
+    if (!userToDelete) return res.status(404).json({ error: 'User not found' });
+
+    // Prevent Super Admin from deleting themselves
+    if (userToDelete.id === req.user?.id) {
+      return res.status(400).json({ error: 'You cannot delete your own account' });
+    }
+
+    await prisma.user.delete({ where: { id: req.params.id } });
+
+    await prisma.activityLog.create({
+      data: {
+        action: 'UTILISATEUR_SUPPRIME',
+        object: `Utilisateur ${userToDelete.email}`,
+        userId: req.user?.id
+      }
+    });
+
+    res.json({ message: 'User deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: 'Delete user server error' });
+  }
+});
+
 export default router;
