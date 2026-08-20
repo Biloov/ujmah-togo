@@ -16,6 +16,11 @@ export default function AdminSidebar() {
     { label: "Historique des Dons", path: "/admin/donations", icon: <Landmark size={18} /> }
   ];
 
+  const isManager = user?.role === 'SUPER_ADMIN' || user?.role === 'ADMIN';
+  const visibleItems = isManager 
+    ? [...menuItems, { label: "Membres de l'Équipe", path: "/admin/users", icon: <User size={18} /> }]
+    : menuItems;
+
   const handleLogout = () => {
     logout();
     navigate('/admin/login');
@@ -51,7 +56,7 @@ export default function AdminSidebar() {
 
       {/* Navigation Menu */}
       <div className="flex flex-col gap-1.5 flex-grow">
-        {menuItems.map((item) => {
+        {visibleItems.map((item) => {
           const isActive = location.pathname === item.path;
           return (
             <button
