@@ -16,3 +16,5 @@ services:
         sync: false # User will set their Neon DB url in Render dashboard
       - key: DIRECT_URL
         sync: false # User will set their Neon DB url in Render dashboard
+      - key: FRONTEND_URL
+        sync: false # User will set their Vercel production url in Render dashboard
