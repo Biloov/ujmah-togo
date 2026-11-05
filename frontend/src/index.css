@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @theme {
   /* Identité Visuelle Officielle UJMAH (Extraite du Logo) */
@@ -7,40 +7,45 @@
   --color-ujmah-sun-light: #FED33F;     /* Jaune solaire éclatant */
   --color-ujmah-orange: #E26D11;        /* Orange chaleureux d'action */
   --color-ujmah-orange-hover: #C85A07;  /* Orange d'interaction */
-  --color-ujmah-indigo: #2E1F80;        /* Violet / Indigo identitaire fort */
-  --color-ujmah-indigo-dark: #1E1552;   /* Indigo très profond */
+  --color-ujmah-indigo: #2E1F80;        /* Violet / Indigo identitaire noble */
+  --color-ujmah-indigo-dark: #1E1552;   /* Indigo très profond (fond magazine) */
   --color-ujmah-indigo-light: #4338CA;  /* Indigo lumineux */
   
-  /* Textes & Contrastes */
+  /* Textes & Contrastes Forts */
   --color-ujmah-navy: #0B132B;          /* Bleu marine / noir profond */
-  --color-ujmah-dark: #111827;          /* Noir adouci pour typographie */
-  --color-ujmah-dark-muted: #4B5563;    /* Gris foncé pour sous-titres */
+  --color-ujmah-dark: #0F172A;          /* Noir encre profond */
+  --color-ujmah-dark-muted: #334155;    /* Gris foncé lisible */
   
   /* Fonds & Espaces */
-  --color-ujmah-ivory: #FAF8F5;         /* Ivoire chaud et apaisant */
-  --color-ujmah-cream: #FDFBF7;         /* Crème très clair */
+  --color-ujmah-ivory: #FBF9F5;         /* Ivoire très subtil et propre */
+  --color-ujmah-cream: #F8F5EE;         /* Crème chaud */
   --color-ujmah-white: #FFFFFF;         /* Blanc pur */
-  --color-ujmah-gray: #F3F4F6;          /* Gris neutre clair */
+  --color-ujmah-gray: #F1F5F9;          /* Gris neutre clair */
   
   /* Alias & Rétrocompatibilité */
   --color-ujmah-gold: #FDB813;
   --color-ujmah-blue: #2E1F80;
   
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Manrope', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #FAF8F5;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  background-color: #FFFFFF;
   color: #0B132B;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
 }
 
 /* Custom Scrollbar */
@@ -49,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #F8F5EE;
 }
 ::-webkit-scrollbar-thumb {
   background: #2E1F80;
@@ -59,15 +64,14 @@ h1, h2, h3, h4, h5, h6 {
   background: #1E1552;
 }
 
-/* Glassmorphism avec reflet chaleureux */
-.glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(254, 211, 63, 0.2);
+/* Rayonnement solaire et halo éditorial */
+.bg-solar-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(253, 184, 19, 0.15) 0%, rgba(226, 109, 17, 0.05) 40%, transparent 75%);
 }
 
-/* Rayonnement solaire subtil en arrière-plan */
-.bg-solar-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(253, 184, 19, 0.12) 0%, rgba(226, 109, 17, 0.04) 35%, transparent 70%);
+.bg-magazine-pattern {
+  background-color: #FAF8F5;
+  background-image: radial-gradient(#2E1F80 0.5px, transparent 0.5px), radial-gradient(#FDB813 0.5px, #FAF8F5 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
 }
