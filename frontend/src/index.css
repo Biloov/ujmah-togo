@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @theme {
   /* Identité Visuelle Officielle UJMAH (Extraite du Logo) */
@@ -8,7 +8,8 @@
   --color-ujmah-orange: #E26D11;        /* Orange chaleureux d'action */
   --color-ujmah-orange-hover: #C85A07;  /* Orange d'interaction */
   --color-ujmah-indigo: #2E1F80;        /* Violet / Indigo identitaire noble */
-  --color-ujmah-indigo-dark: #1E1552;   /* Indigo très profond (fond magazine) */
+  --color-ujmah-indigo-dark: #1E1552;   /* Indigo très profond */
+  --color-ujmah-indigo-night: #130B3A;  /* Indigo nuit ultra-profond */
   --color-ujmah-indigo-light: #4338CA;  /* Indigo lumineux */
   
   /* Textes & Contrastes Forts */
@@ -26,14 +27,14 @@
   --color-ujmah-gold: #FDB813;
   --color-ujmah-blue: #2E1F80;
   
-  --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-display: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
   margin: 0;
-  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background-color: #FFFFFF;
   color: #0B132B;
   -webkit-font-smoothing: antialiased;
@@ -42,6 +43,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .font-editorial {
@@ -64,9 +66,31 @@ h1, h2, h3, h4, h5, h6 {
   background: #1E1552;
 }
 
-/* Rayonnement solaire et halo éditorial */
+/* Rayonnement solaire et halo immersif */
 .bg-solar-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(253, 184, 19, 0.15) 0%, rgba(226, 109, 17, 0.05) 40%, transparent 75%);
+  background: radial-gradient(circle at 50% 0%, rgba(253, 184, 19, 0.22) 0%, rgba(226, 109, 17, 0.12) 40%, transparent 75%);
+}
+
+.hero-mesh-bg {
+  background: 
+    radial-gradient(circle at 85% 15%, rgba(253, 184, 19, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 15% 60%, rgba(226, 109, 17, 0.16) 0%, transparent 50%),
+    radial-gradient(circle at 50% 100%, rgba(46, 31, 128, 0.4) 0%, transparent 60%),
+    linear-gradient(180deg, #100830 0%, #1A1248 45%, #0B132B 100%);
+}
+
+.glass-card-dark {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(11, 19, 43, 0.08);
 }
 
 .bg-magazine-pattern {
