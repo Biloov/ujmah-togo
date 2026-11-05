@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { LayoutDashboard, Newspaper, HeartHandshake, Calendar, Landmark, LogOut, User } from 'lucide-react';
+import { LayoutDashboard, Newspaper, HeartHandshake, Calendar, Landmark, LogOut, User, Image as ImageIcon } from 'lucide-react';
 
 export default function AdminSidebar() {
   const { user, logout } = useAuth();
@@ -11,6 +11,7 @@ export default function AdminSidebar() {
   const menuItems = [
     { label: "Tableau de Bord", path: "/admin/dashboard", icon: <LayoutDashboard size={18} /> },
     { label: "Actualités CMS", path: "/admin/articles", icon: <Newspaper size={18} /> },
+    { label: "Médiathèque (Photos/Vidéos)", path: "/admin/gallery", icon: <ImageIcon size={18} /> },
     { label: "Projets Humanitaires", path: "/admin/projects", icon: <HeartHandshake size={18} /> },
     { label: "Événements & Inscriptions", path: "/admin/events", icon: <Calendar size={18} /> },
     { label: "Historique des Dons", path: "/admin/donations", icon: <Landmark size={18} /> }
