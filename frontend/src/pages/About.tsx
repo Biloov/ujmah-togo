@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Users, Award, Calendar, MapPin, Phone, CheckCircle2, HeartHandshake, Compass } from 'lucide-react';
+import { Shield, Users, Award, Calendar, MapPin, Phone, CheckCircle2, HeartHandshake, Compass, Building, Briefcase } from 'lucide-react';
 
 export default function About() {
   const objectives = [
@@ -14,93 +14,128 @@ export default function About() {
   ];
 
   const executiveBoard = [
-    { role: "Président", name: "AMIDOU Bilal", title: "Commerçant & Motion Designer" },
-    { role: "Vice-président", name: "MOUSSA RAFIOU", title: "Enseignant au CEG Centre" },
-    { role: "Directeur des affaires administratives", name: "KALILOU Moussa", title: "Enseignant au CEG Privé" },
-    { role: "Directrice des finances et du patrimoine", name: "ALEDJI Nazifa", title: "Gestionnaire Finance" },
-    { role: "Directeur des formations", name: "OURO GOUNI Abdul Malik", title: "Étudiant en Sciences Islamiques & Enseignant" },
-    { role: "Directeur de la communication et des relations extérieures", name: "HLOMEGBE Ishaac", title: "Entrepreneur agro-pastoral" },
-    { role: "Directeur de l'organisation et de la planification", name: "BOLBIGOU CHAFIOU", title: "Enseignant, Étudiant en Master" },
-    { role: "Adjoint au Directeur de l'organisation et de la planification", name: "ALEDJOU RAMADAN", title: "Étudiant en FASEG" },
-    { role: "Directeur des ressources humaines et de la culture", name: "AMOUSSOU BAKI", title: "Enseignant au cours primaire" },
-    { role: "Directrice des affaires féminines", name: "TCHADENOU Cherifa", title: "Technicienne Télécommunication & Réseaux" }
+    { role: "Président", name: "AMIDOU Bilal", title: "Commerçant & Motion Designer", num: "01" },
+    { role: "Vice-président", name: "MOUSSA RAFIOU", title: "Enseignant au CEG Centre", num: "02" },
+    { role: "Directeur des affaires administratives", name: "KALILOU Moussa", title: "Enseignant au CEG Privé", num: "03" },
+    { role: "Directrice des finances et du patrimoine", name: "ALEDJI Nazifa", title: "Gestionnaire Finance", num: "04" },
+    { role: "Directeur des formations", name: "OURO GOUNI Abdul Malik", title: "Étudiant en Sciences Islamiques & Enseignant", num: "05" },
+    { role: "Directeur de la communication & relations extérieures", name: "HLOMEGBE Ishaac", title: "Entrepreneur agro-pastoral", num: "06" },
+    { role: "Directeur de l'organisation et de la planification", name: "BOLBIGOU CHAFIOU", title: "Enseignant, Étudiant en Master", num: "07" },
+    { role: "Adjoint au Dir. organisation & planification", name: "ALEDJOU RAMADAN", title: "Étudiant en FASEG", num: "08" },
+    { role: "Directeur des ressources humaines et de la culture", name: "AMOUSSOU BAKI", title: "Enseignant au cours primaire", num: "09" },
+    { role: "Directrice des affaires féminines", name: "TCHADENOU Cherifa", title: "Technicienne Télécommunication & Réseaux", num: "10" }
   ];
 
   return (
-    <div className="pt-28 pb-20 px-6 bg-ujmah-ivory min-h-screen">
-      <div className="max-w-7xl mx-auto">
+    <div className="pt-28 md:pt-36 pb-20 bg-white min-h-screen text-ujmah-navy">
+      <div className="max-w-7xl mx-auto px-6">
         
-        {/* En-tête Institutionnel */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="inline-block bg-ujmah-sun/20 border border-ujmah-sun/40 text-ujmah-indigo font-sans text-xs uppercase tracking-widest font-extrabold px-4 py-1.5 rounded-full mb-4">
-            Organisation & Histoire
+        {/* En-tête Éditorial */}
+        <div className="max-w-4xl mb-16 pb-8 border-b border-ujmah-navy/10">
+          <span className="font-mono text-xs uppercase tracking-widest text-ujmah-orange font-bold block mb-3">
+            Dossier Institutionnel • Fondation & Gouvernance
           </span>
-          <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-ujmah-indigo mb-6 tracking-tight">
+          <h1 className="font-editorial font-extrabold text-4xl sm:text-6xl text-ujmah-indigo tracking-tight leading-tight mb-6">
             Qui sommes-nous ?
           </h1>
-          <p className="font-sans text-base sm:text-lg text-ujmah-navy/75 leading-relaxed">
-            L'<strong>Union des Jeunes Musulmans pour l'Action Humanitaire (UJMAH)</strong> est une association togolaise engagée depuis 2003 pour la dignité humaine, l'éducation civique et le soutien aux populations vulnérables.
+          <p className="font-sans text-lg sm:text-xl text-ujmah-dark-muted leading-relaxed">
+            L'<strong>Union des Jeunes Musulmans pour l'Action Humanitaire (UJMAH)</strong> est une organisation caritative et d'intérêt public fondée au Togo en 2003, vouée au soulagement de la détresse humaine, à l'émulation éducative et à la dignité fraternelle.
           </p>
         </div>
 
-        {/* Section Genèse & Histoire */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-ujmah-navy/5 shadow-md mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-ujmah-orange mb-3">
-                <Calendar size={16} />
-                23 Janvier 2003 — Plus de 23 ans d'histoire
-              </div>
-              <h2 className="font-display font-bold text-2xl sm:text-3xl text-ujmah-indigo mb-6">
-                Une vocation née au cœur de la jeunesse togolaise
-              </h2>
-              <p className="font-sans text-sm sm:text-base text-ujmah-navy/70 leading-relaxed mb-4">
-                L'UJMAH a vu le jour le <strong>23 janvier 2003</strong> à Agoè-Houmbi (Lomé). Fondée par des jeunes conscients des défis sociaux, éducatifs et spirituels de leur temps, l'association a choisi de placer la fraternité et l'action concrète au service de la nation togolaise.
+        {/* Genèse & 23 Ans d'Histoire (Style Récit de Grand Reportage) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+          
+          <div className="lg:col-span-7">
+            <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
+              Aux Origines de l'Engagement
+            </span>
+            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo mb-6 leading-snug">
+              23 Janvier 2003 : La naissance d'un idéal de fraternité active
+            </h2>
+            
+            <div className="space-y-4 font-sans text-base text-ujmah-dark-muted leading-relaxed">
+              <p>
+                C'est dans le quartier d'<strong>Agoè-Houmbi à Lomé</strong> qu'a germé le 23 janvier 2003 l'initiative de jeunes togolais désireux d'unir leurs forces pour apporter des réponses concrètes aux urgences sociales de leur environnement.
               </p>
-              <p className="font-sans text-sm sm:text-base text-ujmah-navy/70 leading-relaxed mb-6">
-                Reconnue officiellement par les autorités togolaises sous le récépissé <strong>N° 0315/MATDCL-SG-DLPAP-DOCA</strong>, l'association a étendu son rayon d'action de Lomé jusqu'à la Région Centrale avec la création de l'orphelinat <em>« MES ENFANTS »</em> à Yelivo.
+              <p>
+                Loin de se cantonner aux discours, l'association a immédiatement fondé son action sur le terrain : soutien scolaire, secours alimentaires aux plus vulnérables, concours coraniques et séminaires de formation citoyenne et managériale.
               </p>
-              <div className="p-4 rounded-2xl bg-ujmah-ivory border-l-4 border-ujmah-sun text-ujmah-indigo font-display font-semibold text-sm italic">
-                « Servir l'humanité dans l'union » — Devise officielle immuable depuis la fondation.
-              </div>
+              <p>
+                Enregistrée et reconnue par les autorités togolaises sous le récépissé officiel <strong>N° 0315/MATDCL-SG-DLPAP-DOCA</strong>, l'UJMAH a étendu son rayonnement au fil de plus de deux décennies, jusqu'à implanter dans la Région Centrale son joyau caritatif : l'orphelinat <em>« MES ENFANTS »</em> à Yelivo.
+              </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-ujmah-ivory p-6 rounded-2xl border border-ujmah-navy/5 flex flex-col justify-center text-center">
-                <span className="font-display font-extrabold text-3xl sm:text-4xl text-ujmah-indigo">2003</span>
-                <span className="font-sans text-xs uppercase tracking-wider text-ujmah-navy/60 font-semibold mt-2">Année de Fondation</span>
+            <div className="mt-8 p-6 rounded-2xl bg-ujmah-ivory border-l-4 border-ujmah-orange">
+              <p className="font-editorial italic text-lg text-ujmah-indigo">
+                « Servir l'humanité dans l'union »
+              </p>
+              <span className="font-sans text-xs text-ujmah-navy/60 font-semibold mt-1 block">
+                La devise originelle qui guide chacune de nos interventions depuis 23 ans.
+              </span>
+            </div>
+          </div>
+
+          <div className="lg:col-span-5 bg-ujmah-ivory p-8 rounded-3xl border border-ujmah-navy/5">
+            <h3 className="font-editorial font-bold text-2xl text-ujmah-indigo mb-6 pb-3 border-b border-ujmah-navy/10">
+              Repères Clés
+            </h3>
+            
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <span className="font-editorial font-extrabold text-2xl text-ujmah-orange">2003</span>
+                <div>
+                  <h4 className="font-sans font-bold text-sm text-ujmah-navy">Création à Agoè-Houmbi</h4>
+                  <p className="font-sans text-xs text-ujmah-navy/60 mt-0.5">Fondation le 23 janvier par la jeunesse musulmane togolaise.</p>
+                </div>
               </div>
-              <div className="bg-ujmah-ivory p-6 rounded-2xl border border-ujmah-navy/5 flex flex-col justify-center text-center">
-                <span className="font-display font-extrabold text-3xl sm:text-4xl text-ujmah-orange">40</span>
-                <span className="font-sans text-xs uppercase tracking-wider text-ujmah-navy/60 font-semibold mt-2">Orphelins à Yelivo</span>
+
+              <div className="flex items-start gap-4">
+                <span className="font-editorial font-extrabold text-2xl text-ujmah-indigo">0315</span>
+                <div>
+                  <h4 className="font-sans font-bold text-sm text-ujmah-navy">Reconnaissance Légale</h4>
+                  <p className="font-sans text-xs text-ujmah-navy/60 mt-0.5">Récépissé ministériel officiel MATDCL-SG-DLPAP-DOCA.</p>
+                </div>
               </div>
-              <div className="bg-ujmah-ivory p-6 rounded-2xl border border-ujmah-navy/5 flex flex-col justify-center text-center">
-                <span className="font-display font-extrabold text-3xl sm:text-4xl text-ujmah-sun">10</span>
-                <span className="font-sans text-xs uppercase tracking-wider text-ujmah-navy/60 font-semibold mt-2">Membres au Bureau</span>
+
+              <div className="flex items-start gap-4">
+                <span className="font-editorial font-extrabold text-2xl text-ujmah-sun">Yelivo</span>
+                <div>
+                  <h4 className="font-sans font-bold text-sm text-ujmah-navy">Orphelinat « MES ENFANTS »</h4>
+                  <p className="font-sans text-xs text-ujmah-navy/60 mt-0.5">40 enfants accueillis et éduqués dans la Région Centrale.</p>
+                </div>
               </div>
-              <div className="bg-ujmah-ivory p-6 rounded-2xl border border-ujmah-navy/5 flex flex-col justify-center text-center">
-                <span className="font-display font-extrabold text-3xl sm:text-4xl text-ujmah-indigo">100%</span>
-                <span className="font-sans text-xs uppercase tracking-wider text-ujmah-navy/60 font-semibold mt-2">Bénévolat & Foi</span>
+
+              <div className="flex items-start gap-4">
+                <span className="font-editorial font-extrabold text-2xl text-ujmah-dark">Siège</span>
+                <div>
+                  <h4 className="font-sans font-bold text-sm text-ujmah-navy">Agoè-Adjougba, Lomé</h4>
+                  <p className="font-sans text-xs text-ujmah-navy/60 mt-0.5">À 100m de BOXBERG • Ligne : +228 92 67 34 00</p>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
 
-        {/* Objectifs Statutaires */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-ujmah-navy/5 shadow-md mb-16">
-          <div className="text-center mb-10 max-w-2xl mx-auto">
-            <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange">Cadre d'intervention</span>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl text-ujmah-indigo mt-1">Nos Objectifs Statutaires</h2>
-            <p className="font-sans text-sm text-ujmah-navy/60 mt-2">Les 8 axes officiels régissant nos actions sur le terrain</p>
+        {/* Les 8 Objectifs Statutaires (Mise en page Numérotée de Prestige) */}
+        <div className="mb-20 pb-16 border-b border-ujmah-navy/10">
+          <div className="max-w-2xl mb-12">
+            <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
+              Charte Statutaire
+            </span>
+            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo">
+              Nos Huit Objectifs Fondateurs
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
             {objectives.map((obj, idx) => (
-              <div key={idx} className="flex items-start gap-3.5 p-4 rounded-2xl bg-ujmah-ivory/60 border border-ujmah-navy/5 hover:border-ujmah-indigo/20 transition-all">
-                <div className="w-7 h-7 rounded-full bg-ujmah-indigo text-white flex items-center justify-center font-display font-bold text-xs flex-shrink-0 mt-0.5">
-                  {idx + 1}
-                </div>
-                <p className="font-sans text-sm text-ujmah-navy/80 leading-relaxed font-medium">
+              <div key={idx} className="flex items-start gap-4 pb-6 border-b border-ujmah-navy/5">
+                <span className="font-mono text-sm font-extrabold text-ujmah-orange pt-0.5">
+                  0{idx + 1}
+                </span>
+                <p className="font-sans text-sm text-ujmah-dark-muted leading-relaxed font-medium">
                   {obj}
                 </p>
               </div>
@@ -108,74 +143,47 @@ export default function About() {
           </div>
         </div>
 
-        {/* Gouvernance : Le Bureau Exécutif */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-ujmah-navy/5 shadow-md mb-16">
-          <div className="text-center mb-12 max-w-2xl mx-auto">
-            <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange">Gouvernance Officielle</span>
-            <h2 className="font-display font-bold text-2xl sm:text-3xl text-ujmah-indigo mt-1">Le Bureau Exécutif</h2>
-            <p className="font-sans text-sm text-ujmah-navy/60 mt-2">
-              L'équipe dirigeante engagée pour coordonner, administrer et superviser les activités de l'association
+        {/* Le Bureau Exécutif (Trombinoscope Institutionnel Haut de Gamme) */}
+        <div className="mb-16">
+          <div className="max-w-3xl mb-12">
+            <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
+              Gouvernance Officielle
+            </span>
+            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo mb-3">
+              Membres du Bureau Exécutif
+            </h2>
+            <p className="font-sans text-sm text-ujmah-navy/60">
+              Les dix membres élus pour diriger, coordonner et administrer les œuvres et programmes de l'UJMAH Togo.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {executiveBoard.map((member, index) => (
+            {executiveBoard.map((member) => (
               <div 
-                key={index} 
-                className="bg-ujmah-ivory p-6 rounded-2xl border border-ujmah-navy/5 hover:border-ujmah-sun/40 hover:shadow-md transition-all flex flex-col justify-between"
+                key={member.num}
+                className="bg-ujmah-ivory p-6 rounded-2xl border border-ujmah-navy/5 hover:border-ujmah-indigo/20 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <span className="inline-block bg-ujmah-indigo/10 text-ujmah-indigo text-[11px] font-sans font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-                    {member.role}
-                  </span>
-                  <h3 className="font-display font-bold text-lg text-ujmah-navy">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="font-mono text-xs font-bold text-ujmah-orange">
+                      N° {member.num}
+                    </span>
+                    <span className="font-sans text-[10px] uppercase font-bold tracking-wider text-ujmah-indigo/60">
+                      Mandat Actif
+                    </span>
+                  </div>
+                  <h3 className="font-editorial font-bold text-lg text-ujmah-indigo mb-1">
                     {member.name}
                   </h3>
-                  <p className="font-sans text-xs text-ujmah-navy/60 mt-1 font-medium leading-relaxed">
+                  <p className="font-sans text-xs font-bold text-ujmah-orange uppercase tracking-wider mb-2">
+                    {member.role}
+                  </p>
+                  <p className="font-sans text-xs text-ujmah-navy/65 font-medium leading-relaxed">
                     {member.title}
                   </p>
                 </div>
-                <div className="w-8 h-1 bg-ujmah-sun rounded-full mt-4"></div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Siège & Coordonnées Officielles */}
-        <div className="bg-ujmah-navy text-white rounded-3xl p-8 sm:p-12 shadow-xl border border-ujmah-sun/30">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <span className="text-xs font-bold uppercase tracking-widest text-ujmah-sun">Transparence & Proximité</span>
-              <h2 className="font-display font-bold text-2xl sm:text-3xl mt-2 mb-4">Siège Social & Contact Officiel</h2>
-              <p className="font-sans text-sm text-white/75 leading-relaxed mb-6">
-                L'UJMAH dispose de son siège social à Lomé et assure la coordination directe de ses missions caritatives avec ses relais dans les différentes préfectures du Togo.
-              </p>
-              
-              <div className="flex flex-col gap-4 text-sm font-sans">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 text-ujmah-sun flex items-center justify-center flex-shrink-0">
-                    <MapPin size={20} />
-                  </div>
-                  <span><strong>Siège :</strong> Agoè-Adjougba, à 100m de BOXBERG, Lomé – Togo</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/10 text-ujmah-sun flex items-center justify-center flex-shrink-0">
-                    <Phone size={20} />
-                  </div>
-                  <span><strong>Téléphone officiel :</strong> +228 92 67 34 00</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col justify-center text-center">
-              <h3 className="font-display font-bold text-xl text-ujmah-sun mb-2">Reconnaissance Légale</h3>
-              <p className="font-sans text-xs text-white/70 leading-relaxed mb-4">
-                Déclarée et enregistrée auprès du Ministère de l'Administration Territoriale, de la Décentralisation et des Collectivités Locales sous le récépissé officiel.
-              </p>
-              <div className="inline-block bg-white/10 py-2 px-4 rounded-xl font-mono text-xs text-white tracking-widest font-bold">
-                0315/MATDCL-SG-DLPAP-DOCA
-              </div>
-            </div>
           </div>
         </div>
 
