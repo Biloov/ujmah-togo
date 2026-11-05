@@ -17,6 +17,7 @@ import Donation from './pages/Donation';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminArticles from './pages/AdminArticles';
+import AdminGallery from './pages/AdminGallery';
 import AdminProjects from './pages/AdminProjects';
 import AdminEvents from './pages/AdminEvents';
 import AdminDonations from './pages/AdminDonations';
@@ -48,6 +49,7 @@ function AppContent() {
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/articles" element={<AdminArticles />} />
+          <Route path="/admin/gallery" element={<AdminGallery />} />
           <Route path="/admin/projects" element={<AdminProjects />} />
           <Route path="/admin/events" element={<AdminEvents />} />
           <Route path="/admin/donations" element={<AdminDonations />} />
