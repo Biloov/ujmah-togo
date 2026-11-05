@@ -25,27 +25,30 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-[1000] transition-all duration-300">
-      {/* Main Nav Bar (Barre unique propre, épurée et moderne) */}
       <nav className={`w-full transition-all duration-300 ${
         isScrolled 
           ? "bg-white/95 backdrop-blur-md shadow-md border-b border-ujmah-navy/10 py-3.5" 
           : "bg-white/90 backdrop-blur-md border-b border-ujmah-navy/5 py-4"
       }`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 flex justify-between items-center">
           
-          {/* Logo & Signature Officielle */}
-          <a href="/" className="flex items-center gap-3 group">
+          {/* Logo & Signature Officielle : "UJMAH" avec typographie élégante */}
+          <a href="/" className="flex items-center gap-3.5 group">
             <img 
               src="/logo-ujmahvf.png" 
-              alt="UJMAH Togo" 
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" 
+              alt="UJMAH" 
+              className="h-11 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-105" 
               onError={(e) => {
                 e.currentTarget.src = "https://placehold.co/150x50/0b1f3a/ffffff?text=UJMAH";
               }}
             />
-            <div className="hidden sm:flex flex-col border-l border-ujmah-navy/15 pl-3">
-              <span className="font-sans font-black text-sm tracking-tight text-ujmah-indigo leading-tight">UJMAH TOGO</span>
-              <span className="font-sans text-[10px] text-ujmah-orange font-bold uppercase tracking-wider">Servir dans l'union</span>
+            <div className="hidden sm:flex flex-col border-l border-ujmah-navy/15 pl-3.5">
+              <span className="font-sans font-black text-xl tracking-tight text-ujmah-indigo leading-none">
+                UJMAH
+              </span>
+              <span className="font-sans text-[9px] text-ujmah-orange font-bold uppercase tracking-widest mt-1">
+                Servir dans l'union
+              </span>
             </div>
           </a>
 
@@ -85,13 +88,15 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation Drawer */}
-        <div className={`lg:hidden fixed top-0 right-0 h-screen w-[310px] bg-white shadow-2xl pt-20 px-6 z-[999] transition-transform duration-300 ease-in-out flex flex-col justify-between pb-8 ${
+        <div className={`lg:hidden fixed top-0 right-0 h-screen w-[310px] bg-white shadow-2xl pt-20 px-8 z-[999] transition-transform duration-300 ease-in-out flex flex-col justify-between pb-8 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}>
           <div className="flex flex-col gap-4">
             <div className="pb-4 border-b border-ujmah-navy/10">
-              <span className="font-sans font-black text-lg text-ujmah-indigo block">UJMAH Togo</span>
-              <span className="font-sans text-xs text-ujmah-orange font-bold uppercase tracking-wider">Servir dans l'union</span>
+              <span className="font-sans font-black text-2xl text-ujmah-indigo block leading-none">UJMAH</span>
+              <span className="font-sans text-[10px] text-ujmah-orange font-bold uppercase tracking-widest mt-1 block">
+                Servir dans l'union
+              </span>
             </div>
 
             {navLinks.map((link) => (
