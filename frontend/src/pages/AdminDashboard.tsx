@@ -29,7 +29,7 @@ export default function AdminDashboard() {
         {/* Welcome Header */}
         <div className="mb-10 flex justify-between items-center">
           <div>
-            <h1 className="font-display font-extrabold text-3xl">Tableau de Bord</h1>
+            <h1 className="font-sans font-extrabold text-3xl">Tableau de Bord</h1>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed mt-1">
               Bienvenue, {user?.firstName} {user?.lastName}. Accédez aux outils de pilotage de l'association.
             </p>
@@ -45,7 +45,7 @@ export default function AdminDashboard() {
             <div key={stat.label} className="bg-white p-6 rounded-2xl border border-ujmah-navy/5 shadow-sm flex items-center justify-between">
               <div>
                 <span className="font-sans text-xs uppercase tracking-wide text-ujmah-navy/50 font-bold">{stat.label}</span>
-                <h3 className="font-display font-extrabold text-2xl mt-1.5">{stat.value}</h3>
+                <h3 className="font-sans font-extrabold text-2xl mt-1.5">{stat.value}</h3>
                 <p className="font-sans text-xs text-ujmah-navy/40 mt-1">{stat.desc}</p>
               </div>
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${stat.color}`}>
@@ -61,7 +61,7 @@ export default function AdminDashboard() {
             <ShieldAlert size={24} />
           </div>
           <div>
-            <h3 className="font-display font-bold text-xl mb-2">Sécurité & Contrôle</h3>
+            <h3 className="font-sans font-bold text-xl mb-2">Sécurité & Contrôle</h3>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed mb-4">
               Chaque action d'édition (création d'article, de projet, modification d'impact) est enregistrée de manière cryptée dans le journal d'activité de l'association.
               Veuillez ne jamais partager vos identifiants d'accès.

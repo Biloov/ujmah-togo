@@ -116,7 +116,7 @@ export default function AdminUsers() {
         {/* Header */}
         <div className="mb-10 flex justify-between items-center">
           <div>
-            <h1 className="font-display font-extrabold text-3xl">Gestion des Membres</h1>
+            <h1 className="font-sans font-extrabold text-3xl">Gestion des Membres</h1>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed mt-1">
               Gérez les comptes d'accès de l'équipe et attribuez les rôles et permissions.
             </p>
@@ -143,7 +143,7 @@ export default function AdminUsers() {
         {/* Create Member Form */}
         {showForm && (
           <div className="bg-white p-8 rounded-2xl border border-ujmah-navy/5 shadow-md mb-8 animate-fadeIn">
-            <h3 className="font-display font-bold text-xl mb-6">Nouveau Membre de l'Équipe</h3>
+            <h3 className="font-sans font-bold text-xl mb-6">Nouveau Membre de l'Équipe</h3>
             
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -241,7 +241,7 @@ export default function AdminUsers() {
         ) : users.length === 0 ? (
           <div className="bg-white p-12 rounded-2xl border border-ujmah-navy/5 shadow-sm text-center">
             <Users className="mx-auto text-ujmah-navy/20 mb-4" size={48} />
-            <h3 className="font-display font-bold text-xl mb-1">Aucun membre</h3>
+            <h3 className="font-sans font-bold text-xl mb-1">Aucun membre</h3>
           </div>
         ) : (
           <div className="bg-white rounded-2xl border border-ujmah-navy/5 shadow-sm overflow-hidden">
@@ -258,7 +258,7 @@ export default function AdminUsers() {
               <tbody>
                 {users.map((u) => (
                   <tr key={u.id} className="border-b border-ujmah-navy/5 text-sm hover:bg-ujmah-gray/10 transition-colors">
-                    <td className="p-5 font-display font-bold text-ujmah-navy">
+                    <td className="p-5 font-sans font-bold text-ujmah-navy">
                       {u.firstName} {u.lastName}
                     </td>
                     <td className="p-5 font-sans text-xs text-ujmah-navy/60 font-semibold">{u.email}</td>

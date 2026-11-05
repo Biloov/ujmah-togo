@@ -52,7 +52,7 @@ export default function Donation() {
           <span className="inline-block bg-ujmah-sun/20 border border-ujmah-sun/40 text-ujmah-indigo font-sans text-xs uppercase tracking-widest font-extrabold px-4 py-1.5 rounded-full mb-4">
             Nous Soutenir
           </span>
-          <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-ujmah-indigo mb-6 tracking-tight">
+          <h1 className="font-sans font-extrabold text-3xl sm:text-5xl text-ujmah-indigo mb-6 tracking-tight">
             Faire un don
           </h1>
           <p className="font-sans text-base text-ujmah-navy/70 leading-relaxed">
@@ -68,7 +68,7 @@ export default function Donation() {
                 <CreditCard size={24} />
               </div>
               <div>
-                <h3 className="font-display font-bold text-2xl text-ujmah-indigo">Don sécurisé en ligne</h3>
+                <h3 className="font-sans font-bold text-2xl text-ujmah-indigo">Don sécurisé en ligne</h3>
                 <span className="text-xs text-ujmah-navy/50 font-sans">Mobile Money & Cartes Bancaires</span>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function Donation() {
                 <Landmark size={24} />
               </div>
               <div>
-                <h3 className="font-display font-bold text-2xl text-ujmah-indigo">Virement bancaire</h3>
+                <h3 className="font-sans font-bold text-2xl text-ujmah-indigo">Virement bancaire</h3>
                 <span className="text-xs text-ujmah-navy/50 font-sans">Compte officiel UJMAH Togo</span>
               </div>
             </div>
@@ -173,14 +173,14 @@ export default function Donation() {
             </p>
 
             <div className="bg-ujmah-ivory p-6 rounded-2xl border border-ujmah-navy/5 mb-8">
-              <h4 className="font-display font-semibold text-xs text-ujmah-navy/50 uppercase tracking-wider mb-1">Établissement Bancaire</h4>
+              <h4 className="font-sans font-semibold text-xs text-ujmah-navy/50 uppercase tracking-wider mb-1">Établissement Bancaire</h4>
               <p className="font-sans text-sm text-ujmah-indigo font-extrabold mb-4">CORIS BANK INTERNATIONAL TOGO</p>
               
-              <h4 className="font-display font-semibold text-xs text-ujmah-navy/50 uppercase tracking-wider mb-1">Titulaire du compte</h4>
+              <h4 className="font-sans font-semibold text-xs text-ujmah-navy/50 uppercase tracking-wider mb-1">Titulaire du compte</h4>
               <p className="font-sans text-sm text-ujmah-indigo font-extrabold mb-4">ASSOCIATION UJMAH</p>
               
-              <h4 className="font-display font-semibold text-xs text-ujmah-navy/50 uppercase tracking-wider mb-1">Relevé d'Identité Bancaire (RIB)</h4>
-              <p className="font-mono text-sm text-ujmah-orange font-bold tracking-wider">
+              <h4 className="font-sans font-semibold text-xs text-ujmah-navy/50 uppercase tracking-wider mb-1">Relevé d'Identité Bancaire (RIB)</h4>
+              <p className="font-sans text-sm text-ujmah-orange font-bold tracking-wider">
                 TG182 01010 008811824401 13
               </p>
             </div>

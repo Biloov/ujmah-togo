@@ -50,7 +50,7 @@ export default function AdminSidebar() {
           {user?.firstName[0] || <User size={18} />}
         </div>
         <div className="overflow-hidden">
-          <h4 className="font-display font-semibold text-sm truncate">{user?.firstName} {user?.lastName}</h4>
+          <h4 className="font-sans font-semibold text-sm truncate">{user?.firstName} {user?.lastName}</h4>
           <span className="font-sans text-[10px] uppercase font-bold text-ujmah-gold tracking-wide">{user?.role}</span>
         </div>
       </div>

@@ -133,7 +133,7 @@ export default function AdminArticles() {
         {/* Header */}
         <div className="mb-10 flex justify-between items-center">
           <div>
-            <h1 className="font-display font-extrabold text-3xl">Actualités CMS</h1>
+            <h1 className="font-sans font-extrabold text-3xl">Actualités CMS</h1>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed mt-1">
               Rédigez, publiez et modérez les articles d'actualités de l'association.
             </p>
@@ -158,7 +158,7 @@ export default function AdminArticles() {
         {/* Modal/Form Overlay */}
         {showForm && (
           <div className="bg-white p-8 rounded-2xl border border-ujmah-navy/5 shadow-md mb-8 animate-fadeIn">
-            <h3 className="font-display font-bold text-xl mb-6">Nouvel Article</h3>
+            <h3 className="font-sans font-bold text-xl mb-6">Nouvel Article</h3>
             
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -179,7 +179,7 @@ export default function AdminArticles() {
                   type="text"
                   value={slug}
                   onChange={(e) => setSlug(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-ujmah-navy/10 bg-ujmah-gray/50 focus:border-ujmah-navy focus:outline-none text-sm transition-colors font-mono"
+                  className="w-full px-4 py-3 rounded-lg border border-ujmah-navy/10 bg-ujmah-gray/50 focus:border-ujmah-navy focus:outline-none text-sm transition-colors font-sans"
                   placeholder="lien-url-generer"
                   required
                 />
@@ -262,7 +262,7 @@ export default function AdminArticles() {
         ) : articles.length === 0 ? (
           <div className="bg-white p-12 rounded-2xl border border-ujmah-navy/5 shadow-sm text-center">
             <FileText className="mx-auto text-ujmah-navy/20 mb-4" size={48} />
-            <h3 className="font-display font-bold text-xl mb-1">Aucun article</h3>
+            <h3 className="font-sans font-bold text-xl mb-1">Aucun article</h3>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed">Rédigez votre premier article d'actualité pour peupler le blog !</p>
           </div>
         ) : (
@@ -280,8 +280,8 @@ export default function AdminArticles() {
               <tbody>
                 {articles.map((art) => (
                   <tr key={art.id} className="border-b border-ujmah-navy/5 text-sm hover:bg-ujmah-gray/10 transition-colors">
-                    <td className="p-5 font-display font-bold text-ujmah-navy leading-snug">{art.title}</td>
-                    <td className="p-5 font-mono text-xs text-ujmah-navy/55">{art.slug}</td>
+                    <td className="p-5 font-sans font-bold text-ujmah-navy leading-snug">{art.title}</td>
+                    <td className="p-5 font-sans text-xs text-ujmah-navy/55">{art.slug}</td>
                     <td className="p-5 text-ujmah-navy/60 font-medium">
                       {new Date(art.createdAt).toLocaleDateString('fr-FR')}
                     </td>

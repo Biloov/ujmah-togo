@@ -32,10 +32,10 @@ export default function About() {
         
         {/* En-tête Éditorial */}
         <div className="max-w-4xl mb-16 pb-8 border-b border-ujmah-navy/10">
-          <span className="font-mono text-xs uppercase tracking-widest text-ujmah-orange font-bold block mb-3">
+          <span className="font-sans text-xs uppercase tracking-widest text-ujmah-orange font-bold block mb-3">
             Dossier Institutionnel • Fondation & Gouvernance
           </span>
-          <h1 className="font-editorial font-extrabold text-4xl sm:text-6xl text-ujmah-indigo tracking-tight leading-tight mb-6">
+          <h1 className="font-sans font-extrabold text-4xl sm:text-6xl text-ujmah-indigo tracking-tight leading-tight mb-6">
             Qui sommes-nous ?
           </h1>
           <p className="font-sans text-lg sm:text-xl text-ujmah-dark-muted leading-relaxed">
@@ -50,7 +50,7 @@ export default function About() {
             <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
               Aux Origines de l'Engagement
             </span>
-            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo mb-6 leading-snug">
+            <h2 className="font-sans font-bold text-3xl sm:text-4xl text-ujmah-indigo mb-6 leading-snug">
               23 Janvier 2003 : La naissance d'un idéal de fraternité active
             </h2>
             
@@ -67,7 +67,7 @@ export default function About() {
             </div>
 
             <div className="mt-8 p-6 rounded-2xl bg-ujmah-ivory border-l-4 border-ujmah-orange">
-              <p className="font-editorial italic text-lg text-ujmah-indigo">
+              <p className="font-sans italic text-lg text-ujmah-indigo">
                 « Servir l'humanité dans l'union »
               </p>
               <span className="font-sans text-xs text-ujmah-navy/60 font-semibold mt-1 block">
@@ -77,13 +77,13 @@ export default function About() {
           </div>
 
           <div className="lg:col-span-5 bg-ujmah-ivory p-8 rounded-3xl border border-ujmah-navy/5">
-            <h3 className="font-editorial font-bold text-2xl text-ujmah-indigo mb-6 pb-3 border-b border-ujmah-navy/10">
+            <h3 className="font-sans font-bold text-2xl text-ujmah-indigo mb-6 pb-3 border-b border-ujmah-navy/10">
               Repères Clés
             </h3>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <span className="font-editorial font-extrabold text-2xl text-ujmah-orange">2003</span>
+                <span className="font-sans font-extrabold text-2xl text-ujmah-orange">2003</span>
                 <div>
                   <h4 className="font-sans font-bold text-sm text-ujmah-navy">Création à Agoè-Houmbi</h4>
                   <p className="font-sans text-xs text-ujmah-navy/60 mt-0.5">Fondation le 23 janvier par la jeunesse musulmane togolaise.</p>
@@ -91,7 +91,7 @@ export default function About() {
               </div>
 
               <div className="flex items-start gap-4">
-                <span className="font-editorial font-extrabold text-2xl text-ujmah-indigo">0315</span>
+                <span className="font-sans font-extrabold text-2xl text-ujmah-indigo">0315</span>
                 <div>
                   <h4 className="font-sans font-bold text-sm text-ujmah-navy">Reconnaissance Légale</h4>
                   <p className="font-sans text-xs text-ujmah-navy/60 mt-0.5">Récépissé ministériel officiel MATDCL-SG-DLPAP-DOCA.</p>
@@ -99,7 +99,7 @@ export default function About() {
               </div>
 
               <div className="flex items-start gap-4">
-                <span className="font-editorial font-extrabold text-2xl text-ujmah-sun">Yelivo</span>
+                <span className="font-sans font-extrabold text-2xl text-ujmah-sun">Yelivo</span>
                 <div>
                   <h4 className="font-sans font-bold text-sm text-ujmah-navy">Orphelinat « MES ENFANTS »</h4>
                   <p className="font-sans text-xs text-ujmah-navy/60 mt-0.5">40 enfants accueillis et éduqués dans la Région Centrale.</p>
@@ -107,7 +107,7 @@ export default function About() {
               </div>
 
               <div className="flex items-start gap-4">
-                <span className="font-editorial font-extrabold text-2xl text-ujmah-dark">Siège</span>
+                <span className="font-sans font-extrabold text-2xl text-ujmah-dark">Siège</span>
                 <div>
                   <h4 className="font-sans font-bold text-sm text-ujmah-navy">Agoè-Adjougba, Lomé</h4>
                   <p className="font-sans text-xs text-ujmah-navy/60 mt-0.5">À 100m de BOXBERG • Ligne : +228 92 67 34 00</p>
@@ -124,7 +124,7 @@ export default function About() {
             <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
               Charte Statutaire
             </span>
-            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo">
+            <h2 className="font-sans font-bold text-3xl sm:text-4xl text-ujmah-indigo">
               Nos Huit Objectifs Fondateurs
             </h2>
           </div>
@@ -132,7 +132,7 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
             {objectives.map((obj, idx) => (
               <div key={idx} className="flex items-start gap-4 pb-6 border-b border-ujmah-navy/5">
-                <span className="font-mono text-sm font-extrabold text-ujmah-orange pt-0.5">
+                <span className="font-sans text-sm font-extrabold text-ujmah-orange pt-0.5">
                   0{idx + 1}
                 </span>
                 <p className="font-sans text-sm text-ujmah-dark-muted leading-relaxed font-medium">
@@ -149,7 +149,7 @@ export default function About() {
             <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
               Gouvernance Officielle
             </span>
-            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo mb-3">
+            <h2 className="font-sans font-bold text-3xl sm:text-4xl text-ujmah-indigo mb-3">
               Membres du Bureau Exécutif
             </h2>
             <p className="font-sans text-sm text-ujmah-navy/60">
@@ -165,14 +165,14 @@ export default function About() {
               >
                 <div>
                   <div className="flex justify-between items-center mb-3">
-                    <span className="font-mono text-xs font-bold text-ujmah-orange">
+                    <span className="font-sans text-xs font-bold text-ujmah-orange">
                       N° {member.num}
                     </span>
                     <span className="font-sans text-[10px] uppercase font-bold tracking-wider text-ujmah-indigo/60">
                       Mandat Actif
                     </span>
                   </div>
-                  <h3 className="font-editorial font-bold text-lg text-ujmah-indigo mb-1">
+                  <h3 className="font-sans font-bold text-lg text-ujmah-indigo mb-1">
                     {member.name}
                   </h3>
                   <p className="font-sans text-xs font-bold text-ujmah-orange uppercase tracking-wider mb-2">

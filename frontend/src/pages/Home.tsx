@@ -167,7 +167,7 @@ export default function Home() {
             
             <div className="pt-2 md:pt-0 px-4">
               <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Ministère MATDCL</span>
-              <span className="font-mono text-xs font-extrabold text-ujmah-orange mt-0.5 block">Récépissé N° 0315</span>
+              <span className="font-sans text-xs font-extrabold text-ujmah-orange mt-0.5 block">Récépissé N° 0315</span>
             </div>
 
             <div className="pt-4 md:pt-0 px-4">
