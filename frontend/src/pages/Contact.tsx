@@ -57,7 +57,7 @@ export default function Contact() {
           <span className="inline-block bg-ujmah-sun/20 border border-ujmah-sun/40 text-ujmah-indigo font-sans text-xs uppercase tracking-widest font-extrabold px-4 py-1.5 rounded-full mb-4">
             Prendre Contact
           </span>
-          <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-ujmah-indigo mb-6 tracking-tight">
+          <h1 className="font-sans font-extrabold text-3xl sm:text-5xl text-ujmah-indigo mb-6 tracking-tight">
             Nous Contacter
           </h1>
           <p className="font-sans text-base text-ujmah-navy/70 leading-relaxed">
@@ -68,14 +68,14 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
           {/* Info Column */}
           <div className="bg-white p-8 sm:p-10 rounded-3xl border border-ujmah-navy/5 shadow-md flex flex-col gap-8">
-            <h3 className="font-display font-bold text-2xl text-ujmah-indigo mb-2">Coordonnées Officielles</h3>
+            <h3 className="font-sans font-bold text-2xl text-ujmah-indigo mb-2">Coordonnées Officielles</h3>
             
             <div className="flex gap-4 items-start">
               <div className="w-12 h-12 rounded-2xl bg-ujmah-orange/10 text-ujmah-orange flex items-center justify-center flex-shrink-0">
                 <MapPin size={22} />
               </div>
               <div>
-                <h4 className="font-display font-bold text-base text-ujmah-navy mb-1">Siège social</h4>
+                <h4 className="font-sans font-bold text-base text-ujmah-navy mb-1">Siège social</h4>
                 <p className="font-sans text-sm text-ujmah-navy/70 leading-relaxed">
                   Agoè-Adjougba, à 100m de BOXBERG, Lomé – Togo
                 </p>
@@ -87,7 +87,7 @@ export default function Contact() {
                 <Phone size={22} />
               </div>
               <div>
-                <h4 className="font-display font-bold text-base text-ujmah-navy mb-1">Téléphone & WhatsApp</h4>
+                <h4 className="font-sans font-bold text-base text-ujmah-navy mb-1">Téléphone & WhatsApp</h4>
                 <p className="font-sans text-sm text-ujmah-navy/70 leading-relaxed font-bold">
                   +228 92 67 34 00
                 </p>
@@ -99,7 +99,7 @@ export default function Contact() {
                 <Mail size={22} />
               </div>
               <div>
-                <h4 className="font-display font-bold text-base text-ujmah-navy mb-1">Courrier électronique</h4>
+                <h4 className="font-sans font-bold text-base text-ujmah-navy mb-1">Courrier électronique</h4>
                 <p className="font-sans text-sm text-ujmah-navy/70 leading-relaxed">
                   ujmahofficiel@gmail.com
                 </p>
@@ -108,7 +108,7 @@ export default function Contact() {
 
             <div className="p-4 rounded-2xl bg-ujmah-ivory border border-ujmah-navy/10 mt-2">
               <span className="text-xs uppercase font-extrabold text-ujmah-orange tracking-wider block mb-1">Enregistrement Officiel</span>
-              <p className="font-mono text-xs text-ujmah-navy font-bold">
+              <p className="font-sans text-xs text-ujmah-navy font-bold">
                 Récépissé N° 0315/MATDCL-SG-DLPAP-DOCA
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function Contact() {
 
           {/* Form Column */}
           <div className="bg-white p-8 sm:p-10 rounded-3xl border border-ujmah-navy/5 shadow-md">
-            <h3 className="font-display font-bold text-2xl text-ujmah-indigo mb-6">Envoyez-nous un message</h3>
+            <h3 className="font-sans font-bold text-2xl text-ujmah-indigo mb-6">Envoyez-nous un message</h3>
             
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <div>

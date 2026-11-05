@@ -91,7 +91,7 @@ export default function Actions() {
           <span className="inline-block bg-ujmah-sun/20 border border-ujmah-sun/40 text-ujmah-indigo font-sans text-xs uppercase tracking-widest font-extrabold px-4 py-1.5 rounded-full mb-4">
             Nos Programmes Permanents
           </span>
-          <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-ujmah-indigo mb-6 tracking-tight">
+          <h1 className="font-sans font-extrabold text-3xl sm:text-5xl text-ujmah-indigo mb-6 tracking-tight">
             Nos Actions sur le Terrain
           </h1>
           <p className="font-sans text-base sm:text-lg text-ujmah-navy/70 leading-relaxed">
@@ -124,7 +124,7 @@ export default function Actions() {
               </div>
               
               <div className="p-8 flex flex-col flex-grow">
-                <h3 className="font-display font-bold text-xl text-ujmah-navy mb-3 leading-snug">
+                <h3 className="font-sans font-bold text-xl text-ujmah-navy mb-3 leading-snug">
                   {act.title}
                 </h3>
                 <p className="font-sans text-sm text-ujmah-navy/70 leading-relaxed mb-6 flex-grow">

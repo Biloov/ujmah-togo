@@ -29,10 +29,10 @@ export default function Orphelinat() {
         
         {/* En-tête Éditorial */}
         <div className="max-w-4xl mb-14 pb-8 border-b border-ujmah-navy/10">
-          <span className="font-mono text-xs uppercase tracking-widest text-ujmah-orange font-bold block mb-3">
+          <span className="font-sans text-xs uppercase tracking-widest text-ujmah-orange font-bold block mb-3">
             Grand Reportage Terrain • Région Centrale
           </span>
-          <h1 className="font-editorial font-extrabold text-4xl sm:text-6xl text-ujmah-indigo tracking-tight leading-tight mb-6">
+          <h1 className="font-sans font-extrabold text-4xl sm:text-6xl text-ujmah-indigo tracking-tight leading-tight mb-6">
             L'Orphelinat « MES ENFANTS » à Yelivo
           </h1>
           <p className="font-sans text-lg sm:text-xl text-ujmah-dark-muted leading-relaxed">
@@ -47,13 +47,13 @@ export default function Orphelinat() {
               <Sparkles size={22} />
             </div>
             <div>
-              <h3 className="font-editorial font-bold text-lg text-ujmah-indigo">Vitrine Autonome de l'Orphelinat</h3>
+              <h3 className="font-sans font-bold text-lg text-ujmah-indigo">Vitrine Autonome de l'Orphelinat</h3>
               <p className="font-sans text-xs text-ujmah-navy/65 mt-0.5">
                 Plateforme numérique dédiée au parrainage nominatif, aux actualités de l'orphelinat et au suivi scolaire :
               </p>
             </div>
           </div>
-          <span className="font-mono text-xs font-bold text-ujmah-indigo bg-white px-4 py-2 rounded-xl border border-ujmah-navy/10 flex-shrink-0">
+          <span className="font-sans text-xs font-bold text-ujmah-indigo bg-white px-4 py-2 rounded-xl border border-ujmah-navy/10 flex-shrink-0">
             orphelinat.ujmah-togo.vercel.app
           </span>
         </div>
@@ -76,7 +76,7 @@ export default function Orphelinat() {
               <div className="absolute bottom-6 left-6 right-6 text-white flex justify-between items-end">
                 <div>
                   <span className="font-sans text-[10px] uppercase font-bold text-ujmah-sun tracking-widest block">Village de Yelivo</span>
-                  <h3 className="font-editorial font-bold text-xl drop-shadow">Centre d'Accueil « MES ENFANTS »</h3>
+                  <h3 className="font-sans font-bold text-xl drop-shadow">Centre d'Accueil « MES ENFANTS »</h3>
                 </div>
                 <div className="bg-white/20 backdrop-blur-md px-3.5 py-1.5 rounded-xl text-xs font-sans font-bold text-white border border-white/20">
                   Directeur : AMOUSSOU Nazif
@@ -89,7 +89,7 @@ export default function Orphelinat() {
             <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
               Récit de Vie
             </span>
-            <h2 className="font-editorial font-bold text-3xl text-ujmah-indigo mb-6 leading-snug">
+            <h2 className="font-sans font-bold text-3xl text-ujmah-indigo mb-6 leading-snug">
               Un sanctuaire d'amour et de reconstruction
             </h2>
 
@@ -104,11 +104,11 @@ export default function Orphelinat() {
 
             <div className="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-ujmah-navy/10">
               <div>
-                <span className="font-editorial font-extrabold text-3xl text-ujmah-orange">40</span>
+                <span className="font-sans font-extrabold text-3xl text-ujmah-orange">40</span>
                 <span className="font-sans text-xs text-ujmah-navy/60 font-semibold block mt-1">Pensionnaires permanents</span>
               </div>
               <div>
-                <span className="font-editorial font-extrabold text-3xl text-ujmah-indigo">100%</span>
+                <span className="font-sans font-extrabold text-3xl text-ujmah-indigo">100%</span>
                 <span className="font-sans text-xs text-ujmah-navy/60 font-semibold block mt-1">Enfants scolarisés</span>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function Orphelinat() {
             <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
               Prise en Charge Quotidienne
             </span>
-            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo">
+            <h2 className="font-sans font-bold text-3xl sm:text-4xl text-ujmah-indigo">
               Les Trois Piliers d'Accompagnement
             </h2>
           </div>
@@ -130,10 +130,10 @@ export default function Orphelinat() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pillars.map((p) => (
               <div key={p.num} className="bg-ujmah-ivory p-8 rounded-3xl border border-ujmah-navy/5">
-                <span className="font-mono text-sm font-extrabold text-ujmah-orange block mb-3">
+                <span className="font-sans text-sm font-extrabold text-ujmah-orange block mb-3">
                   Pilier {p.num}
                 </span>
-                <h3 className="font-editorial font-bold text-xl text-ujmah-indigo mb-3">
+                <h3 className="font-sans font-bold text-xl text-ujmah-indigo mb-3">
                   {p.title}
                 </h3>
                 <p className="font-sans text-sm text-ujmah-dark-muted leading-relaxed">
@@ -149,12 +149,12 @@ export default function Orphelinat() {
           <span className="inline-block bg-ujmah-orange text-white font-sans text-xs uppercase font-extrabold tracking-widest px-4 py-1.5 rounded-full mb-6">
             Bénédiction Suprême
           </span>
-          <h2 className="font-editorial font-extrabold text-3xl sm:text-5xl text-white mb-4">
+          <h2 className="font-sans font-extrabold text-3xl sm:text-5xl text-white mb-4">
             Parrainez un Orphelin
           </h2>
           
           <div className="p-4 rounded-2xl bg-white/10 max-w-md mx-auto mb-6">
-            <span className="font-editorial font-extrabold text-3xl text-ujmah-sun">20 250 FCFA</span>
+            <span className="font-sans font-extrabold text-3xl text-ujmah-sun">20 250 FCFA</span>
             <span className="font-sans text-xs text-white/80 block mt-1">Par mois pour la nourriture, la scolarité et les soins complets</span>
           </div>
 

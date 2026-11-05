@@ -66,7 +66,7 @@ export default function AdminDonations() {
         {/* Header */}
         <div className="mb-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h1 className="font-display font-extrabold text-3xl">Historique des Dons</h1>
+            <h1 className="font-sans font-extrabold text-3xl">Historique des Dons</h1>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed mt-1">
               Consultez l'historique complet des dons Genius Pay et générez les reçus fiscaux PDF.
             </p>
@@ -100,7 +100,7 @@ export default function AdminDonations() {
         ) : getFilteredDonations().length === 0 ? (
           <div className="bg-white p-12 rounded-2xl border border-ujmah-navy/5 shadow-sm text-center">
             <Landmark className="mx-auto text-ujmah-navy/20 mb-4" size={48} />
-            <h3 className="font-display font-bold text-xl mb-1">Aucune transaction</h3>
+            <h3 className="font-sans font-bold text-xl mb-1">Aucune transaction</h3>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed">Aucun don n'a été enregistré pour le moment.</p>
           </div>
         ) : (
@@ -119,10 +119,10 @@ export default function AdminDonations() {
               <tbody>
                 {getFilteredDonations().map((don) => (
                   <tr key={don.id} className="border-b border-ujmah-navy/5 text-sm hover:bg-ujmah-gray/10 transition-colors">
-                    <td className="p-5 font-mono text-xs font-bold text-ujmah-navy/70">{don.reference}</td>
+                    <td className="p-5 font-sans text-xs font-bold text-ujmah-navy/70">{don.reference}</td>
                     <td className="p-5">
                       <div className="flex flex-col">
-                        <span className="font-display font-bold text-ujmah-navy">{don.donorName}</span>
+                        <span className="font-sans font-bold text-ujmah-navy">{don.donorName}</span>
                         <span className="font-sans text-xs text-ujmah-navy/50">{don.donorEmail}</span>
                       </div>
                     </td>

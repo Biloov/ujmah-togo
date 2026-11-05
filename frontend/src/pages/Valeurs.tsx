@@ -34,7 +34,7 @@ function Counter({ endValue, duration, suffix = "" }: { endValue: number; durati
   }, [isStarted, endValue, duration]);
 
   return (
-    <div ref={elementRef} className="font-display font-extrabold text-4xl text-ujmah-navy">
+    <div ref={elementRef} className="font-sans font-extrabold text-4xl text-ujmah-navy">
       {count.toLocaleString('fr-FR')}{suffix}
     </div>
   );
@@ -57,7 +57,7 @@ export default function Valeurs() {
           <span className="inline-block bg-ujmah-navy/5 text-ujmah-navy font-sans text-xs uppercase tracking-widest font-semibold px-4 py-1.5 rounded-full mb-4">
             Charte Éthique
           </span>
-          <h1 className="font-display font-extrabold text-3xl sm:text-5xl text-ujmah-navy mb-6 tracking-tight">
+          <h1 className="font-sans font-extrabold text-3xl sm:text-5xl text-ujmah-navy mb-6 tracking-tight">
             Nos Valeurs Fondatrices
           </h1>
           <p className="font-sans text-base text-ujmah-navy/60 leading-relaxed">
@@ -73,7 +73,7 @@ export default function Valeurs() {
                 {v.icon}
               </div>
               <div>
-                <h3 className="font-display font-bold text-xl text-ujmah-navy mb-3 leading-snug">{v.title}</h3>
+                <h3 className="font-sans font-bold text-xl text-ujmah-navy mb-3 leading-snug">{v.title}</h3>
                 <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed">{v.desc}</p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function Valeurs() {
 
         {/* Interactive Stats Block */}
         <div className="bg-ujmah-gray/50 rounded-3xl p-10 border border-ujmah-navy/5">
-          <h2 className="font-display font-bold text-2xl text-center text-ujmah-navy mb-12">UJMAH en chiffres</h2>
+          <h2 className="font-sans font-bold text-2xl text-center text-ujmah-navy mb-12">UJMAH en chiffres</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-2xl border border-ujmah-navy/5 shadow-sm text-center flex flex-col items-center">
               <span className="w-10 h-10 rounded-full bg-ujmah-navy/5 text-ujmah-navy flex items-center justify-center mb-4">🏆</span>

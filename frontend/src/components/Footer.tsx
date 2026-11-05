@@ -21,7 +21,7 @@ export default function Footer() {
                 }}
               />
             </div>
-            <p className="font-display font-bold text-sm text-ujmah-sun tracking-wide mb-3">
+            <p className="font-sans font-bold text-sm text-ujmah-sun tracking-wide mb-3">
               « Servir l'humanité dans l'union »
             </p>
             <p className="font-sans text-xs text-white/70 leading-relaxed">
@@ -31,7 +31,7 @@ export default function Footer() {
 
           {/* Colonne 2 : Navigation Institutionnelle */}
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-ujmah-sun mb-4">
+            <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-ujmah-sun mb-4">
               Institutionnel
             </h4>
             <div className="flex flex-col gap-2.5 font-sans text-xs">
@@ -45,7 +45,7 @@ export default function Footer() {
 
           {/* Colonne 3 : Programmes Phares */}
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-ujmah-sun mb-4">
+            <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-ujmah-sun mb-4">
               Programmes
             </h4>
             <div className="flex flex-col gap-2.5 font-sans text-xs">
@@ -60,7 +60,7 @@ export default function Footer() {
 
           {/* Colonne 4 : Coordonnées Certifiées */}
           <div>
-            <h4 className="font-display font-bold text-sm uppercase tracking-wider text-ujmah-sun mb-4">
+            <h4 className="font-sans font-bold text-sm uppercase tracking-wider text-ujmah-sun mb-4">
               Siège & Contact
             </h4>
             <div className="flex flex-col gap-3 font-sans text-xs text-white/80">

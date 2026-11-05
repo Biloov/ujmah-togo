@@ -132,7 +132,7 @@ export default function AdminEvents() {
         {/* Header */}
         <div className="mb-10 flex justify-between items-center">
           <div>
-            <h1 className="font-display font-extrabold text-3xl">Événements & Inscriptions</h1>
+            <h1 className="font-sans font-extrabold text-3xl">Événements & Inscriptions</h1>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed mt-1">
               Organisez les conférences de l'association et gérez la liste des inscrits en temps réel.
             </p>
@@ -157,7 +157,7 @@ export default function AdminEvents() {
         {/* Create Form Overlay */}
         {showForm && (
           <div className="bg-white p-8 rounded-2xl border border-ujmah-navy/5 shadow-md mb-8 animate-fadeIn">
-            <h3 className="font-display font-bold text-xl mb-6">Nouvel Événement</h3>
+            <h3 className="font-sans font-bold text-xl mb-6">Nouvel Événement</h3>
             
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -262,7 +262,7 @@ export default function AdminEvents() {
             ) : events.length === 0 ? (
               <div className="bg-white p-12 rounded-2xl border border-ujmah-navy/5 text-center">
                 <Calendar className="mx-auto text-ujmah-navy/20 mb-4" size={44} />
-                <h3 className="font-display font-semibold text-lg">Aucun événement</h3>
+                <h3 className="font-sans font-semibold text-lg">Aucun événement</h3>
                 <p className="font-sans text-xs text-ujmah-navy/60">Ajoutez les séminaires pour les ouvrir aux inscriptions.</p>
               </div>
             ) : (
@@ -285,7 +285,7 @@ export default function AdminEvents() {
                           selectedEventId === evt.id ? "bg-ujmah-gold/5" : ""
                         }`}
                       >
-                        <td className="p-4 font-display font-bold text-ujmah-navy">{evt.title}</td>
+                        <td className="p-4 font-sans font-bold text-ujmah-navy">{evt.title}</td>
                         <td className="p-4 font-sans text-xs text-ujmah-navy/60 font-semibold">
                           {new Date(evt.startDate).toLocaleDateString('fr-FR')}
                         </td>
@@ -313,7 +313,7 @@ export default function AdminEvents() {
 
           {/* Registrations List Drawer */}
           <div className="bg-white p-6 rounded-2xl border border-ujmah-navy/5 shadow-sm">
-            <h3 className="font-display font-bold text-lg mb-4 flex items-center gap-2">
+            <h3 className="font-sans font-bold text-lg mb-4 flex items-center gap-2">
               <Users className="text-ujmah-gold" size={18} />
               Liste des Inscrits
             </h3>
@@ -334,7 +334,7 @@ export default function AdminEvents() {
               <div className="flex flex-col gap-4 max-h-[400px] overflow-y-auto pr-1">
                 {registrations.map((reg) => (
                   <div key={reg.id} className="bg-ujmah-gray/40 border border-ujmah-navy/5 rounded-xl p-3.5 flex flex-col">
-                    <span className="font-display font-bold text-sm text-ujmah-navy">{reg.firstName} {reg.lastName}</span>
+                    <span className="font-sans font-bold text-sm text-ujmah-navy">{reg.firstName} {reg.lastName}</span>
                     <span className="font-sans text-xs text-ujmah-navy/60 mt-1">📞 {reg.phone}</span>
                     <span className="font-sans text-xs text-ujmah-navy/60 mt-0.5">✉️ {reg.email}</span>
                   </div>

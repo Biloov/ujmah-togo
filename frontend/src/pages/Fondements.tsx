@@ -51,10 +51,10 @@ export default function Fondements() {
         
         {/* En-tête Éditorial */}
         <div className="max-w-4xl mb-16 pb-8 border-b border-ujmah-navy/10">
-          <span className="font-mono text-xs uppercase tracking-widest text-ujmah-orange font-bold block mb-3">
+          <span className="font-sans text-xs uppercase tracking-widest text-ujmah-orange font-bold block mb-3">
             Doctrine & Boussole Morale
           </span>
-          <h1 className="font-editorial font-extrabold text-4xl sm:text-6xl text-ujmah-indigo tracking-tight leading-tight mb-6">
+          <h1 className="font-sans font-extrabold text-4xl sm:text-6xl text-ujmah-indigo tracking-tight leading-tight mb-6">
             Nos Fondements Religieux
           </h1>
           <p className="font-sans text-lg sm:text-xl text-ujmah-dark-muted leading-relaxed">
@@ -67,7 +67,7 @@ export default function Fondements() {
           <div className="max-w-3xl mx-auto text-center relative z-10">
             <Quote size={40} className="text-ujmah-sun mx-auto mb-6 opacity-80" />
             
-            <blockquote className="font-editorial font-extrabold text-2xl sm:text-4xl leading-relaxed mb-6">
+            <blockquote className="font-sans font-extrabold text-2xl sm:text-4xl leading-relaxed mb-6">
               « Moi et celui qui prend en charge l'orphelin serons au Paradis comme ces deux-ci. »
             </blockquote>
             
@@ -75,7 +75,7 @@ export default function Fondements() {
               — Et le Messager d'Allah ﷺ joignit son index et son majeur pour en marquer l'étroite proximité.
             </p>
 
-            <span className="inline-block bg-white/10 px-4 py-1.5 rounded-full font-mono text-xs text-ujmah-sun font-bold uppercase tracking-widest border border-white/15">
+            <span className="inline-block bg-white/10 px-4 py-1.5 rounded-full font-sans text-xs text-ujmah-sun font-bold uppercase tracking-widest border border-white/15">
               Sahih Al-Bukhari • Hadith N° 5304
             </span>
           </div>
@@ -87,7 +87,7 @@ export default function Fondements() {
             <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
               Sources Scripturaires
             </span>
-            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo">
+            <h2 className="font-sans font-bold text-3xl sm:text-4xl text-ujmah-indigo">
               Les Trois Sources Authentiques
             </h2>
           </div>
@@ -99,10 +99,10 @@ export default function Fondements() {
                 className="bg-ujmah-ivory p-8 rounded-3xl border border-ujmah-navy/5 flex flex-col justify-between"
               >
                 <div>
-                  <span className="font-mono text-sm font-extrabold text-ujmah-orange block mb-3">
+                  <span className="font-sans text-sm font-extrabold text-ujmah-orange block mb-3">
                     Pilier {f.num}
                   </span>
-                  <h3 className="font-editorial font-bold text-2xl text-ujmah-indigo mb-3">
+                  <h3 className="font-sans font-bold text-2xl text-ujmah-indigo mb-3">
                     {f.title}
                   </h3>
                   <p className="font-sans text-sm text-ujmah-dark-muted leading-relaxed mb-6">
@@ -111,7 +111,7 @@ export default function Fondements() {
                 </div>
 
                 <div className="p-5 rounded-2xl bg-white border-l-4 border-ujmah-sun shadow-sm">
-                  <p className="font-editorial italic text-xs text-ujmah-navy leading-snug mb-2">
+                  <p className="font-sans italic text-xs text-ujmah-navy leading-snug mb-2">
                     {f.verse}
                   </p>
                   <span className="font-sans text-[11px] font-bold text-ujmah-orange uppercase tracking-wider block">
@@ -129,7 +129,7 @@ export default function Fondements() {
             <span className="font-sans text-xs uppercase font-extrabold tracking-widest text-ujmah-orange block mb-2">
               Traduction dans l'Action
             </span>
-            <h2 className="font-editorial font-bold text-3xl sm:text-4xl text-ujmah-indigo mb-3">
+            <h2 className="font-sans font-bold text-3xl sm:text-4xl text-ujmah-indigo mb-3">
               Notre Éthique de l'Engagement
             </h2>
             <p className="font-sans text-sm text-ujmah-navy/60">
@@ -140,10 +140,10 @@ export default function Fondements() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {ethicRules.map((rule, idx) => (
               <div key={idx} className="p-8 rounded-3xl bg-ujmah-ivory border border-ujmah-navy/5">
-                <span className="font-mono text-xs font-bold text-ujmah-orange uppercase tracking-widest block mb-2">
+                <span className="font-sans text-xs font-bold text-ujmah-orange uppercase tracking-widest block mb-2">
                   Principe 0{idx + 1}
                 </span>
-                <h3 className="font-editorial font-bold text-xl text-ujmah-indigo mb-3">
+                <h3 className="font-sans font-bold text-xl text-ujmah-indigo mb-3">
                   {rule.title}
                 </h3>
                 <p className="font-sans text-sm text-ujmah-dark-muted leading-relaxed">

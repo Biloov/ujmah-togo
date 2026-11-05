@@ -111,7 +111,7 @@ export default function AdminProjects() {
         {/* Header */}
         <div className="mb-10 flex justify-between items-center">
           <div>
-            <h1 className="font-display font-extrabold text-3xl">Projets Humanitaires</h1>
+            <h1 className="font-sans font-extrabold text-3xl">Projets Humanitaires</h1>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed mt-1">
               Pilotez les campagnes de collectes de dons et d'investissements sur le terrain.
             </p>
@@ -136,7 +136,7 @@ export default function AdminProjects() {
         {/* Create Form Overlay */}
         {showForm && (
           <div className="bg-white p-8 rounded-2xl border border-ujmah-navy/5 shadow-md mb-8 animate-fadeIn">
-            <h3 className="font-display font-bold text-xl mb-6">Nouveau Projet</h3>
+            <h3 className="font-sans font-bold text-xl mb-6">Nouveau Projet</h3>
             
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -157,7 +157,7 @@ export default function AdminProjects() {
                   type="text"
                   value={slug}
                   onChange={(e) => setSlug(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-ujmah-navy/10 bg-ujmah-gray/50 focus:border-ujmah-navy focus:outline-none text-sm transition-colors font-mono"
+                  className="w-full px-4 py-3 rounded-lg border border-ujmah-navy/10 bg-ujmah-gray/50 focus:border-ujmah-navy focus:outline-none text-sm transition-colors font-sans"
                   placeholder="renovation-ecole-yelivo"
                   required
                 />
@@ -226,7 +226,7 @@ export default function AdminProjects() {
         ) : projects.length === 0 ? (
           <div className="bg-white p-12 rounded-2xl border border-ujmah-navy/5 shadow-sm text-center">
             <HeartHandshake className="mx-auto text-ujmah-navy/20 mb-4" size={48} />
-            <h3 className="font-display font-bold text-xl mb-1">Aucun projet</h3>
+            <h3 className="font-sans font-bold text-xl mb-1">Aucun projet</h3>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed">Initiez votre premier projet humanitaire de récolte de dons !</p>
           </div>
         ) : (
@@ -248,7 +248,7 @@ export default function AdminProjects() {
                     : 0;
                   return (
                     <tr key={proj.id} className="border-b border-ujmah-navy/5 text-sm hover:bg-ujmah-gray/10 transition-colors">
-                      <td className="p-5 font-display font-bold text-ujmah-navy">{proj.name}</td>
+                      <td className="p-5 font-sans font-bold text-ujmah-navy">{proj.name}</td>
                       <td className="p-5 font-sans font-semibold text-ujmah-navy/65">
                         {proj.budget ? `${proj.budget.toLocaleString('fr-FR')} FCFA` : 'Non défini'}
                       </td>
