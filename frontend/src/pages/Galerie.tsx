@@ -294,7 +294,7 @@ export default function Galerie() {
           2. PILULES DE CATÉGORIES (Filtres Thématiques)
          ========================================================================= */}
       <section className="border-b border-ujmah-navy/10 bg-white sticky top-16 md:top-24 z-30 shadow-xs">
-        <div className="max-w-7xl mx-auto px-6 py-3.5 overflow-x-auto scrollbar-none flex items-center gap-2">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-3.5 overflow-x-auto scrollbar-none flex items-center gap-2">
           {CATEGORIES.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
@@ -317,7 +317,7 @@ export default function Galerie() {
       {/* =========================================================================
           3. GRILLE DE MÉDIAS BENTO & MASONRY (Dribbble/Behance Style)
          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-6 py-14">
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-14">
         
         {filteredItems.length === 0 ? (
           <div className="bg-white rounded-3xl p-16 text-center border border-ujmah-navy/10 shadow-sm max-w-lg mx-auto">

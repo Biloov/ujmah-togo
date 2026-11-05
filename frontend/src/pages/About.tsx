@@ -27,8 +27,8 @@ export default function About() {
   ];
 
   return (
-    <div className="pt-28 md:pt-36 pb-20 bg-white min-h-screen text-ujmah-navy">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="pt-28 sm:pt-36 pb-20 bg-white min-h-screen text-ujmah-navy">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20">
         
         {/* En-tête Éditorial */}
         <div className="max-w-4xl mb-16 pb-8 border-b border-ujmah-navy/10">

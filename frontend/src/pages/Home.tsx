@@ -22,7 +22,6 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
-  // Calculateur de parrainage mensuel orphelinat (20 250 FCFA)
   const [sponsorshipMonths, setSponsorshipMonths] = useState<number>(1);
   const baseMonthlyAmount = 20250;
 
@@ -33,18 +32,16 @@ export default function Home() {
     <div className="bg-[#FAF8F5] min-h-screen text-ujmah-navy selection:bg-ujmah-sun selection:text-ujmah-indigo">
       
       {/* =========================================================================
-          1. HERO SECTION (Inspiré fidèlement de la maquette "Markeezo")
-          Fond ivoire chaleureux, halo solaire circulaire, cartes métriques flottantes
-          Devise officielle : SERVIR L'HUMANITÉ DANS L'UNION
+          1. HERO SECTION (Marges aérées et équilibrées, disque solaire, cartes)
          ========================================================================= */}
-      <section className="relative pt-28 sm:pt-36 pb-20 px-6 overflow-hidden">
+      <section className="relative pt-28 sm:pt-36 pb-20 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 overflow-hidden">
         
         {/* Vagues et auras douces en arrière-plan */}
         <div className="absolute top-0 right-0 w-[45rem] h-[45rem] bg-gradient-to-bl from-amber-100/60 via-amber-50/40 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
         <div className="absolute top-1/3 -left-32 w-[30rem] h-[30rem] bg-orange-100/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
             
             {/* Colonne Gauche : Titre, Paragraphe & Boutons d'Action */}
             <div className="lg:col-span-7 flex flex-col items-start">
@@ -69,7 +66,7 @@ export default function Home() {
                 Depuis le <strong>23 janvier 2003 au Togo</strong>, l'Union des Jeunes Musulmans pour l'Action Humanitaire œuvre pour l'éducation, la formation éthique de la jeunesse, le secours aux nécessiteux, l'hydraulique villageoise et la prise en charge intégrale des <strong>40 orphelins de Yelivo</strong>.
               </p>
 
-              {/* Boutons d'action harmonisés (Bouton orange + Bouton cercle play) */}
+              {/* Boutons d'action harmonisés */}
               <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
                 <a 
                   href="/don" 
@@ -158,7 +155,7 @@ export default function Home() {
       {/* =========================================================================
           2. BANDEAU BLANC FLOTTANT D'AUTORITÉ & PARTENAIRES (Island Card)
          ========================================================================= */}
-      <section className="relative z-20 max-w-6xl mx-auto px-6 -mt-6 mb-24">
+      <section className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 -mt-6 mb-24">
         <div className="bg-white rounded-3xl shadow-xl shadow-ujmah-navy/5 border border-ujmah-navy/10 p-6 sm:p-8">
           <div className="text-center mb-6">
             <span className="text-xs font-bold uppercase tracking-wider text-ujmah-dark-muted">
@@ -195,7 +192,7 @@ export default function Home() {
       {/* =========================================================================
           3. SECTION "QUI SOMMES-NOUS" (Arche Visuelle Asymétrique)
          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16 mb-16">
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-16 mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Colonne Gauche : Arche Visuelle Découpée + Badge 23+ Ans */}
@@ -291,7 +288,7 @@ export default function Home() {
       {/* =========================================================================
           4. SERVICES / PILIERS (Les 4 Cartes dont la 1ère Mise en Valeur en Orange)
          ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-6 py-16 mb-20">
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-16 mb-20">
         
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-ujmah-orange mb-2 block">
@@ -418,7 +415,7 @@ export default function Home() {
       {/* =========================================================================
           5. BANDEAU DE FOND SOMBRE AVEC CHIFFRES CLÉS
          ========================================================================= */}
-      <section className="bg-gradient-to-br from-[#100830] via-[#1E1552] to-[#0B132B] text-white py-20 px-6 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#100830] via-[#1E1552] to-[#0B132B] text-white py-20 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 relative overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10">
           
           <span className="text-xs font-bold uppercase tracking-widest text-ujmah-sun mb-4 block">
