@@ -2,11 +2,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @theme {
-  --color-ujmah-navy: #0B1F3A;
-  --color-ujmah-blue: #123C73;
-  --color-ujmah-gold: #C9A227;
-  --color-ujmah-white: #FFFFFF;
-  --color-ujmah-gray: #F5F7FA;
+  /* Identité Visuelle Officielle UJMAH (Extraite du Logo) */
+  --color-ujmah-sun: #FDB813;           /* Jaune solaire lumineux */
+  --color-ujmah-sun-light: #FED33F;     /* Jaune solaire éclatant */
+  --color-ujmah-orange: #E26D11;        /* Orange chaleureux d'action */
+  --color-ujmah-orange-hover: #C85A07;  /* Orange d'interaction */
+  --color-ujmah-indigo: #2E1F80;        /* Violet / Indigo identitaire fort */
+  --color-ujmah-indigo-dark: #1E1552;   /* Indigo très profond */
+  --color-ujmah-indigo-light: #4338CA;  /* Indigo lumineux */
+  
+  /* Textes & Contrastes */
+  --color-ujmah-navy: #0B132B;          /* Bleu marine / noir profond */
+  --color-ujmah-dark: #111827;          /* Noir adouci pour typographie */
+  --color-ujmah-dark-muted: #4B5563;    /* Gris foncé pour sous-titres */
+  
+  /* Fonds & Espaces */
+  --color-ujmah-ivory: #FAF8F5;         /* Ivoire chaud et apaisant */
+  --color-ujmah-cream: #FDFBF7;         /* Crème très clair */
+  --color-ujmah-white: #FFFFFF;         /* Blanc pur */
+  --color-ujmah-gray: #F3F4F6;          /* Gris neutre clair */
+  
+  /* Alias & Rétrocompatibilité */
+  --color-ujmah-gold: #FDB813;
+  --color-ujmah-blue: #2E1F80;
   
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Manrope', sans-serif;
@@ -15,8 +33,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #F5F7FA;
-  color: #0B1F3A;
+  background-color: #FAF8F5;
+  color: #0B132B;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,26 +43,31 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Manrope', sans-serif;
 }
 
-/* Custom Scrollbar matching UJMAH style */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F7FA;
+  background: #FAF8F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #123C73;
+  background: #2E1F80;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0B1F3A;
+  background: #1E1552;
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism avec reflet chaleureux */
 .glass {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(254, 211, 63, 0.2);
+}
+
+/* Rayonnement solaire subtil en arrière-plan */
+.bg-solar-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(253, 184, 19, 0.12) 0%, rgba(226, 109, 17, 0.04) 35%, transparent 70%);
 }
