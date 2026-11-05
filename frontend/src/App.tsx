@@ -4,6 +4,8 @@ import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import About from './pages/About';
+import Fondements from './pages/Fondements';
 import Actions from './pages/Actions';
 import Orphelinat from './pages/Orphelinat';
 import Galerie from './pages/Galerie';
@@ -25,13 +27,15 @@ function AppContent() {
   const isAdminPath = location.pathname.startsWith('/admin');
 
   return (
-    <div className={isAdminPath ? "" : "flex flex-col min-h-screen bg-ujmah-gray text-ujmah-navy font-sans"}>
+    <div className={isAdminPath ? "" : "flex flex-col min-h-screen bg-ujmah-ivory text-ujmah-navy font-sans"}>
       {!isAdminPath && <Navbar />}
 
       <main className={isAdminPath ? "" : "flex-grow"}>
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
+          <Route path="/qui-sommes-nous" element={<About />} />
+          <Route path="/fondements" element={<Fondements />} />
           <Route path="/actions" element={<Actions />} />
           <Route path="/orphelinat" element={<Orphelinat />} />
           <Route path="/galerie" element={<Galerie />} />
