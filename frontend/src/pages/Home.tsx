@@ -35,8 +35,9 @@ export default function Home() {
       {/* =========================================================================
           1. HERO SECTION (Inspiré fidèlement de la maquette "Markeezo")
           Fond ivoire chaleureux, halo solaire circulaire, cartes métriques flottantes
+          Devise officielle : SERVIR L'HUMANITÉ DANS L'UNION
          ========================================================================= */}
-      <section className="relative pt-32 sm:pt-40 pb-20 px-6 overflow-hidden">
+      <section className="relative pt-28 sm:pt-36 pb-20 px-6 overflow-hidden">
         
         {/* Vagues et auras douces en arrière-plan */}
         <div className="absolute top-0 right-0 w-[45rem] h-[45rem] bg-gradient-to-bl from-amber-100/60 via-amber-50/40 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
@@ -48,27 +49,27 @@ export default function Home() {
             {/* Colonne Gauche : Titre, Paragraphe & Boutons d'Action */}
             <div className="lg:col-span-7 flex flex-col items-start">
               
-              {/* Badge supérieur orange/jaune */}
+              {/* Badge supérieur harmonisé */}
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-ujmah-orange text-xs font-bold uppercase tracking-wider mb-6 border border-amber-500/20">
                 <span className="w-2 h-2 rounded-full bg-ujmah-orange animate-pulse"></span>
-                ASSOCIATION HUMANITAIRE OFFICIELLE • RÉCÉPISSÉ N° 0315
+                ASSOCIATION HUMANITAIRE OFFICIELLE • RÉCÉPISSÉ N° 0315/MATDCL
               </div>
 
-              {/* Titre Principal */}
+              {/* Titre Principal avec la devise officielle exacte */}
               <h1 className="font-sans font-black text-4xl sm:text-6xl xl:text-7xl text-ujmah-navy tracking-tight leading-[1.08] mb-6">
-                Servir l'humanité, <br />
+                Servir l'humanité <br />
                 <span className="text-ujmah-orange">
-                  bâtir un avenir
-                </span>{' '}
-                dans l'union.
+                  dans l'union
+                </span>
+                <span className="text-ujmah-indigo">.</span>
               </h1>
 
-              {/* Texte explicatif */}
+              {/* Texte explicatif harmonisé */}
               <p className="font-sans text-base sm:text-lg text-ujmah-dark-muted leading-relaxed max-w-xl mb-10">
-                Depuis plus de <strong>23 ans au Togo</strong>, l'Union des Jeunes Musulmans pour l'Action Humanitaire allie formation éthique de la jeunesse, secours d'urgence, hydraulique villageoise et protection intégrale des <strong>40 orphelins de Yelivo</strong>.
+                Depuis le <strong>23 janvier 2003 au Togo</strong>, l'Union des Jeunes Musulmans pour l'Action Humanitaire œuvre pour l'éducation, la formation éthique de la jeunesse, le secours aux nécessiteux, l'hydraulique villageoise et la prise en charge intégrale des <strong>40 orphelins de Yelivo</strong>.
               </p>
 
-              {/* Boutons d'action (Bouton orange + Bouton cercle play comme sur Markeezo) */}
+              {/* Boutons d'action harmonisés (Bouton orange + Bouton cercle play) */}
               <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
                 <a 
                   href="/don" 
@@ -96,7 +97,7 @@ export default function Home() {
               
               <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
                 
-                {/* Grand Disque Solaire d'Arrière-Plan (Exactement comme le disque orange de Markeezo) */}
+                {/* Grand Disque Solaire d'Arrière-Plan */}
                 <div className="absolute inset-0 m-auto w-[320px] sm:w-[380px] h-[320px] sm:h-[380px] rounded-full bg-gradient-to-tr from-ujmah-orange via-ujmah-sun to-amber-200 shadow-2xl opacity-90"></div>
 
                 {/* Photo Centrale Découpée en cercle élégant */}
@@ -113,7 +114,7 @@ export default function Home() {
                 </div>
 
                 {/* Badge Flottant 1 (Haut Droite) */}
-                <div className="absolute -top-2 right-0 sm:-right-4 z-20 bg-white rounded-2xl p-3.5 shadow-xl border border-ujmah-navy/5 flex items-center gap-3 animate-bounce duration-1000">
+                <div className="absolute -top-2 right-0 sm:-right-4 z-20 bg-white rounded-2xl p-3.5 shadow-xl border border-ujmah-navy/5 flex items-center gap-3">
                   <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-ujmah-orange flex items-center justify-center">
                     <Users size={18} />
                   </div>
@@ -155,36 +156,36 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          2. BANDEAU BLANC FLOTTANT D'AUTORITÉ & PARTENAIRES (Island Card de Markeezo)
+          2. BANDEAU BLANC FLOTTANT D'AUTORITÉ & PARTENAIRES (Island Card)
          ========================================================================= */}
       <section className="relative z-20 max-w-6xl mx-auto px-6 -mt-6 mb-24">
         <div className="bg-white rounded-3xl shadow-xl shadow-ujmah-navy/5 border border-ujmah-navy/10 p-6 sm:p-8">
           <div className="text-center mb-6">
             <span className="text-xs font-bold uppercase tracking-wider text-ujmah-dark-muted">
-              Reconnaissance Administrative & Ancrage Institutionnel au Togo
+              Cadre Légal & Ancrage Institutionnel au Togo
             </span>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center divide-y md:divide-y-0 md:divide-x divide-ujmah-navy/10 text-center">
             
             <div className="pt-2 md:pt-0 px-4">
-              <span className="font-mono text-xs font-extrabold text-ujmah-orange block">MATDCL-SG-DLPAP-DOCA</span>
-              <span className="text-xs text-ujmah-dark-muted font-bold mt-0.5 block">Récépissé N° 0315</span>
+              <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Ministère MATDCL</span>
+              <span className="font-mono text-xs font-extrabold text-ujmah-orange mt-0.5 block">Récépissé N° 0315</span>
             </div>
 
             <div className="pt-4 md:pt-0 px-4">
-              <span className="text-xs font-extrabold text-ujmah-indigo block">Agoè-Adjougba</span>
-              <span className="text-xs text-ujmah-dark-muted font-medium mt-0.5 block">Siège (à 100m de BOXBERG)</span>
+              <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Siège National</span>
+              <span className="text-xs font-extrabold text-ujmah-indigo mt-0.5 block">Agoè-Adjougba (100m BOXBERG)</span>
             </div>
 
             <div className="pt-4 md:pt-0 px-4">
-              <span className="text-xs font-extrabold text-ujmah-navy block">Coris Bank Togo</span>
-              <span className="text-xs text-ujmah-dark-muted font-medium mt-0.5 block">Compte Officiel Association</span>
+              <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Banque Partenaire</span>
+              <span className="text-xs font-extrabold text-ujmah-navy mt-0.5 block">Coris Bank International Togo</span>
             </div>
 
             <div className="pt-4 md:pt-0 px-4">
-              <span className="text-xs font-extrabold text-emerald-600 block">Village de Yelivo</span>
-              <span className="text-xs text-ujmah-dark-muted font-medium mt-0.5 block">Orphelinat (Près de Sokodé)</span>
+              <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Centre Orphelinat</span>
+              <span className="text-xs font-extrabold text-emerald-600 mt-0.5 block">Village de Yelivo (Sokodé)</span>
             </div>
 
           </div>
@@ -192,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          3. SECTION "QUI SOMMES-NOUS" (Arche Visuelle Asymétrique de Markeezo)
+          3. SECTION "QUI SOMMES-NOUS" (Arche Visuelle Asymétrique)
          ========================================================================= */}
       <section className="max-w-7xl mx-auto px-6 py-16 mb-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -201,7 +202,7 @@ export default function Home() {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-sm lg:max-w-none">
               
-              {/* Arche Découpée (comme sur Markeezo) */}
+              {/* Arche Découpée */}
               <div className="rounded-t-full rounded-b-3xl overflow-hidden shadow-2xl border-4 border-white bg-amber-50 relative aspect-[4/5]">
                 <img 
                   src="/assets/sefima-weaving.png" 
@@ -214,11 +215,11 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ujmah-navy/60 via-transparent to-transparent"></div>
               </div>
 
-              {/* Badge Circulaire Flottant "23+ Years" */}
+              {/* Badge Circulaire Flottant "23+ Ans" */}
               <div className="absolute -top-4 -left-4 sm:-left-8 bg-white rounded-3xl p-5 shadow-2xl border border-ujmah-navy/10 flex flex-col items-center justify-center text-center w-28 h-28 sm:w-32 sm:h-32">
                 <span className="font-sans font-black text-3xl sm:text-4xl text-ujmah-orange leading-none">23+</span>
                 <span className="text-[10px] sm:text-[11px] font-bold text-ujmah-navy uppercase tracking-wider mt-1 leading-tight">
-                  Ans d'actions concrètes
+                  Ans d'actions continues
                 </span>
               </div>
 
@@ -233,15 +234,15 @@ export default function Home() {
             </span>
 
             <h2 className="font-sans font-black text-3xl sm:text-5xl text-ujmah-navy tracking-tight leading-tight mb-6">
-              Une jeunesse togolaise dévouée <br />
-              <span className="text-ujmah-indigo">pour des résultats concrets.</span>
+              Une jeunesse engagée, <br />
+              <span className="text-ujmah-indigo">des actions concrètes sur le terrain.</span>
             </h2>
 
             <p className="text-sm sm:text-base text-ujmah-dark-muted leading-relaxed mb-8">
-              Créée le <strong>23 janvier 2003 à Agoè-Houmbi (Lomé)</strong>, l'UJMAH est le fruit de la volonté d'élèves, étudiants et cadres musulmans de transformer leur foi en actes d'utilité publique.
+              Fondée le <strong>23 janvier 2003 à Agoè-Houmbi (Lomé)</strong>, l'UJMAH rassemble des élèves, des étudiants et des cadres musulmans mobilisés pour traduire les valeurs d'entraide, de fraternité et d'éthique en résultats tangibles et pérennes pour le Togo.
             </p>
 
-            {/* 2 Lignes de caractéristiques avec icônes (comme sur Markeezo) */}
+            {/* 2 Lignes de caractéristiques avec icônes */}
             <div className="space-y-6 w-full mb-10">
               
               <div className="flex items-start gap-4">
@@ -253,7 +254,7 @@ export default function Home() {
                     Éducation, Éthique & Leadership Jeunesse
                   </h4>
                   <p className="text-xs sm:text-sm text-ujmah-dark-muted leading-relaxed mt-0.5">
-                    Concours national de récitation du Saint Coran (CRSC), séminaires managériaux SEFIMA et cercles d'études authentiques.
+                    Concours national de récitation du Saint Coran (CRSC), séminaires managériaux SEFIMA et cercles d'études authentiques selon les pieux prédécesseurs.
                   </p>
                 </div>
               </div>
@@ -267,7 +268,7 @@ export default function Home() {
                     Secours aux Orphelins & Hydraulique Villageoise
                   </h4>
                   <p className="text-xs sm:text-sm text-ujmah-dark-muted leading-relaxed mt-0.5">
-                    Gestion continue du centre « MES ENFANTS » à Yelivo (40 orphelins), forages de puits d'eau potable et partage solidaire.
+                    Prise en charge intégrale des 40 pensionnaires du centre « MES ENFANTS » à Yelivo, forages de puits d'eau potable et colis alimentaires de solidarité.
                   </p>
                 </div>
               </div>
@@ -301,7 +302,7 @@ export default function Home() {
           </h2>
         </div>
 
-        {/* Grille des 4 Cartes (1ère carte en dégradé orange/soleil comme sur Markeezo) */}
+        {/* Grille des 4 Cartes (1ère carte en dégradé orange/soleil) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           
           {/* CARTE 1 MISE EN VALEUR : Orphelinat de Yelivo (Fond Orange Chaud) */}
@@ -317,14 +318,14 @@ export default function Home() {
                 Orphelinat Yelivo
               </h3>
               <p className="text-xs text-white/90 leading-relaxed mb-6">
-                40 enfants orphelins pris en charge à 100% : nourriture, scolarité et soins médicaux sous la direction de Nazif AMOUSSOU.
+                40 enfants orphelins pris en charge à 100% : hébergement, alimentation équilibrée, scolarité et soins médicaux sous la direction de Nazif AMOUSSOU.
               </p>
 
               {/* Mini Calculateur de Parrainage */}
               <div className="bg-black/15 backdrop-blur-sm rounded-xl p-3.5 mb-4 border border-white/20">
-                <span className="text-[10px] text-white/80 block uppercase font-bold mb-1">Parrainage mensuel</span>
+                <span className="text-[10px] text-white/80 block uppercase font-bold mb-1">Formule Parrainage</span>
                 <span className="font-black text-2xl text-white block">20 250 FCFA</span>
-                <span className="text-[10px] text-amber-100">/ mois (≈ 31 €)</span>
+                <span className="text-[10px] text-amber-100">/ mois par enfant (≈ 31 €)</span>
               </div>
             </div>
 
@@ -351,7 +352,7 @@ export default function Home() {
                 Concours de Coran (CRSC)
               </h3>
               <p className="text-xs text-ujmah-dark-muted leading-relaxed mb-6">
-                Compétition annuelle de mémorisation et de récitation du Saint Coran pour l'émulation spirituelle de la jeunesse togolaise.
+                Compétition annuelle nationale et régionale d'émulation spirituelle pour la récitation et la mémorisation du Saint Coran.
               </p>
             </div>
             <a 
@@ -375,7 +376,7 @@ export default function Home() {
                 Séminaires SEFIMA
               </h3>
               <p className="text-xs text-ujmah-dark-muted leading-relaxed mb-6">
-                Formation managériale, leadership associatif et déontologie islamique au service des cadres et des étudiants du Togo.
+                Formation islamique et managériale intensive des cadres : leadership citoyen, gestion associative et éthique professionnelle.
               </p>
             </div>
             <a 
@@ -415,7 +416,7 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          5. BANDEAU DE FOND SOMBRE AVEC CHIFFRES CLÉS (Pied de Landing Page Markeezo)
+          5. BANDEAU DE FOND SOMBRE AVEC CHIFFRES CLÉS
          ========================================================================= */}
       <section className="bg-gradient-to-br from-[#100830] via-[#1E1552] to-[#0B132B] text-white py-20 px-6 relative overflow-hidden">
         <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -425,15 +426,15 @@ export default function Home() {
           </span>
 
           <h2 className="font-sans font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight mb-6">
-            Construisons ensemble un avenir digne <br />
-            pour les orphelins et la jeunesse togolaise.
+            Servir l'humanité dans l'union, <br />
+            auprès des orphelins et des démunis du Togo.
           </h2>
 
           <p className="text-sm sm:text-base text-white/70 max-w-2xl mx-auto mb-14 leading-relaxed">
-            « L'UJMAH est le témoignage vivant d'une jeunesse qui a choisi la foi par les actes et la solidarité de terrain. » — <strong>AMIDOU Bilal</strong>, Président de l'UJMAH Togo.
+            « L'UJMAH est le témoignage vivant d'une jeunesse qui a choisi la foi par les actes, l'excellence citoyenne et la fraternité sans frontière. » — <strong>AMIDOU Bilal</strong>, Président de l'UJMAH Togo.
           </p>
 
-          {/* 3 Chiffres Clés en Bas (comme sur Markeezo) */}
+          {/* 3 Chiffres Clés en Bas */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-white/10 max-w-3xl mx-auto mb-10">
             <div>
               <span className="font-sans font-black text-4xl sm:text-5xl text-ujmah-sun block leading-none mb-2">
