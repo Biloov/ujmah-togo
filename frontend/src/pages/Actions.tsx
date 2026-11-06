@@ -1,145 +1,331 @@
-import React from 'react';
-import { ArrowRight, BookOpen, GraduationCap, Heart, Droplets, Backpack, Utensils, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { 
+  ArrowRight, 
+  BookOpen, 
+  GraduationCap, 
+  Heart, 
+  Droplets, 
+  Backpack, 
+  Utensils, 
+  Sparkles,
+  MapPin,
+  Users,
+  CheckCircle2,
+  ChevronRight,
+  Filter
+} from 'lucide-react';
+
+interface ActionItem {
+  id: string;
+  num: string;
+  title: string;
+  category: string;
+  desc: string;
+  location: string;
+  beneficiaries: string;
+  impactKey: string;
+  image: string;
+  fallback: string;
+  icon: React.ReactNode;
+  badgeBg: string;
+  badgeText: string;
+  link: string;
+  btnText: string;
+}
+
+const CATEGORIES = [
+  "Tous",
+  "Orphelinat & Enfance",
+  "Éducation & Coran",
+  "Leadership (SEFIMA)",
+  "Solidarité & Hydraulique"
+];
 
 export default function Actions() {
-  const actions = [
+  const [activeCategory, setActiveCategory] = useState("Tous");
+
+  const actions: ActionItem[] = [
     {
+      id: "act-1",
+      num: "01",
       title: "L'Orphelinat « MES ENFANTS » à Yelivo",
-      desc: "Centre d'hébergement et d'encadrement familial accueillant 40 orphelins et enfants vulnérables près de Sokodé. Prise en charge globale (scolarité, nutrition, santé) sous la direction d'AMOUSSOU Nazif.",
-      badge: "Protection de l'Enfance",
+      category: "Orphelinat & Enfance",
+      desc: "Centre d'hébergement et d'encadrement familial assurant à chaque enfant un foyer stable, trois repas équilibrés par jour, une scolarité suivie et une couverture médicale intégrale.",
+      location: "Village de Yelivo, près de Sokodé",
+      beneficiaries: "40 orphelins résidents",
+      impactKey: "Prise en charge complète sous la direction de Nazif AMOUSSOU",
       image: "/assets/orphanage-yelivo.png",
-      fallback: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600",
-      icon: <Heart size={20} />,
-      color: "border-ujmah-orange text-ujmah-orange bg-ujmah-orange/10",
+      fallback: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=700",
+      icon: <Heart size={16} fill="currentColor" />,
+      badgeBg: "bg-ujmah-orange/10 border-ujmah-orange/20",
+      badgeText: "text-ujmah-orange",
       link: "/orphelinat",
       btnText: "Découvrir l'Orphelinat"
     },
     {
-      title: "Concours de Récitation du Coran (CRSC)",
-      desc: "Grand rendez-vous national créant une saine émulation autour de la mémorisation et de la méditation du Livre saint, tout en inculquant les valeurs morales islamiques aux jeunes générations du Togo.",
-      badge: "Spiritualité & Excellence",
+      id: "act-2",
+      num: "02",
+      title: "Concours de Récitation du Coran (CRSC & CNRSC)",
+      category: "Éducation & Coran",
+      desc: "Grand rendez-vous national créant une saine émulation autour de la mémorisation et de la méditation du Livre saint, avec attribution de bourses et récompenses d'excellence.",
+      location: "Lomé et chefs-lieux régionaux",
+      beneficiaries: "Centaines de jeunes candidats",
+      impactKey: "Maîtrise du Tajweed et transmission des valeurs éthiques",
       image: "/assets/crsc-interior.png",
-      fallback: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=600",
-      icon: <GraduationCap size={20} />,
-      color: "border-ujmah-indigo text-ujmah-indigo bg-ujmah-indigo/10",
+      fallback: "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=700",
+      icon: <GraduationCap size={16} />,
+      badgeBg: "bg-ujmah-indigo/10 border-ujmah-indigo/20",
+      badgeText: "text-ujmah-indigo",
       link: "/don",
-      btnText: "Soutenir le CRSC"
+      btnText: "Soutenir le concours"
     },
     {
-      title: "Séminaire de Formation (SEFIMA)",
-      desc: "Séminaire annuel intensif combinant perfectionnement en sciences islamiques, gestion de projet, leadership et compétences managériales pour former les leaders intègres de demain.",
-      badge: "Formation des Cadres",
+      id: "act-3",
+      num: "03",
+      title: "Séminaires de Formation (SEFIMA)",
+      category: "Leadership (SEFIMA)",
+      desc: "Sessions intensives de formation combinant perfectionnement en sciences islamiques, management, leadership citoyen, gestion associative et éthique professionnelle.",
+      location: "Centres de formation régionaux",
+      beneficiaries: "Cadres, diplômés & étudiants",
+      impactKey: "Renforcement des compétences des futurs décideurs musulmans",
       image: "/assets/sefima-weaving.png",
-      fallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600",
-      icon: <BookOpen size={20} />,
-      color: "border-ujmah-sun text-ujmah-indigo bg-ujmah-sun/20",
-      link: "/don",
-      btnText: "Parrainer un séminariste"
-    },
-    {
-      title: "Assises de Sciences Islamiques",
-      desc: "Cercles d'études et conférences publiques régulières dispensés par des enseignants et lettrés qualifiés pour enseigner la doctrine authentique, l'éthique musulmane et préserver la jeunesse des dérives.",
-      badge: "Éducation & Savoir",
-      image: "/assets/formations-workspace.png",
-      fallback: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=600",
-      icon: <Sparkles size={20} />,
-      color: "border-ujmah-indigo text-ujmah-indigo bg-ujmah-indigo/10",
+      fallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=700",
+      icon: <BookOpen size={16} />,
+      badgeBg: "bg-amber-500/10 border-amber-500/20",
+      badgeText: "text-amber-700",
       link: "/contact",
-      btnText: "En savoir plus"
+      btnText: "Participer aux sessions"
     },
     {
-      title: "Distribution de Kits Scolaires",
-      desc: "Campagnes annuelles de rentrée scolaire pour équiper les enfants orphelins et issus de foyers démunis en cahiers, livres, cartables et uniformes afin de freiner la déscolarisation précoce.",
-      badge: "Éducation Pour Tous",
+      id: "act-4",
+      num: "04",
+      title: "Distribution de Kits Scolaires de Rentrée",
+      category: "Orphelinat & Enfance",
+      desc: "Dotation annuelle en cahiers, livres, cartables et fournitures complètes aux orphelins et enfants démunis pour éliminer l'obstacle financier à la scolarisation.",
+      location: "Écoles primaires & collèges du Togo",
+      beneficiaries: "Élèves défavorisés & orphelins",
+      impactKey: "Lutte directe contre le décrochage scolaire précoce",
       image: "/assets/actions-sociales.png",
-      fallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600",
-      icon: <Backpack size={20} />,
-      color: "border-ujmah-orange text-ujmah-orange bg-ujmah-orange/10",
+      fallback: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=700",
+      icon: <Backpack size={16} />,
+      badgeBg: "bg-ujmah-orange/10 border-ujmah-orange/20",
+      badgeText: "text-ujmah-orange",
       link: "/don",
       btnText: "Offrir un kit scolaire"
     },
     {
+      id: "act-5",
+      num: "05",
+      title: "Hydraulique Villageoise & Forages d'Eau Potable",
+      category: "Solidarité & Hydraulique",
+      desc: "Réalisation de forages modernes et de puits villageois pour apporter de l'eau saine aux localités isolées, préserver la santé publique et constituer une aumône continue (Sadaqa Jariya).",
+      location: "Villages et cantons ruraux (Savanes, Kara, Centrale)",
+      beneficiaries: "Milliers d'habitants villageois",
+      impactKey: "Accès pérenne à l'eau potable et réduction des maladies",
+      image: "/assets/gallery-well.png",
+      fallback: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80&w=700",
+      icon: <Droplets size={16} />,
+      badgeBg: "bg-blue-500/10 border-blue-500/20",
+      badgeText: "text-blue-700",
+      link: "/don",
+      btnText: "Financer un forage"
+    },
+    {
+      id: "act-6",
+      num: "06",
       title: "Solidarité Alimentaire (Tabaski & Ramadan)",
-      desc: "Campagnes caritatives de distribution de viande sacrificielle à domicile pour la fête de l'Aïd al-Adha et distribution de paniers de vivres pour soulager les familles nécessiteuses lors du mois béni de Ramadan.",
-      badge: "Aide Sociale Directe",
+      category: "Solidarité & Hydraulique",
+      desc: "Distribution de colis de vivres essentiels lors du mois de Ramadan et partage de viande sacrificielle d'Aïd al-Adha directement au domicile des familles les plus vulnérables.",
+      location: "Agoè-Adjougba, Lomé et intérieur du pays",
+      beneficiaries: "Familles répertoriées & démunis",
+      impactKey: "Sécurité alimentaire et fraternité concrète",
       image: "/assets/hero-mosque.png",
-      fallback: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600",
-      icon: <Utensils size={20} />,
-      color: "border-ujmah-sun text-ujmah-indigo bg-ujmah-sun/20",
+      fallback: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=700",
+      icon: <Utensils size={16} />,
+      badgeBg: "bg-amber-500/10 border-amber-500/20",
+      badgeText: "text-amber-700",
       link: "/don",
       btnText: "Participer aux colis"
     },
     {
-      title: "Hydraulique Villageoise & Forages d'Eau",
-      desc: "Réalisation de forages et de puits d'eau potable dans les villages isolés du Togo pour apporter une eau saine, réduire les maladies hydriques et constituer une aumône continue (Sadaqa Jariya).",
-      badge: "Eau Potable & Santé",
-      image: "/assets/gallery-well.png",
-      fallback: "https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80&w=600",
-      icon: <Droplets size={20} />,
-      color: "border-ujmah-indigo text-ujmah-indigo bg-ujmah-indigo/10",
-      link: "/don",
-      btnText: "Financer un puits"
+      id: "act-7",
+      num: "07",
+      title: "Assises de Sciences & Cercles d'Éthique",
+      category: "Éducation & Coran",
+      desc: "Enseignements publics dispensés par des éducateurs et prédicateurs qualifiés sur la doctrine saine selon le Coran, la Sunnah et la compréhension des pieux prédécesseurs.",
+      location: "Lieux de culte et salles de conférence",
+      beneficiaries: "Jeunesse et communauté togolaise",
+      impactKey: "Préservation des valeurs morales et paix sociale",
+      image: "/assets/formations-workspace.png",
+      fallback: "https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=700",
+      icon: <Sparkles size={16} />,
+      badgeBg: "bg-ujmah-indigo/10 border-ujmah-indigo/20",
+      badgeText: "text-ujmah-indigo",
+      link: "/fondements",
+      btnText: "Consulter nos fondements"
     }
   ];
 
+  const filteredActions = activeCategory === "Tous" 
+    ? actions 
+    : actions.filter(a => a.category === activeCategory);
+
   return (
-    <div className="pt-28 pb-20 px-6 bg-ujmah-ivory min-h-screen">
-      <div className="max-w-7xl mx-auto">
+    <div className="pt-28 sm:pt-36 pb-24 bg-[#FAF8F5] min-h-screen text-ujmah-navy">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20">
         
-        {/* Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="inline-block bg-ujmah-sun/20 border border-ujmah-sun/40 text-ujmah-indigo font-sans text-xs uppercase tracking-widest font-extrabold px-4 py-1.5 rounded-full mb-4">
-            Nos Programmes Permanents
-          </span>
-          <h1 className="font-sans font-extrabold text-3xl sm:text-5xl text-ujmah-indigo mb-6 tracking-tight">
+        {/* =========================================================================
+            1. EN-TÊTE ÉDITORIAL HAUTE LISIBILITÉ
+           ========================================================================= */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-ujmah-orange text-xs font-bold uppercase tracking-wider mb-4 border border-amber-500/20">
+            <Sparkles size={14} />
+            7 Programmes Structurants au Togo
+          </div>
+
+          <h1 className="font-sans font-black text-3xl sm:text-5xl text-ujmah-navy tracking-tight leading-tight mb-5">
             Nos Actions sur le Terrain
           </h1>
-          <p className="font-sans text-base sm:text-lg text-ujmah-navy/70 leading-relaxed">
-            Grâce à la mobilisation de nos équipes et à la générosité de nos donateurs, l'UJMAH déploie des actions pérennes qui répondent aux besoins essentiels des populations togolaises.
+
+          <p className="font-sans text-base sm:text-lg text-ujmah-dark-muted leading-relaxed">
+            Depuis 2003, l'UJMAH déploie des actions coordonnées sur l'ensemble du territoire togolais pour apporter des solutions concrètes en matière d'éducation, de protection des orphelins et de solidarité d'urgence.
           </p>
         </div>
 
-        {/* Actions Grid */}
+        {/* =========================================================================
+            2. PILULES DE FILTRAGE INTERACTIF
+           ========================================================================= */}
+        <div className="flex items-center justify-center gap-2 flex-wrap mb-14">
+          {CATEGORIES.map((cat) => {
+            const isSelected = activeCategory === cat;
+            return (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 sm:px-5 py-2.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+                  isSelected
+                    ? "bg-ujmah-indigo text-white shadow-md shadow-ujmah-indigo/20 scale-[1.02]"
+                    : "bg-white text-ujmah-navy/80 hover:bg-amber-50 border border-ujmah-navy/10"
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* =========================================================================
+            3. NOUVELLE FORMULE DE CARTES : HAUTE LISIBILITÉ & STRUCTURE ÉLÉGANTE
+            Les badges ne sont plus superposés de manière floue sur la photo !
+            Ils sont logés clairement dans le corps blanc avec contrastes nets.
+           ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {actions.map((act) => (
+          {filteredActions.map((act) => (
             <div 
-              key={act.title} 
-              className="bg-white rounded-3xl border border-ujmah-navy/5 shadow-md overflow-hidden flex flex-col hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300"
+              key={act.id} 
+              className="bg-white rounded-3xl border border-ujmah-navy/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col overflow-hidden"
             >
-              <div className="relative h-56 overflow-hidden">
+              {/* Photo avec cadre net */}
+              <div className="relative aspect-[16/10] overflow-hidden bg-ujmah-navy/5">
                 <img 
                   src={act.image} 
                   alt={act.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   onError={(e) => {
                     e.currentTarget.src = act.fallback;
                   }}
                 />
-                <div className="absolute top-4 left-4">
-                  <span className={`inline-flex items-center gap-1.5 border rounded-full px-3.5 py-1 text-xs font-bold ${act.color} backdrop-blur-sm shadow-sm`}>
-                    {act.icon}
-                    {act.badge}
+                
+                {/* Badge Numéro Haute Lisibilité en coin photo */}
+                <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-3 py-1 rounded-xl shadow-md border border-black/5 flex items-center gap-1.5">
+                  <span className="font-sans font-black text-xs text-ujmah-indigo">
+                    N° {act.num}
                   </span>
                 </div>
               </div>
               
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="font-sans font-bold text-xl text-ujmah-navy mb-3 leading-snug">
-                  {act.title}
-                </h3>
-                <p className="font-sans text-sm text-ujmah-navy/70 leading-relaxed mb-6 flex-grow">
-                  {act.desc}
-                </p>
-                <a 
-                  href={act.link} 
-                  className="inline-flex items-center gap-2 font-sans font-bold text-sm text-ujmah-orange hover:text-ujmah-orange-hover transition-colors mt-auto group"
-                >
-                  {act.btnText}
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                </a>
+              {/* Corps de la Carte : Lisibilité Maximale */}
+              <div className="p-6 sm:p-7 flex flex-col flex-grow justify-between">
+                
+                <div>
+                  {/* Badge Thématique Net (Sur fond blanc, contraste garanti à 100%) */}
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold border ${act.badgeBg} ${act.badgeText}`}>
+                      {act.icon}
+                      {act.category}
+                    </span>
+                  </div>
+
+                  {/* Titre de l'Action */}
+                  <h3 className="font-sans font-black text-xl text-ujmah-navy mb-3 leading-snug">
+                    {act.title}
+                  </h3>
+
+                  {/* Description aérée et lisible */}
+                  <p className="font-sans text-xs sm:text-sm text-ujmah-dark-muted leading-relaxed mb-6">
+                    {act.desc}
+                  </p>
+
+                  {/* Fiche Métadonnées Pratiques (Lieu & Bénéficiaires) */}
+                  <div className="space-y-2 bg-[#FAF8F5] rounded-2xl p-3.5 mb-6 border border-ujmah-navy/5 text-xs">
+                    <div className="flex items-start gap-2 text-ujmah-navy">
+                      <MapPin size={14} className="text-ujmah-orange flex-shrink-0 mt-0.5" />
+                      <span><strong>Lieu :</strong> {act.location}</span>
+                    </div>
+                    <div className="flex items-start gap-2 text-ujmah-navy">
+                      <Users size={14} className="text-ujmah-indigo flex-shrink-0 mt-0.5" />
+                      <span><strong>Public :</strong> {act.beneficiaries}</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bouton d'Action */}
+                <div className="pt-4 border-t border-ujmah-navy/5">
+                  <a 
+                    href={act.link} 
+                    className="inline-flex items-center justify-between w-full py-2.5 px-4 rounded-xl font-sans font-bold text-xs bg-ujmah-ivory hover:bg-ujmah-orange hover:text-white text-ujmah-indigo transition-all duration-200 group"
+                  >
+                    <span>{act.btnText}</span>
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+
               </div>
             </div>
           ))}
+        </div>
+
+        {/* =========================================================================
+            4. BANDEAU DE MOBILISATION EN BAS DE PAGE
+           ========================================================================= */}
+        <div className="mt-20 bg-gradient-to-r from-ujmah-indigo-dark to-ujmah-navy rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl">
+          <div>
+            <span className="text-xs font-bold text-ujmah-sun uppercase tracking-wider block mb-2">
+              Engagement Terrain
+            </span>
+            <h3 className="font-sans font-black text-2xl sm:text-3xl text-white mb-2">
+              Vous souhaitez soutenir l'un de ces programmes ?
+            </h3>
+            <p className="text-xs sm:text-sm text-white/80 max-w-xl leading-relaxed">
+              Vos contributions financent directement les repas des orphelins, les bourses de Coran, les forages d'eau et les kits scolaires sur le sol togolais.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto flex-shrink-0">
+            <a 
+              href="/don" 
+              className="inline-flex items-center justify-center gap-2 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-7 py-3.5 rounded-xl font-bold text-xs sm:text-sm shadow-lg transition-all"
+            >
+              <Heart size={16} fill="currentColor" />
+              Faire un don dédié
+            </a>
+            <a 
+              href="/contact" 
+              className="inline-flex items-center justify-center gap-2 glass-card-dark text-white hover:bg-white/10 px-6 py-3.5 rounded-xl font-semibold text-xs sm:text-sm border border-white/20 transition-all"
+            >
+              Nous contacter
+            </a>
+          </div>
         </div>
 
       </div>
