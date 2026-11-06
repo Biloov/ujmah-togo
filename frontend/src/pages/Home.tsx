@@ -110,7 +110,7 @@ export default function Home() {
       
       {/* =========================================================================
           1. HERO INSTITUTIONNEL & HUMAIN (Inspiré Biztop & Références d'Excellence)
-          Met en valeur : Récépissé N° 0315, Devise "Servir dans l'union", 23 ans d'histoire
+          Met en valeur : Récépissé N° 0315, Devise "Servir l'humanité dans l'union", 23 ans d'histoire
          ========================================================================= */}
       <section className="relative pt-28 sm:pt-36 pb-16 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 overflow-hidden">
         
@@ -150,7 +150,7 @@ export default function Home() {
                   Agoè-Adjougba, Lomé (à 100m de BOXBERG)
                 </span>
                 <span>•</span>
-                <span className="text-ujmah-navy">Devise : « Servir dans l'union »</span>
+                <span className="text-ujmah-navy">Devise : « Servir l'humanité dans l'union »</span>
                 <span>•</span>
                 <span className="text-ujmah-orange">Ligne : +228 92 67 34 00</span>
               </div>
@@ -437,7 +437,7 @@ export default function Home() {
               </p>
 
               <p className="text-sm sm:text-base text-ujmah-dark-muted leading-relaxed mb-6">
-                Nous avons réuni nos modestes économies pour organiser des cours de soutien, partager les vivres de fête et porter secours. Reconnue officiellement par le Ministère de l'Administration Territoriale sous le récépissé <strong>N° 0315/MATDCL-SG-DLPAP-DOCA</strong>, l'UJMAH a grandi en gardant intacte sa boussole : <strong>« Servir dans l'union »</strong>.
+                Nous avons réuni nos modestes économies pour organiser des cours de soutien, partager les vivres de fête et porter secours. Reconnue officiellement par le Ministère de l'Administration Territoriale sous le récépissé <strong>N° 0315/MATDCL-SG-DLPAP-DOCA</strong>, l'UJMAH a grandi en gardant intacte sa boussole : <strong>« Servir l'humanité dans l'union »</strong>.
               </p>
 
               {/* Fiche d'Identité Institutionnelle */}
@@ -448,7 +448,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-between border-b border-ujmah-navy/5 pb-2">
                   <span className="text-ujmah-dark-muted font-bold">Devise Officielle :</span>
-                  <span className="font-sans font-bold text-ujmah-orange">« Servir dans l'union »</span>
+                  <span className="font-sans font-bold text-ujmah-orange">« Servir l'humanité dans l'union »</span>
                 </div>
                 <div className="flex justify-between border-b border-ujmah-navy/5 pb-2">
                   <span className="text-ujmah-dark-muted font-bold">Siège Social :</span>
@@ -757,7 +757,7 @@ export default function Home() {
               </div>
               <div className="border-b border-white/10 pb-3">
                 <span className="text-white/60 block text-[10px] uppercase font-semibold">Devise Officielle</span>
-                <span className="font-sans font-bold text-ujmah-sun text-sm">« Servir dans l'union »</span>
+                <span className="font-sans font-bold text-ujmah-sun text-sm">« Servir l'humanité dans l'union »</span>
               </div>
               <div className="border-b border-white/10 pb-3">
                 <span className="text-white/60 block text-[10px] uppercase font-semibold">Compte Coris Bank Togo</span>
