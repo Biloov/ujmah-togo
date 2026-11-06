@@ -123,14 +123,6 @@ export default function Home() {
             
             {/* Colonne Gauche : Titre Majeur & Repères Institutionnels */}
             <div className="lg:col-span-7 flex flex-col items-start">
-              
-              {/* Badge d'accréditation légale officielle */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-amber-300 shadow-xs mb-6">
-                <span className="w-2.5 h-2.5 rounded-full bg-ujmah-orange animate-pulse"></span>
-                <span className="text-xs font-bold text-ujmah-indigo uppercase tracking-wider">
-                  RÉCÉPISSÉ N° 0315/MATDCL • FONDÉE LE 23 JANVIER 2003
-                </span>
-              </div>
 
               {/* Devise Officielle inscrite au cœur du titre */}
               <h1 className="font-sans font-black text-4xl sm:text-6xl xl:text-7xl text-ujmah-navy tracking-tight leading-[1.08] mb-6">
