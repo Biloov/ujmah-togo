@@ -65,9 +65,9 @@ export default function Actions() {
     {
       id: "act-2",
       num: "02",
-      title: "Concours de Récitation du Coran (CRSC & CNRSC)",
+      title: "CRSC : Concours de Récitation du Saint Coran",
       category: "Éducation & Coran",
-      desc: "Grand rendez-vous national créant une saine émulation autour de la mémorisation et de la méditation du Livre saint, avec attribution de bourses et récompenses d'excellence.",
+      desc: "Grand événement national d'émulation coranique rassemblant des centaines de jeunes filles et garçons de tout le Togo (Lomé, Sokodé, Kara, Dapaong...) autour de la récitation, du Tajweed et de la mémorisation du Saint Coran, avec octroi de bourses d'excellence.",
       location: "Lomé et chefs-lieux régionaux",
       beneficiaries: "Centaines de jeunes candidats",
       impactKey: "Maîtrise du Tajweed et transmission des valeurs éthiques",
@@ -76,8 +76,8 @@ export default function Actions() {
       icon: <GraduationCap size={16} />,
       badgeBg: "bg-ujmah-indigo/10 border-ujmah-indigo/20",
       badgeText: "text-ujmah-indigo",
-      link: "/don",
-      btnText: "Soutenir le concours"
+      link: "/don?category=crsc",
+      btnText: "Soutenir le CRSC"
     },
     {
       id: "act-3",
@@ -110,7 +110,7 @@ export default function Actions() {
       icon: <Backpack size={16} />,
       badgeBg: "bg-ujmah-orange/10 border-ujmah-orange/20",
       badgeText: "text-ujmah-orange",
-      link: "/don",
+      link: "/don?category=kits",
       btnText: "Offrir un kit scolaire"
     },
     {
@@ -127,7 +127,7 @@ export default function Actions() {
       icon: <Droplets size={16} />,
       badgeBg: "bg-blue-500/10 border-blue-500/20",
       badgeText: "text-blue-700",
-      link: "/don",
+      link: "/don?category=forages",
       btnText: "Financer un forage"
     },
     {
@@ -144,7 +144,7 @@ export default function Actions() {
       icon: <Utensils size={16} />,
       badgeBg: "bg-amber-500/10 border-amber-500/20",
       badgeText: "text-amber-700",
-      link: "/don",
+      link: "/don?category=secours",
       btnText: "Participer aux colis"
     },
     {
