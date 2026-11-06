@@ -1,30 +1,26 @@
 import React, { useState } from 'react';
 import { 
-  ArrowRight, 
+  Heart, 
   BookOpen, 
   GraduationCap, 
-  Heart, 
-  Sparkles, 
   Droplets, 
   Backpack, 
   Utensils, 
-  ShieldCheck, 
-  CheckCircle2, 
   MapPin, 
   Phone, 
+  ArrowRight,
   ChevronRight,
-  Play,
-  Award,
-  Clock,
-  Building,
   Quote,
-  Users
+  Sparkles,
+  Calendar,
+  Smile,
+  ShieldCheck,
+  Check
 } from 'lucide-react';
 
 export default function Home() {
   const [sponsorshipMonths, setSponsorshipMonths] = useState<number>(1);
   const baseMonthlyAmount = 20250;
-
   const currentTotal = baseMonthlyAmount * sponsorshipMonths;
   const currentEur = Math.round(currentTotal / 655.957);
 
@@ -32,119 +28,121 @@ export default function Home() {
     <div className="bg-[#FAF8F5] min-h-screen text-ujmah-navy selection:bg-ujmah-sun selection:text-ujmah-indigo">
       
       {/* =========================================================================
-          1. HERO SECTION (Marges aérées et équilibrées, disque solaire, cartes)
+          1. HERO HUMAIN & CHALEUREUX
+          Pas de jargon marketing abstrait : un message sincère, touchant, fraternel
          ========================================================================= */}
-      <section className="relative pt-28 sm:pt-36 pb-20 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 overflow-hidden">
+      <section className="relative pt-28 sm:pt-36 pb-16 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 overflow-hidden">
         
-        {/* Vagues et auras douces en arrière-plan */}
-        <div className="absolute top-0 right-0 w-[45rem] h-[45rem] bg-gradient-to-bl from-amber-100/60 via-amber-50/40 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
-        <div className="absolute top-1/3 -left-32 w-[30rem] h-[30rem] bg-orange-100/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        {/* Douce lumière d'ambiance en arrière-plan */}
+        <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-gradient-to-bl from-amber-100/70 via-amber-50/40 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div className="absolute top-1/2 -left-32 w-[30rem] h-[30rem] bg-orange-100/50 rounded-full blur-3xl -z-10 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
             
-            {/* Colonne Gauche : Titre, Paragraphe & Boutons d'Action */}
+            {/* Colonne Gauche : Paroles du Cœur */}
             <div className="lg:col-span-7 flex flex-col items-start">
               
-              {/* Badge supérieur harmonisé */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 text-ujmah-orange text-xs font-bold uppercase tracking-wider mb-6 border border-amber-500/20">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-amber-200/80 shadow-xs text-xs font-bold text-ujmah-indigo mb-6">
                 <span className="w-2 h-2 rounded-full bg-ujmah-orange animate-pulse"></span>
-                ASSOCIATION HUMANITAIRE OFFICIELLE • RÉCÉPISSÉ N° 0315/MATDCL
+                <span>Auprès des orphelins et des familles du Togo depuis 2003</span>
               </div>
 
-              {/* Titre Principal avec la devise officielle exacte */}
               <h1 className="font-sans font-black text-4xl sm:text-6xl xl:text-7xl text-ujmah-navy tracking-tight leading-[1.08] mb-6">
                 Servir l'humanité <br />
-                <span className="text-ujmah-orange">
-                  dans l'union
-                </span>
+                <span className="text-ujmah-orange">dans l'union</span>
                 <span className="text-ujmah-indigo">.</span>
               </h1>
 
-              {/* Texte explicatif harmonisé */}
-              <p className="font-sans text-base sm:text-lg text-ujmah-dark-muted leading-relaxed max-w-xl mb-10">
-                Depuis le <strong>23 janvier 2003 au Togo</strong>, l'Union des Jeunes Musulmans pour l'Action Humanitaire œuvre pour l'éducation, la formation éthique de la jeunesse, le secours aux nécessiteux, l'hydraulique villageoise et la prise en charge intégrale des <strong>40 orphelins de Yelivo</strong>.
+              <p className="font-sans text-base sm:text-lg text-ujmah-dark-muted leading-relaxed max-w-xl mb-6">
+                Aucun enfant ne devrait grandir sans amour, ni quitter l'école faute de cahiers. À Lomé, dans le village de Yelivo et dans les hameaux isolés, nous sommes une famille de bénévoles et de donateurs unie pour tendre la main à ceux que la vie a éprouvés.
               </p>
 
-              {/* Boutons d'action harmonisés */}
-              <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+              {/* Rassurance locale sincère */}
+              <div className="flex flex-wrap items-center gap-y-2 gap-x-4 text-xs font-semibold text-ujmah-dark-muted mb-8 pb-6 border-b border-ujmah-navy/10 w-full max-w-xl">
+                <span className="flex items-center gap-1.5 text-ujmah-indigo">
+                  <MapPin size={15} className="text-ujmah-orange" />
+                  Siège à Agoè-Adjougba (Lomé)
+                </span>
+                <span>•</span>
+                <span>40 orphelins hébergés à Yelivo</span>
+                <span>•</span>
+                <span>23 ans de dévouement bénévole</span>
+              </div>
+
+              {/* Appels à l'action chaleureux */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
                 <a 
-                  href="/don" 
-                  className="inline-flex items-center justify-center gap-2.5 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-xl font-bold text-sm shadow-xl shadow-ujmah-orange/25 hover:shadow-ujmah-orange/40 hover:-translate-y-0.5 transition-all duration-300"
+                  href="/don?category=orphelinat&amount=20250" 
+                  className="inline-flex items-center justify-center gap-2.5 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-ujmah-orange/25 hover:shadow-ujmah-orange/40 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <Heart size={18} fill="currentColor" />
-                  Faire un don en ligne
+                  Parrainer un enfant de Yelivo
                 </a>
 
                 <a 
                   href="/qui-sommes-nous" 
-                  className="inline-flex items-center gap-3 text-ujmah-indigo hover:text-ujmah-orange font-bold text-sm px-4 py-3 rounded-xl transition-colors group"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-amber-50 text-ujmah-indigo border border-ujmah-navy/15 px-6 py-4 rounded-2xl font-bold text-sm transition-all shadow-xs"
                 >
-                  <div className="w-11 h-11 rounded-full bg-white shadow-md border border-ujmah-navy/10 flex items-center justify-center group-hover:scale-105 group-hover:border-ujmah-orange transition-all">
-                    <Play size={16} fill="currentColor" className="text-ujmah-orange ml-0.5" />
-                  </div>
-                  <span>Découvrir notre histoire (2003)</span>
+                  Notre histoire vécue
+                  <ArrowRight size={16} />
                 </a>
               </div>
 
             </div>
 
-            {/* Colonne Droite : Composition Visuelle avec Grand Disque Solaire & Cartes Flottantes */}
-            <div className="lg:col-span-5 relative flex justify-center">
-              
-              <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
+            {/* Colonne Droite : Le Foyer de Yelivo en Image Authentique */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative mx-auto max-w-md lg:max-w-none">
                 
-                {/* Grand Disque Solaire d'Arrière-Plan */}
-                <div className="absolute inset-0 m-auto w-[320px] sm:w-[380px] h-[320px] sm:h-[380px] rounded-full bg-gradient-to-tr from-ujmah-orange via-ujmah-sun to-amber-200 shadow-2xl opacity-90"></div>
+                {/* Cadre Photographique Chaleureux */}
+                <div className="bg-white p-3.5 sm:p-4 rounded-3xl shadow-xl border border-ujmah-navy/10 relative">
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-amber-50">
+                    <img 
+                      src="/assets/orphanage-yelivo.png" 
+                      alt="Le centre orphelinat de Yelivo près de Sokodé" 
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-                {/* Photo Centrale Découpée en cercle élégant */}
-                <div className="relative z-10 w-[290px] sm:w-[340px] h-[290px] sm:h-[340px] rounded-full overflow-hidden border-4 border-white shadow-2xl bg-ujmah-ivory">
-                  <img 
-                    src="/assets/orphanage-yelivo.png" 
-                    alt="Orphelinat Yelivo UJMAH" 
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800";
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                    {/* Légende photo sur l'image */}
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <span className="inline-block bg-ujmah-orange text-white text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full mb-1">
+                        Village de Yelivo • Sokodé
+                      </span>
+                      <p className="font-sans font-bold text-sm leading-snug">
+                        Orphelinat « MES ENFANTS »
+                      </p>
+                      <p className="text-[11px] text-white/80 mt-0.5">
+                        Un foyer protecteur pour 40 filles et garçons sous le regard bienveillant de Nazif AMOUSSOU.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Note chaleureuse sous la photo */}
+                  <div className="pt-3.5 px-2 flex items-center justify-between text-xs text-ujmah-dark-muted">
+                    <span className="flex items-center gap-1.5 font-medium">
+                      <Smile size={16} className="text-amber-500" />
+                      40 pensionnaires scolarisés
+                    </span>
+                    <a href="/orphelinat" className="text-ujmah-orange font-bold hover:underline flex items-center gap-0.5">
+                      Voir leur quotidien <ChevronRight size={14} />
+                    </a>
+                  </div>
                 </div>
 
-                {/* Badge Flottant 1 (Haut Droite) */}
-                <div className="absolute -top-2 right-0 sm:-right-4 z-20 bg-white rounded-2xl p-3.5 shadow-xl border border-ujmah-navy/5 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-ujmah-orange flex items-center justify-center">
-                    <Users size={18} />
-                  </div>
-                  <div>
-                    <span className="font-black text-sm text-ujmah-navy block leading-none">40 Enfants</span>
-                    <span className="text-[10px] text-ujmah-dark-muted font-medium">Orphelinat Yelivo</span>
-                  </div>
-                </div>
-
-                {/* Badge Flottant 2 (Milieu Gauche) */}
-                <div className="absolute top-1/2 -left-4 sm:-left-8 -translate-y-1/2 z-20 bg-white rounded-2xl p-3.5 shadow-xl border border-ujmah-navy/5 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-ujmah-indigo/10 text-ujmah-indigo flex items-center justify-center">
-                    <Clock size={18} />
-                  </div>
-                  <div>
-                    <span className="font-black text-sm text-ujmah-indigo block leading-none">23+ Ans</span>
-                    <span className="text-[10px] text-ujmah-dark-muted font-medium">D'actions continues</span>
-                  </div>
-                </div>
-
-                {/* Badge Flottant 3 (Bas Droite) */}
-                <div className="absolute -bottom-4 right-2 sm:right-0 z-20 bg-white rounded-2xl p-3.5 shadow-xl border border-ujmah-navy/5 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center">
-                    <ShieldCheck size={18} />
-                  </div>
-                  <div>
-                    <span className="font-black text-sm text-emerald-600 block leading-none">100% Direct</span>
-                    <span className="text-[10px] text-ujmah-dark-muted font-medium">Transparence totale</span>
-                  </div>
+                {/* Petite étiquette manuscrite flottante */}
+                <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-ujmah-indigo text-white p-4 rounded-2xl shadow-xl hidden sm:block max-w-[220px]">
+                  <p className="text-[11px] text-amber-200 font-bold uppercase tracking-wider">Un geste simple :</p>
+                  <p className="text-xs font-semibold leading-relaxed mt-0.5 text-white/90">
+                    675 F par jour suffisent pour nourrir et scolariser un orphelin.
+                  </p>
                 </div>
 
               </div>
-
             </div>
 
           </div>
@@ -153,36 +151,44 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          2. BANDEAU BLANC FLOTTANT D'AUTORITÉ & PARTENAIRES (Island Card)
+          2. UNE RELATION DE CONFIANCE : D'OÙ NOUS VENONS
+          Pas de tableau de logos froids : l'histoire humaine de la création
          ========================================================================= */}
-      <section className="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 -mt-6 mb-24">
-        <div className="bg-white rounded-3xl shadow-xl shadow-ujmah-navy/5 border border-ujmah-navy/10 p-6 sm:p-8">
-          <div className="text-center mb-6">
-            <span className="text-xs font-bold uppercase tracking-wider text-ujmah-dark-muted">
-              Cadre Légal & Ancrage Institutionnel au Togo
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center divide-y md:divide-y-0 md:divide-x divide-ujmah-navy/10 text-center">
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-16">
+        <div className="bg-white rounded-3xl border border-ujmah-navy/10 p-8 sm:p-12 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
-            <div className="pt-2 md:pt-0 px-4">
-              <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Ministère MATDCL</span>
-              <span className="font-sans text-xs font-extrabold text-ujmah-orange mt-0.5 block">Récépissé N° 0315</span>
+            <div className="lg:col-span-8">
+              <span className="text-xs font-bold uppercase tracking-widest text-ujmah-orange mb-2 block">
+                NOTRE HISTOIRE VÉCUE
+              </span>
+              <h2 className="font-sans font-black text-2xl sm:text-4xl text-ujmah-navy mb-4 leading-tight">
+                Tout a commencé un 23 janvier 2003 sous un hangar d'Agoè-Houmbi.
+              </h2>
+              <p className="text-sm sm:text-base text-ujmah-dark-muted leading-relaxed mb-4">
+                À cette époque, nous étions de simples étudiants, de jeunes enseignants et des artisans togolais. Face à la précarité qui frappait les veuves de notre quartier et aux enfants qui erraient sans pouvoir aller à l'école, nous ne pouvions pas rester spectateurs.
+              </p>
+              <p className="text-sm sm:text-base text-ujmah-dark-muted leading-relaxed">
+                Sans subvention ni grands moyens, nous avons cotisé nos maigres économies pour partager de la viande de fête, organiser des cours du soir et réparer les toitures de familles démunies. Vingt-trois ans plus tard, l'esprit est resté le même : <strong>une entraide fraternelle, sincère et directe</strong>.
+              </p>
             </div>
 
-            <div className="pt-4 md:pt-0 px-4">
-              <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Siège National</span>
-              <span className="text-xs font-extrabold text-ujmah-indigo mt-0.5 block">Agoè-Adjougba (100m BOXBERG)</span>
-            </div>
-
-            <div className="pt-4 md:pt-0 px-4">
-              <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Banque Partenaire</span>
-              <span className="text-xs font-extrabold text-ujmah-navy mt-0.5 block">Coris Bank International Togo</span>
-            </div>
-
-            <div className="pt-4 md:pt-0 px-4">
-              <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Centre Orphelinat</span>
-              <span className="text-xs font-extrabold text-emerald-600 mt-0.5 block">Village de Yelivo (Sokodé)</span>
+            <div className="lg:col-span-4 bg-[#FAF8F5] p-6 rounded-2xl border border-ujmah-navy/5 space-y-4">
+              <div className="border-b border-ujmah-navy/10 pb-3">
+                <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Fondation</span>
+                <span className="font-sans font-black text-xl text-ujmah-indigo">23 Janvier 2003</span>
+                <span className="text-xs text-ujmah-dark-muted block mt-0.5">Agoè-Houmbi, Lomé</span>
+              </div>
+              <div className="border-b border-ujmah-navy/10 pb-3">
+                <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Agrément Légal</span>
+                <span className="font-sans font-black text-base text-ujmah-navy">Récépissé N° 0315</span>
+                <span className="text-xs text-ujmah-dark-muted block mt-0.5">Ministère de l'Administration Territoriale</span>
+              </div>
+              <div>
+                <span className="text-[11px] uppercase font-bold text-ujmah-dark-muted block">Siège Actuel</span>
+                <span className="font-sans font-bold text-sm text-ujmah-navy">Agoè-Adjougba</span>
+                <span className="text-xs text-ujmah-dark-muted block mt-0.5">À 100m de BOXBERG (+228 92 67 34 00)</span>
+              </div>
             </div>
 
           </div>
@@ -190,221 +196,224 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          3. SECTION "QUI SOMMES-NOUS" (Arche Visuelle Asymétrique)
+          3. AU CŒUR DU FOYER DE YELIVO : 40 ENFANTS, 40 VIES
+          Présentation humaine, sensible et concrète du parrainage
+         ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-12 mb-16">
+        
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <span className="text-xs font-bold uppercase tracking-widest text-ujmah-orange mb-2 block">
+            LE REFUGE DE YELIVO
+          </span>
+          <h2 className="font-sans font-black text-3xl sm:text-5xl text-ujmah-navy tracking-tight mb-4">
+            À Yelivo, ce ne sont pas des dossiers.<br /> Ce sont nos enfants.
+          </h2>
+          <p className="text-sm sm:text-base text-ujmah-dark-muted leading-relaxed">
+            Situé à quelques kilomètres de Sokodé dans la Région Centrale, l'orphelinat « MES ENFANTS » offre un toit protecteur, de l'affection et un avenir à 40 jeunes filles et garçons orphelins de père, de mère ou en situation de grande détresse.
+          </p>
+        </div>
+
+        {/* Bloc Parrainage Interactif & Concret */}
+        <div className="bg-white rounded-3xl border border-ujmah-navy/10 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+          
+          {/* Colonne Gauche : Ce que vit l'enfant au quotidien */}
+          <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
+            <div>
+              <h3 className="font-sans font-black text-2xl text-ujmah-indigo mb-4">
+                Ce que votre parrainage change chaque matin :
+              </h3>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-amber-50/60 border border-amber-100">
+                  <div className="w-8 h-8 rounded-xl bg-ujmah-orange text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Utensils size={16} />
+                  </div>
+                  <div>
+                    <h4 className="font-sans font-bold text-sm text-ujmah-navy">3 repas chauds et équilibrés par jour</h4>
+                    <p className="text-xs text-ujmah-dark-muted leading-relaxed mt-0.5">
+                      Petit-déjeuner avant l'école, déjeuner nutritif et dîner partagé en famille. Aucun enfant ne se couche la faim au ventre.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-indigo-50/60 border border-indigo-100">
+                  <div className="w-8 h-8 rounded-xl bg-ujmah-indigo text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Backpack size={16} />
+                  </div>
+                  <div>
+                    <h4 className="font-sans font-bold text-sm text-ujmah-navy">Scolarité complète & devoirs du soir</h4>
+                    <p className="text-xs text-ujmah-dark-muted leading-relaxed mt-0.5">
+                      Frais d'écolage payés, uniformes cousus, sacs, livres et répétitions le soir pour que chaque enfant puisse réussir.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-emerald-50/60 border border-emerald-100">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <ShieldCheck size={16} />
+                  </div>
+                  <div>
+                    <h4 className="font-sans font-bold text-sm text-ujmah-navy">Santé, vaccins & soins immédiats</h4>
+                    <p className="text-xs text-ujmah-dark-muted leading-relaxed mt-0.5">
+                      Visite médicale périodique, traitement rapide du paludisme et boîte à pharmacie surveillée au centre.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Sélecteur de Parrainage */}
+            <div className="pt-6 border-t border-ujmah-navy/10">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+                <div>
+                  <span className="text-xs font-bold text-ujmah-dark-muted uppercase tracking-wider block">
+                    Formule de parrainage mensuel :
+                  </span>
+                  <div className="flex items-baseline gap-2 mt-0.5">
+                    <span className="font-sans font-black text-3xl sm:text-4xl text-ujmah-orange">
+                      {currentTotal.toLocaleString('fr-FR')} FCFA
+                    </span>
+                    <span className="text-xs text-ujmah-dark-muted font-semibold">
+                      (env. {currentEur} € pour {sponsorshipMonths} {sponsorshipMonths === 1 ? 'mois' : 'mois'})
+                    </span>
+                  </div>
+                </div>
+
+                {/* Choix de durée */}
+                <div className="flex gap-2">
+                  {[1, 3, 6, 12].map((m) => (
+                    <button
+                      key={m}
+                      onClick={() => setSponsorshipMonths(m)}
+                      className={`px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                        sponsorshipMonths === m
+                          ? "bg-ujmah-indigo text-white shadow-sm"
+                          : "bg-[#FAF8F5] text-ujmah-navy/70 hover:bg-amber-100"
+                      }`}
+                    >
+                      {m} {m === 1 ? 'mois' : 'mois'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <a
+                href={`/don?category=orphelinat&amount=${currentTotal}`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-ujmah-orange/25 transition-all text-center"
+              >
+                <Heart size={18} fill="currentColor" />
+                Parrainer pour {currentTotal.toLocaleString('fr-FR')} FCFA via SasPay
+              </a>
+            </div>
+
+          </div>
+
+          {/* Colonne Droite : Parole de Nazif AMOUSSOU, Directeur du centre */}
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#1E1552] to-ujmah-navy text-white p-8 sm:p-12 flex flex-col justify-between">
+            <div>
+              <div className="w-14 h-14 rounded-2xl bg-white/10 text-ujmah-sun flex items-center justify-center mb-6">
+                <Quote size={28} />
+              </div>
+
+              <blockquote className="font-sans text-base sm:text-lg text-white/90 leading-relaxed italic mb-6">
+                « Les enfants ne nous demandent pas l'impossible. Ils demandent juste à savoir qu'ils ne sont pas abandonnés, qu'il y aura un repas ce soir et quelqu'un pour leur dire bravo quand ils ramènent une bonne note. Votre soutien, c'est ce qui fait battre le cœur de cette maison. »
+              </blockquote>
+
+              <div className="pt-4 border-t border-white/15">
+                <p className="font-sans font-black text-sm text-white">Nazif AMOUSSOU</p>
+                <p className="text-xs text-amber-200 mt-0.5">Directeur résident de l'Orphelinat de Yelivo</p>
+              </div>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-white/10 text-xs text-white/70">
+              Vous voyagez à Sokodé ? Le centre est ouvert aux visiteurs et aux donateurs. Prévenez le bureau au <strong>+228 92 67 34 00</strong>.
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =========================================================================
+          4. NOS AUTRES ACTIONS SUR LE TERRAIN : DES GESTES, PAS DES STATISTIQUES
          ========================================================================= */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-16 mb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Colonne Gauche : Arche Visuelle Découpée + Badge 23+ Ans */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-sm lg:max-w-none">
-              
-              {/* Arche Découpée */}
-              <div className="rounded-t-full rounded-b-3xl overflow-hidden shadow-2xl border-4 border-white bg-amber-50 relative aspect-[4/5]">
-                <img 
-                  src="/assets/sefima-weaving.png" 
-                  alt="Membres et Jeunes de l'UJMAH" 
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=800";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ujmah-navy/60 via-transparent to-transparent"></div>
-              </div>
-
-              {/* Badge Circulaire Flottant "23+ Ans" */}
-              <div className="absolute -top-4 -left-4 sm:-left-8 bg-white rounded-3xl p-5 shadow-2xl border border-ujmah-navy/10 flex flex-col items-center justify-center text-center w-28 h-28 sm:w-32 sm:h-32">
-                <span className="font-sans font-black text-3xl sm:text-4xl text-ujmah-orange leading-none">23+</span>
-                <span className="text-[10px] sm:text-[11px] font-bold text-ujmah-navy uppercase tracking-wider mt-1 leading-tight">
-                  Ans d'actions continues
-                </span>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Colonne Droite : Textes & Lignes de Preuves */}
-          <div className="lg:col-span-7 flex flex-col items-start lg:pl-8">
-            
-            <span className="text-xs font-bold uppercase tracking-widest text-ujmah-orange mb-3 block">
-              QUI SOMMES-NOUS ?
-            </span>
-
-            <h2 className="font-sans font-black text-3xl sm:text-5xl text-ujmah-navy tracking-tight leading-tight mb-6">
-              Une jeunesse engagée, <br />
-              <span className="text-ujmah-indigo">des actions concrètes sur le terrain.</span>
-            </h2>
-
-            <p className="text-sm sm:text-base text-ujmah-dark-muted leading-relaxed mb-8">
-              Fondée le <strong>23 janvier 2003 à Agoè-Houmbi (Lomé)</strong>, l'UJMAH rassemble des élèves, des étudiants et des cadres musulmans mobilisés pour traduire les valeurs d'entraide, de fraternité et d'éthique en résultats tangibles et pérennes pour le Togo.
-            </p>
-
-            {/* 2 Lignes de caractéristiques avec icônes */}
-            <div className="space-y-6 w-full mb-10">
-              
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-ujmah-orange flex items-center justify-center flex-shrink-0">
-                  <GraduationCap size={24} />
-                </div>
-                <div>
-                  <h4 className="font-sans font-bold text-base text-ujmah-navy">
-                    Éducation, Éthique & Leadership Jeunesse
-                  </h4>
-                  <p className="text-xs sm:text-sm text-ujmah-dark-muted leading-relaxed mt-0.5">
-                    Concours national de récitation du Saint Coran (CRSC), séminaires managériaux SEFIMA et cercles d'études authentiques selon les pieux prédécesseurs.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-ujmah-indigo/10 text-ujmah-indigo flex items-center justify-center flex-shrink-0">
-                  <Heart size={24} />
-                </div>
-                <div>
-                  <h4 className="font-sans font-bold text-base text-ujmah-navy">
-                    Secours aux Orphelins & Hydraulique Villageoise
-                  </h4>
-                  <p className="text-xs sm:text-sm text-ujmah-dark-muted leading-relaxed mt-0.5">
-                    Prise en charge intégrale des 40 pensionnaires du centre « MES ENFANTS » à Yelivo, forages de puits d'eau potable et colis alimentaires de solidarité.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            <a 
-              href="/qui-sommes-nous" 
-              className="inline-flex items-center gap-2 bg-ujmah-indigo hover:bg-ujmah-indigo-dark text-white px-7 py-3.5 rounded-xl font-bold text-xs sm:text-sm transition-all shadow-md"
-            >
-              Découvrir la gouvernance complète (10 membres)
-              <ArrowRight size={16} />
-            </a>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* =========================================================================
-          4. SERVICES / PILIERS (Les 4 Cartes dont la 1ère Mise en Valeur en Orange)
-         ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 py-16 mb-20">
         
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="max-w-3xl mb-12">
           <span className="text-xs font-bold uppercase tracking-widest text-ujmah-orange mb-2 block">
-            NOS DOMAINES D'INTERVENTION
+            NOS ENGAGEMENTS AU QUOTIDIEN
           </span>
-          <h2 className="font-sans font-black text-3xl sm:text-5xl text-ujmah-navy tracking-tight">
-            Une action globale au service de l'homme
+          <h2 className="font-sans font-black text-3xl sm:text-5xl text-ujmah-navy tracking-tight leading-tight mb-4">
+            Ce que nous faisons concrètement à travers le Togo.
           </h2>
+          <p className="text-sm sm:text-base text-ujmah-dark-muted leading-relaxed">
+            L'UJMAH ne se limite pas à un bureau. Nos bénévoles parcourent les villages, les collèges et les quartiers pour agir là où le besoin se fait le plus sentir.
+          </p>
         </div>
 
-        {/* Grille des 4 Cartes (1ère carte en dégradé orange/soleil) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        {/* 3 Cartes Récits Vivants */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* CARTE 1 MISE EN VALEUR : Orphelinat de Yelivo (Fond Orange Chaud) */}
-          <div className="rounded-3xl bg-gradient-to-br from-ujmah-orange to-[#f57c00] text-white p-6 sm:p-7 shadow-2xl flex flex-col justify-between transform lg:-translate-y-2">
+          {/* Action 1 : Le Coran & l'Éducation */}
+          <div className="bg-white rounded-3xl p-8 border border-ujmah-navy/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-white/20 text-white flex items-center justify-center mb-6">
-                <Heart size={24} fill="currentColor" />
-              </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider text-amber-200 block mb-1">
-                Chantier Prioritaire
-              </span>
-              <h3 className="font-sans font-black text-xl text-white mb-2">
-                Orphelinat Yelivo
-              </h3>
-              <p className="text-xs text-white/90 leading-relaxed mb-6">
-                40 enfants orphelins pris en charge à 100% : hébergement, alimentation équilibrée, scolarité et soins médicaux sous la direction de Nazif AMOUSSOU.
-              </p>
-
-              {/* Mini Calculateur de Parrainage */}
-              <div className="bg-black/15 backdrop-blur-sm rounded-xl p-3.5 mb-4 border border-white/20">
-                <span className="text-[10px] text-white/80 block uppercase font-bold mb-1">Formule Parrainage</span>
-                <span className="font-black text-2xl text-white block">20 250 FCFA</span>
-                <span className="text-[10px] text-amber-100">/ mois par enfant (≈ 31 €)</span>
-              </div>
-            </div>
-
-            <a 
-              href="/don?category=orphelinat&amount=20250"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center bg-white text-ujmah-orange hover:bg-amber-50 font-bold text-xs py-3 rounded-xl transition-all shadow-md block mt-4"
-            >
-              Parrainer un enfant
-            </a>
-          </div>
-
-          {/* CARTE 2 (Blanche) : Concours de Coran */}
-          <div className="rounded-3xl bg-white border border-ujmah-navy/10 p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-ujmah-orange flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-ujmah-indigo flex items-center justify-center mb-6">
                 <GraduationCap size={24} />
               </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider text-ujmah-dark-muted block mb-1">
-                Programme #01
+              <span className="text-[11px] font-bold text-ujmah-indigo uppercase tracking-wider block mb-1">
+                Le Savoir & la Foi
               </span>
-              <h3 className="font-sans font-black text-xl text-ujmah-navy mb-2">
-                Concours de Coran (CRSC)
+              <h3 className="font-sans font-black text-xl text-ujmah-navy mb-3">
+                Concours de Coran & Assises de Sciences
               </h3>
-              <p className="text-xs text-ujmah-dark-muted leading-relaxed mb-6">
-                Compétition annuelle nationale et régionale d'émulation spirituelle pour la récitation et la mémorisation du Saint Coran.
+              <p className="text-xs sm:text-sm text-ujmah-dark-muted leading-relaxed mb-6">
+                Régulièrement, des centaines de jeunes filles et garçons de Lomé à Dapaong se réunissent pour réciter le Coran, apprendre les règles du Tajweed et s'imprégner d'une éthique de paix, de tolérance et de respect civique.
               </p>
             </div>
-            <a 
-              href="/actions" 
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-ujmah-indigo hover:text-ujmah-orange transition-colors"
-            >
-              En savoir plus <ChevronRight size={14} />
+            <a href="/actions" className="inline-flex items-center gap-1.5 text-xs font-bold text-ujmah-indigo hover:text-ujmah-orange transition-colors pt-4 border-t border-ujmah-navy/5">
+              Voir les concours et assises <ChevronRight size={14} />
             </a>
           </div>
 
-          {/* CARTE 3 (Blanche) : Séminaires SEFIMA */}
-          <div className="rounded-3xl bg-white border border-ujmah-navy/10 p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
+          {/* Action 2 : L'Eau Potable */}
+          <div className="bg-white rounded-3xl p-8 border border-ujmah-navy/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all">
             <div>
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-ujmah-orange flex items-center justify-center mb-6">
-                <BookOpen size={24} />
-              </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider text-ujmah-dark-muted block mb-1">
-                Programme #02
-              </span>
-              <h3 className="font-sans font-black text-xl text-ujmah-navy mb-2">
-                Séminaires SEFIMA
-              </h3>
-              <p className="text-xs text-ujmah-dark-muted leading-relaxed mb-6">
-                Formation islamique et managériale intensive des cadres : leadership citoyen, gestion associative et éthique professionnelle.
-              </p>
-            </div>
-            <a 
-              href="/actions" 
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-ujmah-indigo hover:text-ujmah-orange transition-colors"
-            >
-              En savoir plus <ChevronRight size={14} />
-            </a>
-          </div>
-
-          {/* CARTE 4 (Blanche) : Solidarité & Forages */}
-          <div className="rounded-3xl bg-white border border-ujmah-navy/10 p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all flex flex-col justify-between">
-            <div>
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-ujmah-orange flex items-center justify-center mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
                 <Droplets size={24} />
               </div>
-              <span className="text-[10px] uppercase font-bold tracking-wider text-ujmah-dark-muted block mb-1">
-                Programme #03
+              <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider block mb-1">
+                Sadaqa Jariya
               </span>
-              <h3 className="font-sans font-black text-xl text-ujmah-navy mb-2">
-                Hydraulique & Vivres
+              <h3 className="font-sans font-black text-xl text-ujmah-navy mb-3">
+                Forages de Puits d'Eau Potable
               </h3>
-              <p className="text-xs text-ujmah-dark-muted leading-relaxed mb-6">
-                Forages de puits d'eau potable dans les villages (Sadaqa Jariya), partage de viande de Tabaski et colis alimentaires de Ramadan.
+              <p className="text-xs sm:text-sm text-ujmah-dark-muted leading-relaxed mb-6">
+                Dans les villages arides du Nord et de la région Centrale, les mères et les enfants marchaient des kilomètres pour puiser une eau insalubre. Nos forages apportent l'eau claire au cœur des hameaux, préservant la santé de milliers d'âmes.
               </p>
             </div>
-            <a 
-              href="/actions" 
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-ujmah-indigo hover:text-ujmah-orange transition-colors"
-            >
-              En savoir plus <ChevronRight size={14} />
+            <a href="/don?category=forages" className="inline-flex items-center gap-1.5 text-xs font-bold text-ujmah-indigo hover:text-ujmah-orange transition-colors pt-4 border-t border-ujmah-navy/5">
+              Participer à un forage <ChevronRight size={14} />
+            </a>
+          </div>
+
+          {/* Action 3 : Kits Scolaires & Tabaski */}
+          <div className="bg-white rounded-3xl p-8 border border-ujmah-navy/10 shadow-sm flex flex-col justify-between hover:shadow-xl transition-all">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-amber-50 text-ujmah-orange flex items-center justify-center mb-6">
+                <Backpack size={24} />
+              </div>
+              <span className="text-[11px] font-bold text-ujmah-orange uppercase tracking-wider block mb-1">
+                Solidarité Directe
+              </span>
+              <h3 className="font-sans font-black text-xl text-ujmah-navy mb-3">
+                Kits Scolaires & Partage de Tabaski
+              </h3>
+              <p className="text-xs sm:text-sm text-ujmah-dark-muted leading-relaxed mb-6">
+                Chaque rentrée de septembre, des sacs à dos et des cahiers sont distribués aux enfants démunis pour qu'aucun ne soit renvoyé de classe. À la fête de Tabaski et au Ramadan, nous livrons vivres et viande aux familles répertoriées.
+              </p>
+            </div>
+            <a href="/don?category=kits" className="inline-flex items-center gap-1.5 text-xs font-bold text-ujmah-indigo hover:text-ujmah-orange transition-colors pt-4 border-t border-ujmah-navy/5">
+              Offrir un kit scolaire <ChevronRight size={14} />
             </a>
           </div>
 
@@ -413,68 +422,99 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          5. BANDEAU DE FOND SOMBRE AVEC CHIFFRES CLÉS
+          5. QUI SONT LES MEMBRES ? DES CITOYENS TOGOLAIS QUI S'ENGAGENT
          ========================================================================= */}
-      <section className="bg-gradient-to-br from-[#100830] via-[#1E1552] to-[#0B132B] text-white py-20 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto text-center relative z-10">
+      <section className="bg-white border-y border-ujmah-navy/10 py-16 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20">
+        <div className="max-w-7xl mx-auto">
           
-          <span className="text-xs font-bold uppercase tracking-widest text-ujmah-sun mb-4 block">
-            ENGAGEMENT CITOYEN & SOLIDAIRE
-          </span>
-
-          <h2 className="font-sans font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight mb-6">
-            Servir l'humanité dans l'union, <br />
-            auprès des orphelins et des démunis du Togo.
-          </h2>
-
-          <p className="text-sm sm:text-base text-white/70 max-w-2xl mx-auto mb-14 leading-relaxed">
-            « L'UJMAH est le témoignage vivant d'une jeunesse qui a choisi la foi par les actes, l'excellence citoyenne et la fraternité sans frontière. » — <strong>AMIDOU Bilal</strong>, Président de l'UJMAH Togo.
-          </p>
-
-          {/* 3 Chiffres Clés en Bas */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-white/10 max-w-3xl mx-auto mb-10">
-            <div>
-              <span className="font-sans font-black text-4xl sm:text-5xl text-ujmah-sun block leading-none mb-2">
-                23+
-              </span>
-              <span className="text-xs text-white/70 uppercase tracking-wider font-semibold">
-                Années d'action continue
-              </span>
-            </div>
-
-            <div>
-              <span className="font-sans font-black text-4xl sm:text-5xl text-ujmah-orange block leading-none mb-2">
-                40
-              </span>
-              <span className="text-xs text-white/70 uppercase tracking-wider font-semibold">
-                Orphelins à Yelivo
-              </span>
-            </div>
-
-            <div>
-              <span className="font-sans font-black text-4xl sm:text-5xl text-white block leading-none mb-2">
-                100%
-              </span>
-              <span className="text-xs text-white/70 uppercase tracking-wider font-semibold">
-                Transparence financière
-              </span>
-            </div>
+          <div className="max-w-3xl mb-12">
+            <span className="text-xs font-bold uppercase tracking-widest text-ujmah-orange mb-2 block">
+              DES VISAGES, DES BÉNÉVOLES, UNE ÉQUIPE
+            </span>
+            <h2 className="font-sans font-black text-2xl sm:text-4xl text-ujmah-navy tracking-tight mb-4">
+              L'UJMAH, ce sont des citoyens ordinaires animés par la foi du bien.
+            </h2>
+            <p className="text-sm sm:text-base text-ujmah-dark-muted leading-relaxed">
+              Les membres de notre Bureau Exécutif sont des enseignants, des commerçants, des techniciens, des mères et des pères de famille. Aucun ne tire de profit personnel : tout notre temps est offert pour servir.
+            </p>
           </div>
 
-          {/* Actions finales */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { name: "AMIDOU Bilal", role: "Président", job: "Commerçant & Designer" },
+              { name: "MOUSSA Rafiou", role: "Vice-président", job: "Enseignant au CEG Centre" },
+              { name: "AMOUSSOU Nazif", role: "Directeur de l'Orphelinat", job: "Responsable à Yelivo" },
+              { name: "KALILOU Moussa", role: "Affaires Administratives", job: "Enseignant au CEG Privé" },
+              { name: "ALEDJI Nazifa", role: "Finances & Patrimoine", job: "Gestionnaire Finance" },
+              { name: "OURO GOUNI Abdul Malik", role: "Formations", job: "Étudiant Sciences Islamiques" },
+              { name: "HLOMEGBE Ishaac", role: "Communication", job: "Entrepreneur agro-pastoral" },
+              { name: "BOLBIGOU Chafiou", role: "Organisation", job: "Enseignant & Master" },
+              { name: "AMOUSSOU Baki", role: "Ressources Humaines", job: "Enseignant cours primaire" },
+              { name: "TCHADENOU Cherifa", role: "Affaires Féminines", job: "Technicienne Télécoms" }
+            ].map((m, idx) => (
+              <div key={idx} className="bg-[#FAF8F5] p-4 rounded-2xl border border-ujmah-navy/5 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-bold text-ujmah-orange uppercase tracking-wider block">
+                    {m.role}
+                  </span>
+                  <p className="font-sans font-black text-sm text-ujmah-navy mt-1 leading-snug">
+                    {m.name}
+                  </p>
+                </div>
+                <p className="text-[11px] text-ujmah-dark-muted mt-2 pt-2 border-t border-ujmah-navy/5">
+                  {m.job}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center sm:text-left">
+            <a 
+              href="/qui-sommes-nous" 
+              className="inline-flex items-center gap-2 text-xs font-bold text-ujmah-indigo hover:text-ujmah-orange transition-colors"
+            >
+              En savoir plus sur notre gouvernance et nos statuts <ArrowRight size={14} />
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      {/* =========================================================================
+          6. BANDEAU DE FIN : UN MESSAGE DU PRÉSIDENT ET APPEL À LA FAMILLE UJMAH
+         ========================================================================= */}
+      <section className="bg-gradient-to-br from-[#100830] via-[#1E1552] to-[#0B132B] text-white py-20 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 relative overflow-hidden">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          
+          <div className="w-16 h-16 rounded-full bg-white/10 text-ujmah-sun flex items-center justify-center mx-auto mb-6">
+            <Heart size={28} fill="currentColor" />
+          </div>
+
+          <h2 className="font-sans font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight mb-6">
+            « Votre don n'est pas une simple transaction. C'est une promesse faite à un orphelin. »
+          </h2>
+
+          <p className="text-sm sm:text-base text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Rejoignez cette chaîne de solidarité togolaise. Que ce soit par un parrainage régulier, une aumône ponctuelle ou un engagement bénévole, votre présence change tout.
+          </p>
+
           <div className="flex flex-wrap items-center justify-center gap-4">
             <a 
               href="/don" 
-              className="bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-xl font-bold text-sm shadow-xl shadow-ujmah-orange/25 transition-all"
+              className="bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-ujmah-orange/30 hover:-translate-y-0.5 transition-all"
             >
-              Faire un don
+              Faire un don en ligne (SasPay / Mobile Money)
             </a>
             <a 
               href="/contact" 
-              className="glass-card-dark text-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-sm border border-white/20 transition-all"
+              className="glass-card-dark text-white hover:bg-white/10 px-8 py-4 rounded-2xl font-bold text-sm border border-white/20 transition-all"
             >
-              Contacter le siège (+228 92 67 34 00)
+              Nous contacter à Lomé (+228 92 67 34 00)
             </a>
+          </div>
+
+          <div className="pt-12 mt-12 border-t border-white/10 text-xs text-white/60">
+            Association UJMAH Togo • Récépissé N° 0315/MATDCL-SG-DLPAP-DOCA • Compte Coris Bank : <strong>TG182 01010 008811824401 13</strong>
           </div>
 
         </div>

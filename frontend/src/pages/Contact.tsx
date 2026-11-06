@@ -49,7 +49,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-28 pb-20 px-6 bg-ujmah-ivory min-h-screen">
+    <div className="pt-28 sm:pt-36 pb-24 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 bg-ujmah-ivory min-h-screen">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}

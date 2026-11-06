@@ -205,7 +205,7 @@ export default function Galerie() {
       {/* =========================================================================
           1. HERO HEADER MÉDIATHÈQUE (Inspiré Behance & Dribbble)
          ========================================================================= */}
-      <section className="relative hero-mesh-bg text-white pt-36 pb-20 px-6 overflow-hidden">
+      <section className="relative hero-mesh-bg text-white pt-36 pb-20 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 overflow-hidden">
         
         {/* Cercles de lumière d'ambiance */}
         <div className="absolute top-1/3 -right-24 w-80 h-80 bg-ujmah-sun/15 rounded-full blur-3xl pointer-events-none"></div>

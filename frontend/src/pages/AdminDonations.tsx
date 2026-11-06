@@ -68,7 +68,7 @@ export default function AdminDonations() {
           <div>
             <h1 className="font-sans font-extrabold text-3xl">Historique des Dons</h1>
             <p className="font-sans text-sm text-ujmah-navy/60 leading-relaxed mt-1">
-              Consultez l'historique complet des dons Genius Pay et générez les reçus fiscaux PDF.
+              Consultez l'historique complet des dons SasPay & Mobile Money et générez les reçus fiscaux PDF.
             </p>
           </div>
 
