@@ -27,38 +27,38 @@ export default function Navbar() {
     <header className="fixed top-0 left-0 w-full z-[1000] transition-all duration-300">
       <nav className={`w-full transition-all duration-300 ${
         isScrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-ujmah-navy/10 py-3.5" 
-          : "bg-white/90 backdrop-blur-md border-b border-ujmah-navy/5 py-4"
+          ? "bg-white/95 backdrop-blur-md shadow-md border-b border-ujmah-navy/10 py-3" 
+          : "bg-white/90 backdrop-blur-md border-b border-ujmah-navy/5 py-3.5"
       }`}>
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 flex justify-between items-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 flex items-center justify-between gap-4">
           
-          {/* Logo & Signature Officielle : "UJMAH" avec typographie élégante */}
-          <a href="/" className="flex items-center gap-3.5 group">
+          {/* 1. Logo & Signature Officielle à gauche */}
+          <a href="/" className="flex items-center gap-3 group flex-shrink-0">
             <img 
               src="/logo-ujmahvf.png" 
               alt="UJMAH" 
-              className="h-11 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-105" 
+              className="h-10 sm:h-11 w-auto transition-transform duration-300 group-hover:scale-105" 
               onError={(e) => {
                 e.currentTarget.src = "https://placehold.co/150x50/0b1f3a/ffffff?text=UJMAH";
               }}
             />
-            <div className="hidden sm:flex flex-col border-l border-ujmah-navy/15 pl-3.5">
-              <span className="font-sans font-black text-xl tracking-tight text-ujmah-indigo leading-none">
+            <div className="hidden sm:flex flex-col border-l border-ujmah-navy/15 pl-3">
+              <span className="font-sans font-black text-lg sm:text-xl tracking-tight text-ujmah-indigo leading-none">
                 UJMAH
               </span>
-              <span className="font-sans text-[9px] text-ujmah-orange font-bold uppercase tracking-widest mt-1">
+              <span className="font-sans text-[8px] sm:text-[8.5px] text-ujmah-orange font-bold uppercase tracking-wider mt-1 whitespace-nowrap">
                 Servir l'humanité dans l'union
               </span>
             </div>
           </a>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-7">
+          {/* 2. Liens de navigation parfaitement CENTRÉS et à taille raffinée */}
+          <div className="hidden lg:flex items-center justify-center flex-1 gap-4 xl:gap-7 px-2">
             {navLinks.map((link) => (
               <a 
                 key={link.label}
                 href={link.href} 
-                className="font-sans font-semibold text-xs xl:text-sm text-ujmah-navy/80 hover:text-ujmah-indigo relative py-1 transition-colors duration-200 group"
+                className="font-sans font-semibold text-[13px] text-ujmah-navy/75 hover:text-ujmah-indigo relative py-1 transition-colors duration-200 group whitespace-nowrap"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ujmah-orange transition-all duration-300 group-hover:w-full"></span>
@@ -66,13 +66,13 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Action CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* 3. Bouton d'Action à droite */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a 
               href="/don" 
-              className="inline-flex items-center gap-2 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-5 py-2.5 rounded-full font-sans font-extrabold text-xs xl:text-sm transition-all duration-300 shadow-md shadow-ujmah-orange/25 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-5 py-2.5 rounded-full font-sans font-extrabold text-xs transition-all duration-300 shadow-md shadow-ujmah-orange/25 hover:shadow-lg hover:-translate-y-0.5"
             >
-              <Heart size={15} fill="currentColor" />
+              <Heart size={14} fill="currentColor" />
               Faire un don
             </a>
           </div>
@@ -94,7 +94,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-4">
             <div className="pb-4 border-b border-ujmah-navy/10">
               <span className="font-sans font-black text-2xl text-ujmah-indigo block leading-none">UJMAH</span>
-              <span className="font-sans text-[10px] text-ujmah-orange font-bold uppercase tracking-widest mt-1 block">
+              <span className="font-sans text-[10px] text-ujmah-orange font-bold uppercase tracking-wider mt-1 block">
                 Servir l'humanité dans l'union
               </span>
             </div>
@@ -111,19 +111,14 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex flex-col gap-3">
-            <a 
-              href="/don" 
-              className="inline-flex items-center justify-center gap-2 bg-ujmah-orange text-white px-6 py-3.5 rounded-full font-sans font-bold text-sm shadow-lg shadow-ujmah-orange/25"
-              onClick={() => setIsOpen(false)}
-            >
-              <Heart size={18} fill="currentColor" />
-              Faire un don
-            </a>
-            <div className="text-center font-sans text-[11px] text-ujmah-navy/50">
-              Siège : Agoè-Adjougba, Lomé
-            </div>
-          </div>
+          <a 
+            href="/don" 
+            className="w-full inline-flex items-center justify-center gap-2 bg-ujmah-orange text-white py-3.5 rounded-full font-sans font-bold text-sm shadow-md"
+            onClick={() => setIsOpen(false)}
+          >
+            <Heart size={16} fill="currentColor" />
+            Faire un don
+          </a>
         </div>
       </nav>
     </header>
