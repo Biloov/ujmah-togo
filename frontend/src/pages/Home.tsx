@@ -155,23 +155,23 @@ export default function Home() {
                 <span className="text-ujmah-orange">Ligne : +228 92 67 34 00</span>
               </div>
 
-              {/* Boutons d'Action Clairs (Inspiré Biztop : bouton primaire avec icône + bouton d'appel) */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+              {/* Boutons d'Action Clairs et Responsifs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
                 <a 
                   href="/don" 
-                  className="inline-flex items-center justify-center gap-2.5 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-ujmah-orange/25 hover:shadow-ujmah-orange/40 hover:-translate-y-0.5 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl font-bold text-xs sm:text-sm shadow-xl shadow-ujmah-orange/25 hover:shadow-ujmah-orange/40 hover:-translate-y-0.5 transition-all duration-300 whitespace-nowrap"
                 >
-                  <Heart size={18} fill="currentColor" />
-                  Soutenir une action (Faire un don)
-                  <ArrowRight size={16} />
+                  <Heart size={16} fill="currentColor" />
+                  <span>Soutenir nos actions</span>
+                  <ArrowRight size={15} />
                 </a>
 
                 <a 
                   href="tel:+22892673400" 
-                  className="inline-flex items-center justify-center gap-2.5 bg-white hover:bg-amber-50 text-ujmah-indigo border border-ujmah-navy/15 px-6 py-4 rounded-2xl font-bold text-sm transition-all shadow-xs"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-amber-50 text-ujmah-indigo border border-ujmah-navy/15 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl font-bold text-xs sm:text-sm transition-all shadow-xs whitespace-nowrap"
                 >
-                  <Phone size={17} className="text-ujmah-orange" />
-                  Appeler le siège : +228 92 67 34 00
+                  <Phone size={15} className="text-ujmah-orange" />
+                  <span>Siège : +228 92 67 34 00</span>
                 </a>
               </div>
 
@@ -509,7 +509,7 @@ export default function Home() {
             </div>
             <a 
               href="/orphelinat" 
-              className="flex-shrink-0 px-5 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-ujmah-orange font-bold text-xs transition-colors"
+              className="w-full sm:w-auto flex-shrink-0 text-center px-5 py-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-ujmah-orange font-bold text-xs transition-colors whitespace-nowrap"
             >
               Voir le foyer
             </a>
@@ -555,7 +555,7 @@ export default function Home() {
             </div>
             <a 
               href="/don?category=forages" 
-              className="flex-shrink-0 px-5 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 font-bold text-xs transition-colors"
+              className="w-full sm:w-auto flex-shrink-0 text-center px-5 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 font-bold text-xs transition-colors whitespace-nowrap"
             >
               Forages & Vivres
             </a>
@@ -772,16 +772,16 @@ export default function Home() {
           </div>
 
           {/* Boutons d'Action Final */}
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-8 border-t border-white/15">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8 border-t border-white/15">
             <a 
               href="/don" 
-              className="bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-2xl font-bold text-sm shadow-xl shadow-ujmah-orange/30 hover:-translate-y-0.5 transition-all"
+              className="w-full sm:w-auto text-center bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-2xl font-bold text-xs sm:text-sm shadow-xl shadow-ujmah-orange/30 hover:-translate-y-0.5 transition-all whitespace-nowrap"
             >
               Faire un don en ligne (SasPay / Mobile Money)
             </a>
             <a 
               href="/contact" 
-              className="glass-card-dark text-white hover:bg-white/10 px-8 py-4 rounded-2xl font-bold text-sm border border-white/20 transition-all"
+              className="w-full sm:w-auto text-center glass-card-dark text-white hover:bg-white/10 px-8 py-4 rounded-2xl font-bold text-xs sm:text-sm border border-white/20 transition-all whitespace-nowrap"
             >
               Contacter le siège à Agoè-Adjougba (+228 92 67 34 00)
             </a>

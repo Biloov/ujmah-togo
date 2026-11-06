@@ -30,9 +30,9 @@ export default function Navbar() {
           ? "bg-white/95 backdrop-blur-md shadow-md border-b border-ujmah-navy/10 py-3" 
           : "bg-white/90 backdrop-blur-md border-b border-ujmah-navy/5 py-3.5"
       }`}>
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-16 xl:px-20 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-20 flex items-center justify-between gap-4">
           
-          {/* 1. Logo & Signature Officielle à gauche */}
+          {/* 1. Logo & Nom Épuré "UJMAH" à gauche (sans devise pour maximiser l'espace et l'élégance) */}
           <a href="/" className="flex items-center gap-3 group flex-shrink-0">
             <img 
               src="/logo-ujmahvf.png" 
@@ -42,17 +42,12 @@ export default function Navbar() {
                 e.currentTarget.src = "https://placehold.co/150x50/0b1f3a/ffffff?text=UJMAH";
               }}
             />
-            <div className="hidden sm:flex flex-col border-l border-ujmah-navy/15 pl-3">
-              <span className="font-sans font-black text-lg sm:text-xl tracking-tight text-ujmah-indigo leading-none">
-                UJMAH
-              </span>
-              <span className="font-sans text-[8px] sm:text-[8.5px] text-ujmah-orange font-bold uppercase tracking-wider mt-1 whitespace-nowrap">
-                Servir l'humanité dans l'union
-              </span>
-            </div>
+            <span className="hidden sm:inline-block border-l border-ujmah-navy/15 pl-3 font-sans font-black text-xl tracking-tight text-ujmah-indigo">
+              UJMAH
+            </span>
           </a>
 
-          {/* 2. Liens de navigation parfaitement CENTRÉS et à taille raffinée */}
+          {/* 2. Liens de navigation parfaitement CENTRÉS et à taille affinée */}
           <div className="hidden lg:flex items-center justify-center flex-1 gap-4 xl:gap-7 px-2">
             {navLinks.map((link) => (
               <a 
@@ -70,7 +65,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a 
               href="/don" 
-              className="inline-flex items-center gap-2 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-5 py-2.5 rounded-full font-sans font-extrabold text-xs transition-all duration-300 shadow-md shadow-ujmah-orange/25 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-5 py-2.5 rounded-full font-sans font-extrabold text-xs transition-all duration-300 shadow-md shadow-ujmah-orange/25 hover:shadow-lg hover:-translate-y-0.5 whitespace-nowrap"
             >
               <Heart size={14} fill="currentColor" />
               Faire un don
@@ -92,11 +87,9 @@ export default function Navbar() {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}>
           <div className="flex flex-col gap-4">
-            <div className="pb-4 border-b border-ujmah-navy/10">
-              <span className="font-sans font-black text-2xl text-ujmah-indigo block leading-none">UJMAH</span>
-              <span className="font-sans text-[10px] text-ujmah-orange font-bold uppercase tracking-wider mt-1 block">
-                Servir l'humanité dans l'union
-              </span>
+            <div className="pb-4 border-b border-ujmah-navy/10 flex items-center gap-3">
+              <img src="/logo-ujmahvf.png" alt="UJMAH" className="h-9 w-auto" />
+              <span className="font-sans font-black text-2xl text-ujmah-indigo leading-none">UJMAH</span>
             </div>
 
             {navLinks.map((link) => (
