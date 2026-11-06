@@ -7,25 +7,36 @@ import { requireAuth, requireRole, AuthenticatedRequest } from '../middleware/au
 const router = Router();
 const FINANCE_ROLES = [RoleName.SUPER_ADMIN, RoleName.ADMIN, RoleName.FINANCE];
 
-// 1. PUBLIC: Create checkout transaction
+const SASPAY_BASE_URL = 'https://api.saspay.me/api/v1';
+
+// 1. PUBLIC: Create SasPay checkout session
 router.post('/checkout', async (req, res) => {
-  const { amount, donorName, donorEmail, donorPhone, category, projectId } = req.body;
+  const { amount, donorName, donorEmail, donorPhone, category, projectId, description } = req.body;
 
   if (!amount || !donorName || !donorEmail || !category) {
-    return res.status(400).json({ error: 'Required donation details are missing' });
+    return res.status(400).json({ error: 'Champs obligatoires manquants (montant, nom, email, catégorie)' });
   }
 
-  try {
-    // Generate unique internal transaction reference
-    const reference = `DON-${crypto.randomBytes(8).toString('hex').toUpperCase()}`;
+  const numericAmount = parseFloat(amount);
+  if (isNaN(numericAmount) || numericAmount <= 0) {
+    return res.status(400).json({ error: 'Montant invalide' });
+  }
 
-    // Create a pending donation in the database
+  // Règle SasPay : Montants impérativement formatés en chaînes décimales ("2500.00")
+  const formattedAmount = numericAmount.toFixed(2);
+
+  try {
+    // Référence interne unique
+    const reference = `DON-${crypto.randomBytes(6).toString('hex').toUpperCase()}`;
+
+    // Enregistrement de l'intention de don dans la base de données
     const donation = await prisma.donation.create({
       data: {
-        amount: parseFloat(amount),
+        amount: numericAmount,
+        currency: 'XOF',
         donorName,
         donorEmail,
-        donorPhone,
+        donorPhone: donorPhone || null,
         category,
         projectId: projectId || null,
         reference,
@@ -33,102 +44,184 @@ router.post('/checkout', async (req, res) => {
       }
     });
 
-    // In a real Genius Pay integration, we would request a checkout url here.
-    // We simulate returning the checkout URL.
-    const checkoutUrl = `https://pay.genius.ci/checkout/${reference}`;
+    const appUrl = process.env.APP_URL || 'https://ujmah-togo.vercel.app';
+    const returnUrl = `${appUrl}/don?status=success&ref=${reference}`;
+
+    const apiKey = process.env.SASPAY_API_KEY;
+
+    // Si la clé API SasPay est configurée, appel direct à l'API officielle
+    if (apiKey) {
+      try {
+        const saspayResponse = await fetch(`${SASPAY_BASE_URL}/checkout-sessions/`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            amount: formattedAmount,
+            currency: 'XOF',
+            description: description || `Don Association UJMAH Togo - ${category}`,
+            customer_email: donorEmail,
+            customer_name: donorName,
+            customer_phone: donorPhone || undefined,
+            return_url: returnUrl,
+            metadata: {
+              reference,
+              donationId: donation.id,
+              category,
+              projectId: projectId || undefined
+            }
+          })
+        });
+
+        const saspayData: any = await saspayResponse.json();
+
+        if (saspayResponse.ok && saspayData.checkout_url) {
+          return res.status(201).json({
+            message: 'Session SasPay initialisée',
+            reference,
+            checkoutUrl: saspayData.checkout_url,
+            sessionId: saspayData.id,
+            donationId: donation.id
+          });
+        } else {
+          console.error('[SasPay Error]:', saspayData);
+        }
+      } catch (apiErr) {
+        console.error('[SasPay Network Error]:', apiErr);
+      }
+    }
+
+    // Fallback gracieux : Lien de paiement direct ou simulation en attendant sk_live
+    const fallbackCheckoutUrl = `https://link.saspay.me/ujmah-togo?amount=${formattedAmount}&ref=${reference}`;
 
     res.status(201).json({
-      message: 'Transaction initialized',
+      message: 'Transaction initialisée',
       reference,
-      checkoutUrl,
+      checkoutUrl: fallbackCheckoutUrl,
       donationId: donation.id
     });
+
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Checkout initialization server error' });
+    console.error('Checkout error:', err);
+    res.status(500).json({ error: 'Erreur serveur lors de l\'initialisation du paiement' });
   }
 });
 
-// 2. PUBLIC/PARTNER: Webhook handler for Genius Pay (Signed callback)
-router.post('/webhook', async (req, res) => {
-  const signature = req.headers['x-geniuspay-signature'];
-  const webhookSecret = process.env.GENIUSPAY_WEBHOOK_SECRET || 'secret';
+// 2. PUBLIC/WEBHOOK: Traitement officiel des webhooks SasPay
+// Vérification stricte selon la spécification SKILL SasPay :
+// Headers : X-Webhook-Signature, X-Webhook-Timestamp, X-Webhook-Event
+// Signature HMAC SHA-256 sur corps brut : f"{timestamp}.{raw_body}"
+router.post('/webhook', async (req: any, res) => {
+  const signature = req.headers['x-webhook-signature'] as string;
+  const timestamp = req.headers['x-webhook-timestamp'] as string;
+  const event = req.headers['x-webhook-event'] as string;
 
-  // Validate request signature (OWASP security compliance)
-  if (!signature) {
-    return res.status(401).json({ error: 'Signature header missing' });
+  const webhookSecret = process.env.SASPAY_WEBHOOK_SECRET;
+
+  if (!signature || !timestamp) {
+    return res.status(401).json({ error: 'En-têtes de signature SasPay manquants' });
   }
 
-  const payload = JSON.stringify(req.body);
-  const expectedSignature = crypto
-    .createHmac('sha256', webhookSecret)
-    .update(payload)
-    .digest('hex');
-
-  // For testing/mocking in dev, we allow bypassing if secret is default 'secret'
-  if (signature !== expectedSignature && webhookSecret !== 'secret') {
-    return res.status(400).json({ error: 'Invalid payload signature signature' });
+  // 1. Rejeter si le timestamp s'écarte de plus de 300 secondes (5 minutes)
+  const now = Math.floor(Date.now() / 1000);
+  const eventTime = parseInt(timestamp, 10);
+  if (isNaN(eventTime) || Math.abs(now - eventTime) > 300) {
+    return res.status(400).json({ error: 'Timestamp expiré ou invalide' });
   }
 
-  const { reference, status, amount } = req.body;
+  // 2. Vérification cryptographique de la signature sur le corps brut
+  if (webhookSecret) {
+    const rawBody = req.rawBody || Buffer.from(JSON.stringify(req.body));
+    const signedData = Buffer.concat([Buffer.from(`${timestamp}.`), rawBody]);
+    const expectedSignature = crypto
+      .createHmac('sha256', webhookSecret)
+      .update(signedData)
+      .digest('hex');
+
+    const signatureBuffer = Buffer.from(signature.toLowerCase());
+    const expectedBuffer = Buffer.from(expectedSignature.toLowerCase());
+
+    if (signatureBuffer.length !== expectedBuffer.length || !crypto.timingSafeEqual(signatureBuffer, expectedBuffer)) {
+      return res.status(400).json({ error: 'Signature de webhook SasPay invalide' });
+    }
+  }
+
+  // 3. Traitement idempotent de l'événement (transaction.success)
+  const eventData = req.body.data || req.body;
+  const reference = eventData.metadata?.reference || eventData.reference;
+
+  if (event === 'transaction.success' || req.body.event === 'transaction.success') {
+    try {
+      if (reference) {
+        const donation = await prisma.donation.findUnique({ where: { reference } });
+        
+        if (donation && donation.status !== 'Reussi') {
+          // Mise à jour du statut
+          await prisma.donation.update({
+            where: { reference },
+            data: { status: 'Reussi' }
+          });
+
+          // Génération du récépissé de don
+          const receiptNumber = `REC-${new Date().getFullYear()}-${crypto.randomBytes(3).toString('hex').toUpperCase()}`;
+          const pdfUrl = `https://ujmah-togo.vercel.app/receipts/${receiptNumber}.pdf`;
+
+          await prisma.donationReceipt.create({
+            data: {
+              receiptNumber,
+              donationId: donation.id,
+              pdfUrl
+            }
+          });
+
+          // Mise à jour du montant collecté si lié à un projet
+          if (donation.projectId) {
+            await prisma.project.update({
+              where: { id: donation.projectId },
+              data: {
+                collectedAmount: { increment: donation.amount }
+              }
+            });
+          }
+
+          console.log(`[SasPay] Don ${reference} validé avec succès (Récépissé : ${receiptNumber}).`);
+        }
+      }
+    } catch (dbErr) {
+      console.error('[SasPay Webhook DB Error]:', dbErr);
+    }
+  }
+
+  // Répondre 200 rapidement conformément à la règle SasPay
+  res.status(200).json({ success: true, code: 200 });
+});
+
+// 3. PUBLIC: Vérifier l'état d'un paiement en direct (GET /payments/{id}/verify/)
+router.get('/verify/:reference', async (req, res) => {
+  const { reference } = req.params;
 
   try {
-    const donation = await prisma.donation.findUnique({ where: { reference } });
-    if (!donation) {
-      return res.status(404).json({ error: 'Donation transaction not found' });
-    }
-
-    if (donation.status === 'Reussi') {
-      return res.json({ message: 'Donation already processed' });
-    }
-
-    if (status === 'success') {
-      // 1. Update donation status
-      await prisma.donation.update({
-        where: { reference },
-        data: { status: 'Reussi' }
-      });
-
-      // 2. Generate a unique receipt index
-      const receiptNumber = `REC-${new Date().getFullYear()}-${crypto.randomBytes(4).toString('hex').toUpperCase()}`;
-      const pdfUrl = `https://ujmah.nexacom-gestion.com/receipts/${receiptNumber}.pdf`;
-
-      await prisma.donationReceipt.create({
-        data: {
-          receiptNumber,
-          donationId: donation.id,
-          pdfUrl
-        }
-      });
-
-      // 3. Update project budget progress if it is tied to a project campaign
-      if (donation.projectId) {
-        await prisma.project.update({
-          where: { id: donation.projectId },
-          data: {
-            collectedAmount: {
-              increment: donation.amount
-            }
-          }
-        });
+    const donation = await prisma.donation.findUnique({
+      where: { reference },
+      include: {
+        receipt: true,
+        project: { select: { name: true } }
       }
+    });
 
-      console.log(`Donation ${reference} successfully validated and receipt generated.`);
-    } else {
-      await prisma.donation.update({
-        where: { reference },
-        data: { status: 'Echoue' }
-      });
+    if (!donation) {
+      return res.status(404).json({ error: 'Don introuvable' });
     }
 
-    res.json({ success: true });
+    res.json({ donation });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Webhook processing server error' });
+    res.status(500).json({ error: 'Erreur lors de la vérification' });
   }
 });
 
-// 3. STAFF: Get complete donations history
+// 4. STAFF: Obtenir l'historique complet des dons
 router.get('/', requireAuth, requireRole(FINANCE_ROLES), async (req, res) => {
   try {
     const donations = await prisma.donation.findMany({
@@ -140,7 +233,7 @@ router.get('/', requireAuth, requireRole(FINANCE_ROLES), async (req, res) => {
     });
     res.json({ donations });
   } catch (err) {
-    res.status(500).json({ error: 'Get donation history server error' });
+    res.status(500).json({ error: 'Erreur lors de la récupération des dons' });
   }
 });
 

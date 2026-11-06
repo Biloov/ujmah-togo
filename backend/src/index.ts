@@ -24,8 +24,14 @@ app.use(cors({
   credentials: true
 }));
 
-// Permettre les uploads d'images et vidéos (base64 ou multipart)
-app.use(express.json({ limit: '50mb' }));
+// Permettre les uploads d'images et vidéos (jusqu'à 50 Mo)
+// et capturer le corps brut (rawBody) pour la vérification HMAC des webhooks SasPay
+app.use(express.json({ 
+  limit: '50mb',
+  verify: (req: any, res, buf) => {
+    req.rawBody = buf;
+  }
+}));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // Routes Mounts

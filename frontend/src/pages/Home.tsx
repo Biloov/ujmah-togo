@@ -327,7 +327,7 @@ export default function Home() {
             </div>
 
             <a 
-              href="https://pay.genius.ci/d/ujmah-orphelinat?amount=20250"
+              href="/don?category=orphelinat&amount=20250"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full text-center bg-white text-ujmah-orange hover:bg-amber-50 font-bold text-xs py-3 rounded-xl transition-all shadow-md block mt-4"
