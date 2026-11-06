@@ -58,19 +58,7 @@ const INITIAL_MEDIA: MediaItem[] = [
     date: "2024",
     description: "Émulation des meilleurs jeunes mémorisateurs du Coran venus de toutes les régions du Togo."
   },
-  {
-    id: "med-3",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    title: "Documentaire : 23 ans d'histoire et d'action humanitaire au Togo",
-    type: "VIDEO",
-    category: "Assises de Sciences",
-    location: "Lomé",
-    date: "2024",
-    duration: "14:20",
-    youtubeId: "dQw4w9WgXcQ",
-    description: "Rétrospective officielle retraçant la fondation de l'UJMAH le 23 janvier 2003 à Agoè-Houmbi jusqu'aux grands chantiers actuels."
-  },
-  {
+    {
     id: "med-4",
     url: "/assets/sefima-weaving.png",
     title: "Atelier pratique du Séminaire SEFIMA : Entrepreneuriat & Autonomie",
