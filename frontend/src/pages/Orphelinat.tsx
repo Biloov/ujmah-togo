@@ -164,7 +164,7 @@ export default function Orphelinat() {
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
             <a 
-              href="https://pay.genius.ci/d/ujmah-orphelinat?amount=20250" 
+              href="/don?category=orphelinat&amount=20250" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto bg-ujmah-orange hover:bg-ujmah-orange-hover text-white px-8 py-4 rounded-full font-sans font-bold text-sm shadow-xl shadow-ujmah-orange/25 transition-all hover:-translate-y-0.5"
