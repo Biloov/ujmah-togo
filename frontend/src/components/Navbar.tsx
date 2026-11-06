@@ -47,7 +47,7 @@ export default function Navbar() {
                 UJMAH
               </span>
               <span className="font-sans text-[9px] text-ujmah-orange font-bold uppercase tracking-widest mt-1">
-                Servir dans l'union
+                Servir l'humanité dans l'union
               </span>
             </div>
           </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
             <div className="pb-4 border-b border-ujmah-navy/10">
               <span className="font-sans font-black text-2xl text-ujmah-indigo block leading-none">UJMAH</span>
               <span className="font-sans text-[10px] text-ujmah-orange font-bold uppercase tracking-widest mt-1 block">
-                Servir dans l'union
+                Servir l'humanité dans l'union
               </span>
             </div>
 

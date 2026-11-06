@@ -254,7 +254,7 @@ export default function Donation() {
           <div className="inline-flex items-center gap-2 bg-white border border-amber-300 shadow-xs px-4 py-1.5 rounded-full mb-4">
             <span className="w-2 h-2 rounded-full bg-ujmah-orange animate-pulse"></span>
             <span className="text-xs font-bold text-ujmah-indigo uppercase tracking-wider">
-              RÉCÉPISSÉ N° 0315/MATDCL-SG-DLPAP-DOCA • « SERVIR DANS L'UNION »
+              RÉCÉPISSÉ N° 0315/MATDCL-SG-DLPAP-DOCA • « Servir l'humanité dans l'union »
             </span>
           </div>
 
@@ -550,7 +550,7 @@ export default function Donation() {
                 ACCRÉDITATION OFFICIELLE
               </span>
               <h4 className="font-sans font-black text-lg mb-2 text-white">
-                « Servir dans l'union »
+                « Servir l'humanité dans l'union »
               </h4>
               <div className="space-y-2 text-xs text-white/80 leading-relaxed mb-4">
                 <p>
